@@ -5,12 +5,12 @@ import Scantests from "../../../../../models/scanTest"
 
 export async function GET(req){
     connectDB()
-    const labTest = await Labtests.find({})
-    const scanTest = await Scantests.find({})
+    const labTest = await Labtests?.find({})
+    const scanTest = await Scantests?.find({})
     //await scanTest[0].updateOne({$set: })
     const res = {
-        labTests : [...labTest[0].labTests],
-        scanTests: [...scanTest[0].scanTests]
+        labTests : [...labTest[0]?.labTests],
+        scanTests: [...scanTest[0]?.scanTests]
     }
     return NextResponse.json(res)
 }

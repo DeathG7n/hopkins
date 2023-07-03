@@ -4,6 +4,6 @@ import Patients from "../../../../models/createPatient"
 
 export async function GET(req){
     connectDB()
-    const users = await Patients.find({})
+    const users = await Patients?.find({})
     return NextResponse.json(users)
 }
