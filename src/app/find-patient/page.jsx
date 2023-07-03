@@ -9,7 +9,7 @@ function Page() {
   const [search, setSearch] = useState({})
   const id = useRef()
   const handleClick = async () => {
-    const res = await fetch(`https://hopkins.vercel.app/api/find/${id?.current?.value}`)
+    const res = await fetch(`/api/find/${id?.current?.value}`)
     const body = await res.json()
     setSearch(body)
   }

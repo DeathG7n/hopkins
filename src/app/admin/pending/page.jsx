@@ -10,14 +10,14 @@ function Page() {
     const [change, setChange] = useState(false)
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`https://hopkins.vercel.app/api/getAll`)
+            const res = await fetch(`/api/getAll`)
             const body = await res.json()
             setPatients(body)
         }
         getPatient()
     },[change])
     async function toggleComplete(id){
-        const res = await fetch(`https://hopkins.vercel.app/api/update/complete/${id}`,{
+        const res = await fetch(`/api/update/complete/${id}`,{
             method: "PUT",
             body: true
         })

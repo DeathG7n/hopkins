@@ -7,7 +7,7 @@ const connectDB = async ()=> {
     try{
         mongoose.set('strictQuery', false)
         mongoose.connect("mongodb+srv://DeathG7n:if3anYichukwu@cluster0.jpkskmf.mongodb.net/?retryWrites=true&w=majority", connectionParams)
-        // mongoose.connect("mongodb://localhost:27017/test", connectionParams)
+        //mongoose.connect("mongodb://localhost:27017/test", connectionParams)
         console.log('Database Connected')
     } catch(err){
         console.log(err)

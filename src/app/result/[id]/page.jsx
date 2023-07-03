@@ -12,7 +12,7 @@ function Page() {
     const [values, setValues] = useState([])
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`https://hopkins.vercel.app/api/find/${params?.id}`)
+            const res = await fetch(`/api/find/${params?.id}`)
             const body = await res.json()
             setPatient(body)
         }
@@ -20,7 +20,7 @@ function Page() {
     },[params?.id])
     useEffect(()=>{
         async function getTests(){
-            const res = await fetch('https://hopkins.vercel.app/api/getAll/tests')
+            const res = await fetch('/api/getAll/tests')
             const body = await res.json()
             setTests(body)
         }

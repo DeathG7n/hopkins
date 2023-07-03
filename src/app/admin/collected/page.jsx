@@ -9,7 +9,7 @@ function Page() {
     const [patients, setPatients] = useState()
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`https://hopkins.vercel.app/api/getAll`)
+            const res = await fetch(`/api/getAll`)
             const body = await res.json()
             setPatients(body)
         }

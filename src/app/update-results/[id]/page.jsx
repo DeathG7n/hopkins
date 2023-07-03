@@ -26,7 +26,7 @@ function Page() {
     const [tests, setTests] = useState([])
     useEffect(()=>{
         async function getTests(){
-            const res = await fetch('https://hopkins.vercel.app/api/getAll/tests')
+            const res = await fetch('/api/getAll/tests')
             const body = await res.json()
             setTests(body)
         }
@@ -34,7 +34,7 @@ function Page() {
     },[])
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`https://hopkins.vercel.app/api/find/${params?.id}`)
+            const res = await fetch(`/api/find/${params?.id}`)
             const body = await res.json()
             setPatient(body)
         }
@@ -104,7 +104,7 @@ function Page() {
         setTimeout(()=> {location.reload(true)}, 3000)
     }
     const addNew = async()=>{
-        const res = await fetch(`https://hopkins.vercel.app/api/update/tests`, {
+        const res = await fetch(`/api/update/tests`, {
             method: 'PUT',
             body: JSON.stringify({
                 name: name?.current.value,
@@ -117,7 +117,7 @@ function Page() {
         setTimeout(()=> {location.reload(true)}, 3000)
     }
     const updateNew = async()=>{
-        const res = await fetch(`https://hopkins.vercel.app/api/update/tests/name`, {
+        const res = await fetch(`/api/update/tests/name`, {
             method: 'PUT',
             body: JSON.stringify({
                 name: mergeForm?.test,
@@ -127,7 +127,7 @@ function Page() {
         setTimeout(()=> {location.reload(true)}, 3000)
     }
     const mergeResults = async()=>{
-        const res = await fetch(`https://hopkins.vercel.app/api/update/merge/${patient?.receiptNo}`, {
+        const res = await fetch(`/api/update/merge/${patient?.receiptNo}`, {
             method: 'PUT',
             body: JSON.stringify({
                 name: name?.current?.value,
@@ -137,7 +137,7 @@ function Page() {
         setTimeout(()=> {location.reload(true)}, 3000)
     }
     const updateTests = async()=>{
-        const res = await fetch(`https://hopkins.vercel.app/api/update/merge/${name?.current?.value}`, {
+        const res = await fetch(`/api/update/merge/${name?.current?.value}`, {
             method: 'PUT',
             body: JSON.stringify({
                 name: name?.current.value,
@@ -171,7 +171,7 @@ function Page() {
         setValues(newArray)
     }
     async function update(){
-        const res = await fetch(`https://hopkins.vercel.app/api/update/${patient?.receiptNo}`, {
+        const res = await fetch(`/api/update/${patient?.receiptNo}`, {
             method: 'PUT',
             body: JSON.stringify({
                 ...form,

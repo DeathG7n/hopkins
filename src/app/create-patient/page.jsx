@@ -15,7 +15,7 @@ function Page() {
     const [tests, setTests] = useState([])
     useEffect(()=>{
         async function getTests(){
-            const res = await fetch('https://hopkins.vercel.app/api/getAll/tests')
+            const res = await fetch('/api/getAll/tests')
             const body = await res.json()
             setTests(body)
         }
@@ -50,7 +50,7 @@ function Page() {
     }
 
     async function create(){
-        const res = await fetch('https://hopkins.vercel.app/api/create', {
+        const res = await fetch('/api/create', {
             method: 'POST',
             body: JSON.stringify(form),
         })
