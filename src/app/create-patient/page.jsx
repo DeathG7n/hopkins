@@ -66,7 +66,7 @@ function Page() {
         <form className={styles.form}>
             <section className={styles.details}>
                 <span>
-                    <label htmlFor="">Patient's Name: </label>
+                    <label htmlFor="">{"Patient's Name:"} </label>
                     <input type="text" className={styles.name} name="name" onChange={(e)=>handleChange(e)}/>
                 </span>
                 <span>

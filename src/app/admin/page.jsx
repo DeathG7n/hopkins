@@ -8,7 +8,7 @@ import ru from "javascript-time-ago/locale/ru.json"
 import ReactTimeAgo from "react-time-ago"
 import Link from "next/link"
 
-function page() {
+function Page() {
     TimeAgo.addDefaultLocale(en)
     TimeAgo.addLocale(ru)
     const [patients, setPatients] = useState()
@@ -73,4 +73,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
