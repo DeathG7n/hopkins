@@ -68,7 +68,7 @@ function Page() {
             setMerge(false)
             setNewTest(false)
         }
-    },[currentTest, add, test?.labTests, test?.scanTests])
+    },[currentTest, add, tests?.labTests, tests?.scanTests])
 
     const toggle = (name)=>{
         setCurrentTest(name)
