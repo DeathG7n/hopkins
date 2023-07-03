@@ -1,0 +1,120 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10px;
+}
+
+.details{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.name{
+    width: 300px;
+}
+.age{
+    width: 60px;
+}
+.receipt{
+    width: 90px;
+}
+
+.form span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form span input, .form span select{
+    height: 25px;
+    text-indent: 5px;
+    border-radius: 5px;
+    border: 1px solid #fb6902;
+}
+.div{
+    display: flex;
+    width: 100%;
+}
+
+.tests{
+    width: 70%;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.tests h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.testbox{
+    display: flex;
+    justify-content: space-between;
+}
+.lab{
+    width: 48%;
+    padding: 1px 1px 10px 1px;
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+/* Track */
+.lab::-webkit-scrollbar{
+    width: 5px; /* width of the scrollbar */
+}
+
+/* Track - color of the track */
+.lab::-webkit-scrollbar-track {
+    background: #fab07c;
+}
+
+/* Handle - color of the draggable handle */
+.lab::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 5px;
+}
+
+.lab span{
+    width: fit-content;
+}
+
+.display{
+    padding: 10px 20px;
+    width: 30%;
+    margin: 10px auto;
+}
+
+.display h3{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.display ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 1px 1px 5px #888;
+    list-style-type: none;
+}
+.display span{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 0 0 0;
+}
+.display div, .display a{
+    width: fit-content;
+    padding: 10px;
+    background-color: #fb6902;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  

@@ -1,0 +1,208 @@
+.container{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nav{
+    width: 20%;
+    height: 100%;
+    background-color: #fb6902;
+    display: flex;
+    flex-direction: column;
+}
+.nav img{
+    width: 100px;
+    margin: 20px auto;
+}
+.div{
+    width: 100%;
+    max-height: 75%;
+}
+.nav h3{
+    text-align: center;
+}
+.nav ol{
+    padding: 10px 0;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+.nav li{
+    padding: 5px 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav li:hover{
+    background-color: #f9f9f9;
+}
+
+.main{
+    padding: 10px;
+    width: 80%;
+    height: 100%;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.main h1{
+    text-align: center;
+}
+
+.main form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.details{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    border: 2px solid #fb6902;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.details div{
+    display: flex;
+    gap: 5px;
+}
+.details div label{
+    font-weight: 500;
+}
+
+.input, .merge{
+    display: flex;
+    max-height: 1000px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    border: 2px solid #fb6902;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.input div input{
+    outline: 1px solid #000;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    text-indent: 5px;
+    width: 50px;
+    max-width: fit-content;
+    margin-right: 5px ;
+}
+.merge div{
+    display: flex;
+    align-items: center;
+}
+.merge div input{
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 25px;
+    text-indent: 5px;
+    width: 200px;
+    max-width: fit-content;
+    margin-right: 5px;
+}
+/* Track */
+.nav ol::-webkit-scrollbar , .input::-webkit-scrollbar{
+    width: 5px; /* width of the scrollbar */
+}
+
+/* Track - color of the track */
+.nav ol::-webkit-scrollbar-track, .input::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle - color of the draggable handle */
+.nav ol::-webkit-scrollbar-thumb , .input::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 5px;
+}
+
+.textarea{
+    border: 2px solid #fb6902;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.textarea textarea{
+    padding: 10px;
+    width: 100%;
+}
+
+.button{
+    width: fit-content;
+    padding: 10px;
+    background-color: #fb6902;
+    border-radius: 5px;
+    align-self: flex-end;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: auto;
+    text-decoration: none;
+    color: #000;
+}
+.todo{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 800px;
+}
+
+.todos{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ece9e9;
+    width: fit-content;
+    max-width: 900px;
+    max-height: 100px;
+    padding: 8px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+/* Track */
+.todos::-webkit-scrollbar , .input::-webkit-scrollbar{
+    width: 5px; /* width of the scrollbar */
+    height: 2px;
+}
+
+/* Track - color of the track */
+.todos::-webkit-scrollbar-track, .input::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle - color of the draggable handle */
+.todos::-webkit-scrollbar-thumb , .input::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 5px;
+}
+.todoButton{
+    width: fit-content;
+    padding: 5px;
+    background-color: #fb6902;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+}

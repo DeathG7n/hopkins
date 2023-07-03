@@ -1,0 +1,45 @@
+.nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 20%;
+    padding: 20px;
+}
+  
+  .nav img{
+    width: 100px;
+  }
+  
+  .nav div h1{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    width: fit-content;
+    letter-spacing: 5px;
+  }
+  .nav > div > h1 > span{
+    color: #fb6902;
+  }
+  .nav div h2{
+    margin-top: 0;
+    font-size: 30px;
+    width: fit-content;
+    letter-spacing: 5px;
+    color: #fb6902;
+    outline: black;
+  }
+  .nav ul{
+    margin-left: auto;
+  }
+
+  .nav a{
+    width: fit-content;
+    padding: 10px;
+    background-color: #fb6902;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
