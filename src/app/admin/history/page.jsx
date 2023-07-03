@@ -7,7 +7,7 @@ import TimeAgo from "javascript-time-ago"
 import en from "javascript-time-ago/locale/en.json"
 import ru from "javascript-time-ago/locale/ru.json"
 import ReactTimeAgo from "react-time-ago"
-import Image from "next/image"
+
 
 function Page() {
     TimeAgo.addDefaultLocale(en)
@@ -15,7 +15,7 @@ function Page() {
     const [patients, setPatients] = useState()
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`http://localhost:3000/api/getAll`)
+            const res = await fetch(`https://hopkins.vercel.app/api/getAll`)
             const body = await res.json()
             setPatients(body)
         }
@@ -24,7 +24,7 @@ function Page() {
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <Image src="/logo-hopkins.jpg" alt="" />
+            <img src="/logo-hopkins.jpg" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

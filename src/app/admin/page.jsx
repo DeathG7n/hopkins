@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./page.module.css"
-import Image from "next/image"
+
 import { useEffect, useState } from "react"
 import TimeAgo from "javascript-time-ago"
 import en from "javascript-time-ago/locale/en.json"
@@ -15,7 +15,7 @@ function Page() {
     const [patients, setPatients] = useState()
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`http://localhost:3000/api/getAll`)
+            const res = await fetch(`https://hopkins.vercel.app/api/getAll`)
             const body = await res.json()
             setPatients(body)
         }
@@ -27,7 +27,7 @@ function Page() {
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <Image src="/logo-hopkins.jpg" alt="" />
+            <img src="/logo-hopkins.jpg" width="100" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

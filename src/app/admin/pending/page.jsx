@@ -3,21 +3,21 @@
 import styles from "../page.module.css"
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
+
 
 function Page() {
     const [patients, setPatients] = useState()
     const [change, setChange] = useState(false)
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`http://localhost:3000/api/getAll`)
+            const res = await fetch(`https://hopkins.vercel.app/api/getAll`)
             const body = await res.json()
             setPatients(body)
         }
         getPatient()
     },[change])
     async function toggleComplete(id){
-        const res = await fetch(`http://localhost:3000/api/update/complete/${id}`,{
+        const res = await fetch(`https://hopkins.vercel.app/api/update/complete/${id}`,{
             method: "PUT",
             body: true
         })
@@ -26,7 +26,7 @@ function Page() {
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <Image src="/logo-hopkins.jpg" alt="" />
+            <img src="/logo-hopkins.jpg" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

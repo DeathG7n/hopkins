@@ -4,14 +4,14 @@ import styles from "../page.module.css"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
-import Image from "next/image"
+
 
 function Page() {
     const params = useParams()
     const [patient, setPatient] = useState()
     useEffect(()=>{
         async function getPatient(){
-            const res = await fetch(`http://localhost:3000/api/find/${params?.patient}`)
+            const res = await fetch(`https://hopkins.vercel.app/api/find/${params?.patient}`)
             const body = await res.json()
             setPatient(body)
         }
@@ -23,7 +23,7 @@ function Page() {
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <Image src="/logo-hopkins.jpg" alt="" />
+            <img src="/logo-hopkins.jpg" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

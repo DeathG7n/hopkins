@@ -4,7 +4,7 @@ import Link from "next/link"
 import styles from "./Navbar.module.css"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import Image from "next/image"
+
 
 function Navbar() {
   const [path, setPath] = useState("")
@@ -22,7 +22,7 @@ function Navbar() {
   
   return (
     <nav className={styles.nav}>
-        <Image src="/logo-hopkins.jpg" alt="" />
+        <img src="/logo-hopkins.jpg" alt="" />
         <div>
           <h1>HOPK<span>i</span>NS</h1>
           <h2>DIAGNOSTICS</h2>
