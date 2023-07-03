@@ -3,7 +3,7 @@ import styles from "./page.module.css"
 import logo from "../../public/logo-hopkins.jpg"
 import Navbar from "@/components/Navbar"
 import { useEffect } from "react"
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 function Page() {
   const router = useRouter();
