@@ -17,6 +17,7 @@ function Page() {
     const [patient, setPatient] = useState()
     const [currentTest, setCurrentTest] = useState("Add New")
     const [parameters, setParameters] = useState([])
+    const [result, setResult] = useState(false)
     const [add, setAdd] = useState(true)
     const [merge, setMerge] = useState(false)
     const [newTest, setNewTest] = useState(false)
@@ -55,18 +56,22 @@ function Page() {
             setAdd(true)
             setMerge(false)
             setNewTest(false)
+            setResult(false)
         } else if(currentTest == "Merge Results"){
             setMerge(true)
             setAdd(false)
             setNewTest(false)
+            setResult(false)
         } else if(currentTest == "Update Test"){
             setAdd(false)
             setMerge(false)
             setNewTest(true)
+            setResult(false)
         } else{
             setAdd(false)
             setMerge(false)
             setNewTest(false)
+            setResult(true)
         }
     },[currentTest, add, tests?.labTests, tests?.scanTests])
 
@@ -232,7 +237,7 @@ function Page() {
                     </div>
                 </section>
                 <h3>Patient Results</h3>
-                {(!add && !merge && !newTest) && <section className={styles.input}>
+                {result && <section className={styles.input}>
                     {parameters?.map((item, id)=>{
                             return(
                                 <div key={id}>
@@ -242,8 +247,8 @@ function Page() {
                             )
                         })}
                 </section>}
-                {(!add && !merge && !newTest) && <h3>Observations</h3>}
-                {(!add && !merge && !newTest) && <section className={styles.textarea}>
+                {result && <h3>Observations</h3>}
+                {result && <section className={styles.textarea}>
                     <textarea name="description" id="description" cols="83" rows="10" placeholder="Write your observations... " onChange={(e)=>handleChange(e)}ref={value}></textarea>
                     <div className={styles.button} onClick={addDesc}>Add Description</div>
                     <div className={styles.todo}>
@@ -253,7 +258,7 @@ function Page() {
                         )
                     })}</div>
                 </section>}
-                {(!add && !merge && !newTest) && <div className={styles.button} onClick={updateTest}>Save Results</div>}
+                {result && <div className={styles.button} onClick={updateTest}>Save Results</div>}
                 {add && <section className={styles.input}>
                     <div>
                         <label htmlFor="hb">Test Name: </label>
