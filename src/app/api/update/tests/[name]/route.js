@@ -24,12 +24,10 @@ export async function PUT(req,{params}){
         const index = lab.indexOf(refTest)
         lab[index] = refTest
         await labTest[0].updateOne({$set: {labTests: [...lab]}})
-        console.log(lab)
     } else{
         const index = scan.indexOf(refTest)
         scan[index] = refTest
         await scanTest[0].updateOne({$set: {scanTests : [...scan]}})
-        console.log(scan)
     }
 
     return NextResponse.json("ok")

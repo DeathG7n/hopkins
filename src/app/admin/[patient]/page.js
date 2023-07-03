@@ -4,6 +4,7 @@ import styles from "../page.module.css"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
+import Image from "next/image"
 
 function Page() {
     const params = useParams()
@@ -15,14 +16,14 @@ function Page() {
             setPatient(body)
         }
         getPatient()
-    },[])
+    },[params?.patient])
     function setResult(name){
         localStorage.setItem("name", name)
     }
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <img src="/logo-hopkins.jpg" alt="" />
+            <Image src="/logo-hopkins.jpg" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

@@ -12,7 +12,6 @@ function Page() {
     const res = await fetch(`http://localhost:3000/api/find/${id?.current?.value}`)
     const body = await res.json()
     setSearch(body)
-    console.log(body)
   }
   
   

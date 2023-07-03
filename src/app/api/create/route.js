@@ -19,7 +19,6 @@ export async function POST(req){
         referral: body.referral
     })
     const user = await newPatient.save()
-    console.log(body)
 
     return NextResponse.json("hi")
 }

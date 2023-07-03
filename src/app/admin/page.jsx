@@ -1,6 +1,7 @@
 "use client"
 
 import styles from "./page.module.css"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import TimeAgo from "javascript-time-ago"
 import en from "javascript-time-ago/locale/en.json"
@@ -26,7 +27,7 @@ function Page() {
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <img src="/logo-hopkins.jpg" alt="" />
+            <Image src="/logo-hopkins.jpg" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

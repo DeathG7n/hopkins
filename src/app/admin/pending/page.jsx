@@ -3,6 +3,7 @@
 import styles from "../page.module.css"
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 function Page() {
     const [patients, setPatients] = useState()
@@ -25,7 +26,7 @@ function Page() {
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <img src="/logo-hopkins.jpg" alt="" />
+            <Image src="/logo-hopkins.jpg" alt="" />
             <ul>
                 <Link href={"/admin"}><li>Home</li></Link>
                 <Link href={"/admin/pending"}><li>Pending Results</li></Link>

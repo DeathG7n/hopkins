@@ -7,7 +7,6 @@ export async function PUT(req,{params}){
     const id = params.id
     const user = await Patients.findOne({receiptNo: id})
     await user.updateOne({$set: {collected: true}})
-    console.log("ok")
     
     return NextResponse.json("ok")
 }

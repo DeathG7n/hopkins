@@ -41,6 +41,5 @@ export async function PUT(req,{params}){
         await user.updateOne({$set: {requestedTests: [...remainingTests, body?.name]}})
     }
     
-    console.log(parameters)
     return NextResponse.json(user)
 }

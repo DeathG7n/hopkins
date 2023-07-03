@@ -2,8 +2,14 @@
 import styles from "./page.module.css"
 import logo from "../../public/logo-hopkins.jpg"
 import Navbar from "@/components/Navbar"
+import { useEffect } from "react"
+import { useRouter } from 'next/router';
 
 function Page() {
+  const router = useRouter();
+  useEffect(()=>{
+    router.push("/create-patient")
+  })
   return (
     <div>
       <Navbar/>

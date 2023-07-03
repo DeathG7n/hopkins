@@ -4,6 +4,7 @@ import styles from "./page.module.css"
 import { useEffect, useState, useRef } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 
 function Page() {
     const value = useRef()
@@ -38,11 +39,10 @@ function Page() {
             setPatient(body)
         }
         getPatient()
-    },[])
+    },[params?.id])
     useEffect(()=>{
         for (let i = 0; i < tests?.labTests?.length; i++) {
             if (tests?.labTests[i]?.name == currentTest){
-                console.log(tests?.labTests[i])
                 setParameters(tests?.labTests[i]?.parameters)
             }
         }
@@ -68,7 +68,7 @@ function Page() {
             setMerge(false)
             setNewTest(false)
         }
-    },[currentTest, add])
+    },[currentTest, add, test?.labTests, test?.scanTests])
 
     const toggle = (name)=>{
         setCurrentTest(name)
@@ -151,12 +151,10 @@ function Page() {
     const addValues = ()=>{
         setValues([...values, value?.current.value])
         value.current.value = ''
-        console.log(value?.current.value)
     }
     const addDesc = ()=>{
         setDesc([...desc, value?.current.value])
         value.current.value = ''
-        console.log(value?.current.value)
     }
     const removeDesc = (todo) =>{
         const newArray = [...desc]
@@ -180,17 +178,15 @@ function Page() {
                 description : [...desc]
             }),
         })
-        console.log(res)
     }
 
     useEffect(()=>{
         done && setTimeout(()=> update(), 3000)
     }, [done])
-    console.log(mergeForm, values)
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
-            <img src="/logo-hopkins.jpg" alt="logo" />
+            <Image src="/logo-hopkins.jpg" alt="logo" />
             <div className={styles.div}>
                 <h3>Requested Tests</h3>
                 <ol>
@@ -238,7 +234,6 @@ function Page() {
                 <h3>Patient Results</h3>
                 {(!add && !merge && !newTest) && <section className={styles.input}>
                     {parameters?.map((item, id)=>{
-                           console.log(form)
                             return(
                                 <div key={id}>
                                     <label htmlFor="hb">{item?.name}: </label>

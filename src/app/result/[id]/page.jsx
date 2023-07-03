@@ -17,7 +17,7 @@ function Page() {
             setPatient(body)
         }
         getPatient()
-    },[])
+    },[params?.id])
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('http://localhost:3000/api/getAll/tests')
@@ -38,7 +38,6 @@ function Page() {
     const titles = test?.segments && test?.parameters.map(i => {return i?.title})
     const uniqueItems = titles?.filter((item, index) => titles.indexOf(item) === index);
     const selectOptions = test?.parameters?.filter(i=> i?.select == true)
-    console.log(selectOptions)
 
   return (
     <div className={styles.container}>
@@ -106,7 +105,6 @@ function Page() {
                                                 <td>{test?.name}</td>
                                                 {[...Array(test?.selectNo)].map((i,id)=>{
                                                     const checked = test?.values?.[id] == currentResult[test?.name] ? true : false
-                                                    console.log(test?.values?.[id], currentResult[test?.name])
                                                     return(
                                                         <td key={id}><input type="checkbox" checked={checked} readOnly></input></td>
                                                     )

@@ -58,7 +58,6 @@ function Page() {
     }
     update && setTimeout(()=> create(), 3000)
     
-    console.log(requested, form)
     
   return (
     <div>
