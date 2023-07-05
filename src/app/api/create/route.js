@@ -18,7 +18,13 @@ export async function POST(req){
         labNo: body.labNo,
         referral: body.referral
     })
-    const user = await newPatient.save()
 
-    return NextResponse.json("hi")
+    if(body?.name != null){
+        const user = await newPatient.save()
+    } else{
+        return
+    }
+    
+
+    return NextResponse.json("Patient Created")
 }

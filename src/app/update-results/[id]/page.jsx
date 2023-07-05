@@ -25,6 +25,7 @@ function Page() {
     const [mergeForm, setMergeForm] = useState({results: []})
     const [done, setDone] = useState(false)
     const [tests, setTests] = useState([])
+    const [items, setItems] = useState([])
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
@@ -86,13 +87,22 @@ function Page() {
         })
     }
     const handleMergeChange = (e)=>{
-        const newArray = [...mergeForm?.results, e?.target.name]
+        const newArray = [...items]
+        if(e.target?.checked == false ){
+            const removedItem = newArray.find(i => i == e?.target.name)
+            const index = newArray.indexOf(removedItem)
+            newArray.splice(index,1)
+            setItems(newArray)
+        } else{
+            setItems(items => [...items, e?.target.name])
+        }
         setMergeForm({
             ...mergeForm,
             test: name?.current?.value,
-            results : [...newArray],
+            results : [...items],
         })
     }
+    console.log(items, mergeForm)
     const handleUpdateChange = (e)=>{
         const newArray = [...mergeForm?.results, e?.target.value]
         setMergeForm({
@@ -136,7 +146,7 @@ function Page() {
             method: 'PUT',
             body: JSON.stringify({
                 name: name?.current?.value,
-                results: [...mergeForm?.results]
+                results: [...items]
             })
         })
         setTimeout(()=> {location.reload(true)}, 3000)
@@ -212,7 +222,7 @@ function Page() {
                 <h3>Patient Details</h3>
                 <section className={styles.details}>
                     <div>
-                        <label htmlFor="age">Age: </label>
+                        <label htmlFor="age">Name: </label>
                         <p>{patient?.name}</p>
                     </div>
                     <div>

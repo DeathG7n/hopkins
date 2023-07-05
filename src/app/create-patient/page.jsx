@@ -4,8 +4,8 @@ import Head from "next/head"
 import styles from "./page.module.css"
 import Navbar from "@/components/Navbar"
 import React ,{ useState , useEffect} from "react"
-import { redirect } from "next/navigation"
 import Link from "next/link"
+import Popup from "@/components/popup/Popup"
 
 
 function Page() {
@@ -13,6 +13,9 @@ function Page() {
     const [form, setForm] = useState({requestedTests: []})
     const [update, setUpdate] = useState(false)
     const [tests, setTests] = useState([])
+    const [message, setMessage] = useState("")
+    const [res, setRes] = useState(false)
+    const [popup, setPopup] = useState(false)
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
@@ -54,14 +57,21 @@ function Page() {
             method: 'POST',
             body: JSON.stringify(form),
         })
-        location.reload(true)
+        const body = await res.json()
+        console.log(res)
+        setRes(res?.ok)
+        setPopup(true)
+        setMessage(body)
+        setTimeout(()=> setPopup(false), 1000)
+        res && location.reload(true)
     }
     update && setTimeout(()=> create(), 3000)
-    
+    console.log(message)
     
   return (
     <div>
         <Navbar/>
+        {popup && <Popup message={res ? message : "Patient Not Created"} error={res}/>}
         <form className={styles.form}>
             <section className={styles.details}>
                 <span>
