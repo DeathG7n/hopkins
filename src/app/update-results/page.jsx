@@ -594,7 +594,7 @@ export const Results = ({parameters, currentResult}) => {
     const router = useRouter();
     const handleClick = (name) =>{
         localStorage.setItem("name", JSON.stringify(name))
-        router.push("/result")
+        // router.push("/result")
     }
     console.log(currentResult?.description)
     return(
@@ -615,7 +615,7 @@ export const Results = ({parameters, currentResult}) => {
             <div>
                 {<div dangerouslySetInnerHTML={{ __html: currentResult?.description }} />}
             </div>
-            {admin == "true" && <div className={styles.button} onClick={()=>handleClick(currentResult)}>Print</div>}
+            {admin == "true" && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
         </section>
     )
 }
