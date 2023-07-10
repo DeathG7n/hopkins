@@ -4,11 +4,12 @@ import styles from "./page.module.css"
 import { useEffect, useState, useRef } from "react"
 import { useRouter } from 'next/navigation';
 import Link from "next/link"
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import dynamic from "next/dynamic";
 
 
 function Page() {
+    const ReactQuill = dynamic(()=> import('react-quill'), {ssr: false})
     const value = useRef()
     const name = useRef()
     const abbr = useRef()
