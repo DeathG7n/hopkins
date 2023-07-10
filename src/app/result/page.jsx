@@ -9,15 +9,15 @@ function Page() {
     const [name, setName] = useState("")
     const [receiptNo, setReceiptNo] = useState("")
     const [values, setValues] = useState([])
-    const id = localStorage.getItem("id")
     useEffect(()=>{
+        const id = localStorage.getItem("id")
         async function getPatient(){
             const res = await fetch(`/api/find/${id}`)
             const body = await res.json()
             setPatient(body)
         }
         getPatient()
-    },[id])
+    },[])
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
