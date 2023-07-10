@@ -11,11 +11,13 @@ import Popup from "@/components/popup/Popup"
 function Page() {
     const [requested, setRequested] = useState([])
     const [form, setForm] = useState({requestedTests: []})
-    const [update, setUpdate] = useState(false)
     const [tests, setTests] = useState([])
     const [message, setMessage] = useState("")
     const [res, setRes] = useState(false)
     const [popup, setPopup] = useState(false)
+    const [labSearch, setLabSearch] = useState([])
+    const [scanSearch, setScanSearch] = useState([])
+    const [show, setShow] = useState(false)
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
@@ -44,29 +46,40 @@ function Page() {
             } 
         }
     }
-    const handleClick = async() =>{
-        setForm({
-            ...form,
-            requestedTests : [...requested],
-        })
-        setUpdate(true)
+    const handleLabSearch = (e) =>{
+        e?.target?.value == "" ? setShow(false) : setShow(true)
+        const names = tests?.labTests?.map(i => {return i?.name})
+        const labs = names?.filter(i => i.toLowerCase()?.includes(e?.target?.value.toLowerCase()))
+        setLabSearch(labs)
+    }
+    const handleScanSearch = (e) =>{
+        e?.target?.value == "" ? setShow(false) : setShow(true)
+        const names = tests?.scanTests?.map(i => {return i?.name})
+        const scans = names?.filter(i => i.toLowerCase()?.includes(e?.target?.value.toLowerCase()))
+        setScanSearch(scans)
     }
 
-    async function create(){
+    async function handleSubmit(){
+        const data = {
+            name: form?.name,
+            age: form?.age,
+            gender: form?.gender,
+            requestedTests: [...requested],
+            labNo: form?.labNo,
+            receiptNo: form?.receiptNo,
+            referral: form?.referral
+        }
         const res = await fetch('/api/create', {
             method: 'POST',
-            body: JSON.stringify(form),
+            body: JSON.stringify(data),
         })
         const body = await res.json()
-        console.log(res)
         setRes(res?.ok)
         setPopup(true)
         setMessage(body)
         setTimeout(()=> setPopup(false), 1000)
         res && location.reload(true)
     }
-    update && setTimeout(()=> create(), 3000)
-    console.log(message)
     
   return (
     <div>
@@ -109,253 +122,29 @@ function Page() {
                     <div className={styles.testbox}>
                         <div className={styles.lab}>
                             <h1>Laboratory</h1>
-                            <h3>Hormones</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Hormones" ? true : false
+                            <input className={styles.search} type="search" name="patient" placeholder="Search for test name" onChange={(e)=> handleLabSearch(e)} />
+                            {labSearch?.map((item, id) =>{
                                 return(
                                     <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
+                                        {<span key={id}>
+                                            <input type="checkbox" name={item} id={item?.name} onChange={(e)=>handleChange(e)} checked={requested?.includes(item)}/>
+                                            <label htmlFor="">{item}</label>
                                         </span>}
                                     </>
                                 )
                             })}
-                            <h3>Clinical Chemistry</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Clinical Chemistry" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Haematology</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Haematology" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Microbiology/Parasitology</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Microbiology" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Serology</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Serology" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Infectious Diseases</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Infectious Diseases" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Cytology</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Cytology" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Histology</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Histology" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Auto-Immune</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Auto-Immune" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Tumor Markers</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Tumor Markers" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Vitamins</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Vitamins" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Profiles/Grouped Tests</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "Profiles" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Molecular Tests/ DNA</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = item?.type == "DNA" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Others</h3>
-                            {tests?.labTests?.map(item =>{
-                                const type = (item?.type == "lab" || item?.type == null) ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            {tests?.scanTests?.map(item =>{
-                                const type = item?.type == "scan" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            
                         </div>
                         <div className={styles.lab}>
                             <h1>Scan</h1>
-                            <h3>Ultrasound Scans</h3>
-                            {tests?.scanTests?.map(item =>{
-                                const type = item?.type == "UltraSound" ? true : false
+                            <input type="search" name="patient" placeholder="Search for test name" onChange={(e)=> handleScanSearch(e)} className={styles.search}/>
+                            {scanSearch?.map((item, id) =>{
                                 return(
                                     <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
+                                        {<span key={id}>
+                                            <input type="checkbox" name={item} id={item?.name} onChange={(e)=>handleChange(e)} checked={requested?.includes(item)}/>
+                                            <label htmlFor="">{item}</label>
                                         </span>}
                                     </>
-                                    
-                                )
-                            })}
-                            <h3>Echocardiography Scan</h3>
-                            {tests?.scanTests?.map(item =>{
-                                const type = item?.type == "ECG" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>X-RAYS</h3>
-                            {tests?.scanTests?.map(item =>{
-                                const type = item?.type == "X-rays" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
-                                )
-                            })}
-                            <h3>Contrast X-RAYS Exams</h3>
-                            {tests?.scanTests?.map(item =>{
-                                const type = item?.type == "Contrast X-ray" ? true : false
-                                return(
-                                    <>
-                                        {type && <span>
-                                            <input type="checkbox" name={item?.name} id={item?.name} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="">{item?.name}</label>
-                                        </span>}
-                                    </>
-                                    
                                 )
                             })}
                         </div>
@@ -364,16 +153,16 @@ function Page() {
                 <section className={styles.display}>
                     <h3>Requested Tests</h3>
                     <ul>
-                        {requested?.map(item=>{
+                        {requested?.map((item, id)=>{
                             return(
                                 <>
-                                    <li>{item}</li>
+                                    <li key={id}>{item}</li>
                                 </> 
                             )
                         })}
                     </ul>
                     <span>
-                        <div onClick={handleClick}>Create New Patient</div>
+                        <div onClick={handleSubmit}>Create New Patient</div>
                     </span>
                     
                 </section>  

@@ -4,8 +4,7 @@ const patientSchema = new Schema({
     name: String,
     age: Number,
     gender: String,
-    requestedTests: Array,
-    receiptNo: String,
+    tests: Array,
     results: Array,
     collected: {
         type: Boolean,

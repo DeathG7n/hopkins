@@ -8,7 +8,7 @@ export async function PUT(req,{params}){
     connectDB()
     const body = await req.json()
     const id = params.id
-    const user = await Patients.findOne({receiptNo: id})
+    const user = await Patients.findOne({_id: id})
     const labTest = await Labtests.find({})
     const scanTest = await Scantests.find({})
     const lab = labTest[0].labTests?.filter(i => body?.results.includes(i?.name))
@@ -21,7 +21,7 @@ export async function PUT(req,{params}){
         return i?.parameters
     })
     for (let i = 0; i < labParameters.length; i++) {
-        parameters?.push(...labParameters[i])
+        parameters?.push(...labParameters[i]) 
     }
     for (let i = 0; i < scanParameters.length; i++) {
         parameters?.push(...scanParameters[i])
@@ -34,11 +34,17 @@ export async function PUT(req,{params}){
         type: "lab",
         parameters: parameters
     }
-    const remainingTests = user?.requestedTests?.filter((i) => !body?.results.includes(i))
+    const newTests = user?.tests?.map(i => {return i})
+    const refTest = newTests?.find((i) => i?.receiptNo == body?.receiptNo)
+    const index = newTests?.indexOf(refTest)
+    const remainingTests = refTest?.requestedTests?.filter((i) => !body?.results.includes(i))
+    remainingTests?.push(body?.name)
+    refTest?.requestedTests.splice(0, refTest?.requestedTests.length, ...remainingTests)
+    newTests[index] = refTest
     
     await labTest[0].updateOne({$push: {labTests: newTest} })
-    if(body != {}){
-        await user.updateOne({$set: {requestedTests: [...remainingTests, body?.name]}})
+    if(body != null && body?.receiptNo != ""){
+        await user.updateOne({$set: {tests: newTests}})
     }
     
     return NextResponse.json(user)

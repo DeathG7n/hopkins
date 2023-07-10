@@ -30,6 +30,8 @@
 .container h4{
     text-align: center;
     text-decoration: underline;
+    font-weight: 900;
+    font-size: 30px;
 }
 
 .result, .options{
@@ -38,11 +40,18 @@
     border-collapse: collapse;
 }
 
-.result td, .result th{
+.result td{
     width: 33%;
     height: 30px;
     padding: 5px;
     text-align: left;
+}
+.result th{
+    width: 33%;
+    height: 30px;
+    padding: 5px;
+    text-align: left;
+    font-size: 20px;
 }
 .options td{
     width: fit-content;

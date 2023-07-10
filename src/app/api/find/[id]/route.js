@@ -5,6 +5,6 @@ import Patients from "../../../../../models/createPatient"
 export async function GET(req,{params}){
     connectDB()
     const id = params.id
-    const user = await Patients.findOne({receiptNo: id}) || await Patients.findOne({name: id})
+    const user = await Patients.findOne({_id: id})
     return NextResponse.json(user)
 }

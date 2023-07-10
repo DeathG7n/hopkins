@@ -33,15 +33,22 @@
 
 .box{
   margin: 0 auto;
-  width: fit-content;
+  width: 40vw;
   padding: 10px;
-  box-shadow: 1px 1px 5px #888;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border: 1px solid #000;
+  gap: 5px;
 }
 
 .box a{
   text-decoration: none;
   color: black;
+}
+
+.box p{
+  width: fit-content;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #fb6902;
 }

@@ -9,12 +9,19 @@ export async function GET(req){
 export async function POST(req){
     connectDB()
     const body = await req.json()
+    const tests = {
+        receiptNo: body.receiptNo,
+        requestedTests: []
+    }
+    for (let i = 0; i < body.requestedTests.length; i++) {
+        tests?.requestedTests.push(body?.requestedTests[i])
+    }
     const newPatient = await new Patients({
         name: body.name,
         age: body.age,
         gender: body.gender,
         receiptNo: body.receiptNo,
-        requestedTests: [...body.requestedTests],
+        tests: [tests],
         labNo: body.labNo,
         referral: body.referral
     })
@@ -24,6 +31,8 @@ export async function POST(req){
     } else{
         return
     }
+
+    console.log(newPatient)
     
 
     return NextResponse.json("Patient Created")

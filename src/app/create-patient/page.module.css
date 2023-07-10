@@ -80,6 +80,13 @@
 .lab span{
     width: fit-content;
 }
+.search{
+    height: 25px;
+    text-indent: 5px;
+    border-radius: 5px;
+    width: 350px;
+    border: 1px solid #fb6902;
+}
 
 .display{
     padding: 10px 20px;

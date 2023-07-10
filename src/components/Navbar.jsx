@@ -19,6 +19,8 @@ function Navbar() {
           setButton("Find Patient")
       }
   }, [pathname])
+
+  console.log(pathname)
   
   return (
     <nav className={styles.nav}>
@@ -27,9 +29,9 @@ function Navbar() {
           <h1>HOPK<span>i</span>NS</h1>
           <h2>DIAGNOSTICS</h2>
         </div>
-        <ul>
+        {pathname != "/" && <ul>
           <Link href={path}>{button}</Link>
-        </ul>
+        </ul>}
     </nav>
   )
 }
