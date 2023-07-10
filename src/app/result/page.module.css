@@ -1,5 +1,5 @@
 .container{
-    padding: 100px 0 90px 0;
+    padding: 80px 0 80px 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -31,7 +31,7 @@
     text-align: center;
     text-decoration: underline;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .result, .options{
@@ -42,16 +42,16 @@
 
 .result td{
     width: 33%;
-    height: 30px;
-    padding: 5px;
+    height: auto;
+    padding: 2px;
     text-align: left;
+    font-size: calc(1vh + 5px)
 }
 .result th{
     width: 33%;
-    height: 30px;
-    padding: 5px;
+    height: auto;
+    padding: 2px;
     text-align: left;
-    font-size: 20px;
 }
 .options td{
     width: fit-content;
@@ -68,10 +68,12 @@
     gap: 5px;
 }
 .desc strong{
-    font-size: 20px;
+    font-size: 1em;
 }
 .desc p{
-    font-size: 18px;
+    /* font-size: 13px; */
+    /* font-size: 1em; */
+    font-size: calc(1vh + 3px)
 }
 
 .line{

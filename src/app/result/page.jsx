@@ -45,7 +45,11 @@ function Page() {
     const titles = test?.segments && test?.parameters.map(i => {return i?.title})
     const uniqueItems = titles?.filter((item, index) => titles.indexOf(item) === index);
     const selectOptions = test?.parameters?.filter(i=> i?.select == true)
-    console.log(name)
+    const resultParameters = test?.parameters?.map(i=>{
+        return name?.[i?.name]
+    })
+    const available = resultParameters?.find(i => i != undefined)
+    console.log(available)
   return (
     <div className={styles.container}>
         <table className={styles.details}>
@@ -68,14 +72,14 @@ function Page() {
             </tbody> 
         </table>
         <h4>{currentTest?.name.toUpperCase()} REPORT</h4>
-        {(!test?.segments && (test?.parameters != [])) && <table className={styles.result}>
-            <thead>
+        {(!test?.segments && test?.parameters?.length != 0) && <table className={styles.result}>
+            {available && <thead>
                 <tr>
                     <th>Investigation</th>
                     <th>Patient's Result</th>
                     <th>Normal Values</th>
                 </tr>
-            </thead>
+            </thead>}
             {<tbody>
                 {(newTest?.parameters || currentTest?.parameters)?.map((item,id)=>{
                     return(
@@ -136,7 +140,6 @@ function Page() {
             })}
         </div>}
         {name?.description != undefined && <div className={styles.desc}>
-            <h2>IMPRESSION</h2>
             <div dangerouslySetInnerHTML={{ __html: name?.description }} />
         </div>}
         <div className={styles.line}>

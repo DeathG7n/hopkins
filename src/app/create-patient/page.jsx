@@ -6,9 +6,11 @@ import Navbar from "@/components/Navbar"
 import React ,{ useState , useEffect} from "react"
 import Link from "next/link"
 import Popup from "@/components/popup/Popup"
+import { useRouter } from "next/navigation"
 
 
 function Page() {
+    const router = useRouter()
     const [requested, setRequested] = useState([])
     const [form, setForm] = useState({requestedTests: []})
     const [tests, setTests] = useState([])
@@ -78,7 +80,7 @@ function Page() {
         setPopup(true)
         setMessage(body)
         setTimeout(()=> setPopup(false), 1000)
-        res && location.reload(true)
+        res && router.push("/find-patient")
     }
     
   return (
