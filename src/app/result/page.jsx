@@ -135,13 +135,9 @@ function Page() {
                 )
             })}
         </div>}
-        {name?.description != [] && <div className={styles.desc}>
+        {name?.description != undefined && <div className={styles.desc}>
             <h2>IMPRESSION</h2>
-            {name?.description?.map((item,id)=>{
-                return(
-                    <div key={id}>{item}</div>
-                )
-            })}
+            <div dangerouslySetInnerHTML={{ __html: name?.description }} />
         </div>}
         <div className={styles.line}>
             <span></span>

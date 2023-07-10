@@ -4,6 +4,8 @@ import styles from "./page.module.css"
 import { useEffect, useState, useRef } from "react"
 import { useRouter } from 'next/navigation';
 import Link from "next/link"
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 function Page() {
@@ -12,7 +14,7 @@ function Page() {
     const abbr = useRef()
     const type = useRef()
     const [values, setValues] = useState([])
-    const [desc, setDesc] = useState([])
+    const [desc, setDesc] = useState("")
     const [patient, setPatient] = useState()
     const [currentTest, setCurrentTest] = useState("Results")
     const [currentResult, setCurrentResult] = useState({})
@@ -225,7 +227,7 @@ function Page() {
             body: JSON.stringify({
                 results : {
                     ...form,
-                    description : [...desc],
+                    description : desc,
                     createdAt: date.toDateString(),
                 },
                 receiptNo: receiptNo
@@ -244,7 +246,7 @@ function Page() {
                 <h3>{patient?.name}</h3>
                 <ul>
                     <li onClick={()=>toggle("")}>Requested Tests<span>{show ? "-" : "+"}</span></li>
-                    {show && <section>
+                    {show && <section className={styles?.section}>
                         {patient?.tests?.map((item, id)=>{
                             return(
                                 <>
@@ -254,7 +256,7 @@ function Page() {
                         })}
                     </section>}
                     <li onClick={()=>toggle("results")}>Results   <span>{resultShow ? "-" : "+"}</span></li>
-                    {resultShow && <section>
+                    {resultShow && <section className={styles?.section}>
                         {patient?.results?.map((item, id)=>{
                             return(
                                 <>
@@ -305,18 +307,8 @@ function Page() {
                     })}
                 </section>}
                 {result && <h3>Observations</h3>}
-                {result && <section className={styles.textarea}>
-                    <textarea name="description" id="description" cols="83" rows="10" placeholder="Write your observations... " onChange={(e)=>handleChange(e)}ref={value}></textarea>
-                    <div className={styles.button} onClick={addDesc}>Add Description</div>
-                    <div className={styles.todo}>
-                        {desc?.map((item, id)=>{
-                        return(
-                            <div key={id} className={styles.todos}>
-                                <p >{item?.substring(0,20)}{item?.length > 20 && "..."}</p>
-                                <div className={styles.todoButton} onClick={()=> removeDesc(item)}>Remove</div>
-                            </div>
-                        )
-                    })}</div>
+                {result && <section >
+                    <ReactQuill theme="snow" value={desc} onChange={setDesc} className={styles.textarea}/>
                 </section>}
                 {result && <div className={styles.button} onClick={updateTest}>Save Results</div>}
                 {results && <Results 
@@ -603,7 +595,7 @@ export const Results = ({parameters, currentResult}) => {
         localStorage.setItem("name", JSON.stringify(name))
         router.push("/result")
     }
-    console.log(admin)
+    console.log(currentResult?.description)
     return(
         <section className={styles.input}>
             {currentResult?.createdAt != undefined && <p><span className={styles.span}>Created On</span> : {currentResult?.createdAt}</p>}
@@ -620,13 +612,7 @@ export const Results = ({parameters, currentResult}) => {
             })}
             {currentResult?.description?.[0] != undefined  ? <h3>Impression</h3> : ""}
             <div>
-                {currentResult?.description?.map((item,id)=>{
-                    return(
-                        <div key={id}>
-                            {item}
-                        </div>
-                    )
-                })}
+                {<div dangerouslySetInnerHTML={{ __html: currentResult?.description }} />}
             </div>
             {admin == "true" && <div className={styles.button} onClick={()=>handleClick(currentResult)}>Print</div>}
         </section>

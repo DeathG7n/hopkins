@@ -67,6 +67,12 @@
     flex-direction: column;
     gap: 5px;
 }
+.desc strong{
+    font-size: 20px;
+}
+.desc p{
+    font-size: 18px;
+}
 
 .line{
     display: flex;
