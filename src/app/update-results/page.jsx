@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 
 function Page() {
-    const ReactQuill = dynamic(()=> import('react-quill'), {ssr: false})
+    const [ReactQuill, setReactQuill] = useState()
     const value = useRef()
     const name = useRef()
     const abbr = useRef()
@@ -35,13 +35,15 @@ function Page() {
     const [testShow, setTestShow] = useState(false)
     const [resultShow, setResultShow] = useState(false)
     useEffect(()=>{
+        const ReactQuill = dynamic(()=> import('react-quill'), {ssr: false})
+        setReactQuill(ReactQuill)
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
             const body = await res.json()
             setTests(body)
         }
         getTests()
-    },[])
+    },[ReactQuill])
     useEffect(()=>{
         const id = localStorage.getItem("id")
         async function getPatient(){
