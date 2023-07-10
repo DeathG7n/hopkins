@@ -7,9 +7,9 @@ import Link from "next/link"
 import 'react-quill/dist/quill.snow.css';
 import dynamic from "next/dynamic";
 
+const ReactQuill = dynamic(()=> import('react-quill'), {ssr: false})
 
 function Page() {
-    const ReactQuill = dynamic(()=> import('react-quill'), {ssr: false})
     const value = useRef()
     const name = useRef()
     const abbr = useRef()
