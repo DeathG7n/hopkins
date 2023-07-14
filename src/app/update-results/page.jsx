@@ -20,6 +20,7 @@ function Page() {
     const [currentTest, setCurrentTest] = useState("Results")
     const [currentResult, setCurrentResult] = useState({})
     const [parameters, setParameters] = useState([])
+    const [test, setTest] = useState({})
     const [result, setResult] = useState(false)
     const [results, setResults] = useState(false)
     const [create, setCreate] = useState(false)
@@ -58,6 +59,7 @@ function Page() {
             }
             if (tests?.labTests[i]?.name == currentResult?.name){
                 setParameters(tests?.labTests[i]?.parameters)
+                setTest(tests?.labTests[i])
             }
         }
         for (let i = 0; i < tests?.scanTests?.length; i++) {
@@ -66,6 +68,7 @@ function Page() {
             }
             if (tests?.scanTests[i]?.name == currentResult?.name){
                 setParameters(tests?.scanTests[i]?.parameters)
+                setTest(tests?.labTests[i])
             }
         }
         if(currentTest == "Create New"){
@@ -113,7 +116,7 @@ function Page() {
         }
     },[currentTest, add, tests?.labTests, tests?.scanTests, currentResult])
 
-    const toggle = (name, no,item)=>{
+    const toggle = (name, no,item, pos)=>{
         if(name == ""){
             setShow(!show)
         } else if(name == "results"){
@@ -123,6 +126,7 @@ function Page() {
         }else{
             setCurrentTest(name)
             localStorage.setItem("receiptNo", no)
+            localStorage.setItem("pos", pos)
             setCurrentResult(item)
         } 
     }
@@ -230,12 +234,13 @@ function Page() {
                     ...form,
                     description : desc,
                     createdAt: date.toDateString(),
+                    printed: false
                 },
                 receiptNo: receiptNo
             }),
         })
     }
-
+    console.log(form)
     useEffect(()=>{
         done && setTimeout(()=> update(), 1000)
     }, [done])
@@ -301,8 +306,13 @@ function Page() {
                     {parameters?.map((item, id)=>{
                             return(
                                 <div key={id}>
-                                    <label htmlFor="hb">{item?.name}: </label>
-                                    <input type="text" name={item?.name} onChange={(e)=>handleChange(e)}/>
+                                    <label htmlFor="hb">{item?.name} {item?.antigen}: </label>
+                                    {item?.extra == undefined && <input type="text" name={item?.name} onChange={(e)=>handleChange(e)}/>}
+                                    {item?.extra != undefined && item?.extra?.map((i, id) => {
+                                        return(
+                                            <input type="text" name={item?.antigen+i} onChange={(e)=>handleChange(e)} key={id} placeholder={i}/>
+                                        )
+                                    })}
                                 </div> 
                             )
                     })}
@@ -315,6 +325,7 @@ function Page() {
                 {results && <Results 
                     currentResult={currentResult}
                     parameters={parameters}
+                    test={test}
                 />}
                 {add && <Add 
                     lab={tests?.labTests}
@@ -388,7 +399,7 @@ export const Result = ({item, toggle}) => {
             {show && <div>
                 {item?.results?.map((result,id)=>{
                     return(
-                        <p key={id} onClick={()=>toggle("Results", item?.receiptNo, result)}>{result?.name}<span>{result?.createdAt}</span></p>
+                        <p key={id} onClick={()=>toggle("Results", item?.receiptNo, result, id)}>{result?.name}<span>{result?.createdAt}</span></p>
                     )
                 })}
             </div> }
@@ -589,14 +600,23 @@ export const Create = ({name, abbr, type, value,values, handleClick, handleRemov
     )
 }
 
-export const Results = ({parameters, currentResult}) => {
+export const Results = ({parameters, currentResult, test}) => {
     const admin = localStorage.getItem("admin")
-    const router = useRouter();
-    const handleClick = (name) =>{
+    const id = localStorage.getItem("id")
+    const receipt = localStorage.getItem("receiptNo")
+    const pos = localStorage.getItem("pos")
+    const handleClick = async(name) =>{
+        const res = await fetch(`/api/update/result/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                result : pos,
+                receiptNo: receipt,
+                printed: true
+            }),
+        })
         localStorage.setItem("name", JSON.stringify(name))
-        // router.push("/result")
     }
-    console.log(currentResult?.description)
+    console.log(currentResult, parameters)
     return(
         <section className={styles.input}>
             {currentResult?.createdAt != undefined && <p><span className={styles.span}>Created On</span> : {currentResult?.createdAt}</p>}
@@ -611,10 +631,33 @@ export const Results = ({parameters, currentResult}) => {
                     </>
                 )
             })}
+            {test?.extra && <table >
+                <thead>
+                    <th>Antigen</th>
+                    <th> </th>
+                    <th>O</th>
+                    <th>H</th>
+                </thead>
+                <tbody>
+                    {parameters?.map((i, id)=>{
+                        const antigen = ["D", "A", "B", "C"]
+                        const extra = ["O", "H"]
+                        return(
+                            <tr key={id}>
+                                <td>{i?.name}</td>
+                                <td>{antigen[id]}</td>
+                                <td>{currentResult?.[antigen[id]+extra[0]]}</td>
+                                <td>{currentResult?.[antigen[id]+extra[1]]}</td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>}
             {currentResult?.description?.[0] != undefined  ? <h3>Impression</h3> : ""}
             <div>
                 {<div dangerouslySetInnerHTML={{ __html: currentResult?.description }} />}
             </div>
+            {currentResult?.printed && <span className={styles.button}>Printed</span>}
             {admin == "true" && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
         </section>
     )

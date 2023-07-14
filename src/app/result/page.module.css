@@ -34,10 +34,16 @@
     font-size: 20px;
 }
 
-.result, .options{
+.result, .options, .extra{
     width: 90%;
     margin: 5px auto 20px auto;
     border-collapse: collapse;
+}
+.result th{
+    width: 33%;
+    height: auto;
+    padding: 2px;
+    text-align: left;
 }
 
 .result td{
@@ -47,8 +53,15 @@
     text-align: left;
     font-size: calc(1vh + 5px)
 }
-.result th{
-    width: 33%;
+.extra td{
+    width: fit-content;
+    height: auto;
+    padding: 2px;
+    text-align: left;
+    font-size: calc(1vh + 5px)
+}
+.extra th{
+    width: 25%;
     height: auto;
     padding: 2px;
     text-align: left;

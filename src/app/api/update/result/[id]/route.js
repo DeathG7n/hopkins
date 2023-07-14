@@ -10,7 +10,7 @@ export async function PUT(req,{params}){
     const newTests = user?.tests?.map(i => {return i})
     const existingTest = newTests?.find(i => i?.receiptNo == body?.receiptNo)
     
-    if(body != {}){
+    if(body != {} && body?.requestedTests != undefined){
         if(existingTest){
             const index = newTests.indexOf(existingTest)
             for (let i = 0; i < body?.requestedTests.length; i++) {
@@ -23,7 +23,20 @@ export async function PUT(req,{params}){
         }
     }
 
-    console.log(existingTest)
+    if(body?.printed){
+        const newResults = user?.results?.map(i => {return i})
+        const existingResult = newResults?.find(i => i?.receiptNo == body?.receiptNo)
+        const results = existingResult?.results?.map(i => {return i})
+        if(existingResult){
+            results[parseInt(body?.result)]["printed"] = true
+            const index = newResults?.indexOf(existingResult)
+            existingResult?.results.splice(0,existingResult?.results.length, ...results)
+            newResults[index] = existingResult
+            await user.updateOne({$set: {results: newResults}})
+        }
+    }
+
+    console.log(parseInt(body?.result))
     
     return NextResponse.json(user)
 }

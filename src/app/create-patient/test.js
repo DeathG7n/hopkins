@@ -218,8 +218,25 @@ export const labTests = [
     },
     {
         abbr: "FLP",
-        name: "Full Lipid Studies(T.CHOL, TG, HDL& LDL)",
-        parameters: [],
+        name: "Full Lipid Profile",
+        parameters: [
+            {
+                name: "Cholesterol",
+                ref: "Less than 200mg/dl (Desirable blood cholesterol) <br/> 201-239mg/dl (borderline-high blood cholesterol) <br/> 240mg/dl &above (High blood cholesterol)"
+            },
+            {
+                name: "L.D. Lipoprotein",
+                ref: "Less than 100mg/dl (optimal) <br/> 100-129mg/dl (Near optimal / Above optimal) <br/> 130-159mg/dl (Borderline High) <br/> 160-189mg/dl (High) <br/> 190mg/dl and above (Very High)"
+            },
+            {
+                name: "H.D. Lipoprotein",
+                ref: "Less than 40mg/dl (A major risk for heart disease) <br/> 40-59mg/dl (The higher the better) <br/> 60mg/dl and above (Considered protective against heart disease)"
+            },
+            {
+                name: "Triglyceride",
+                ref: "Less than 150mg/dl (Normal) <br/> 150-199mg/dl (Borderline High) <br/> 200mg/dl and above (High) <br/> 500mg/dl and above (Very High)"
+            },
+        ],
         type: "Clinical Chemistry"
     },
     {
@@ -1042,27 +1059,32 @@ export const labTests = [
         type: "Serology"
     },
     {
-        abbr: "Widal Reaction",
-        name: "Widal Reaction",
+        abbr: "Widal",
+        name: "Widal",
         parameters: [
             {
-                name: "Antigen S.typhi(D)",
+                name: "Antigen S.typhi",
+                antigen: "D",
                 extra: ["O", "H"]
             },
             {
-                name: "Antigen S.paratyphi(A)",
+                name: "Antigen S.paratyphi",
+                antigen: "A",
                 extra: ["O", "H"]
             },
             {
-                name: "Antigen S.paratyphi(B)",
+                name: "Antigen S.paratyphi",
+                antigen: "B",
                 extra: ["O", "H"]
             },
             {
-                name: "Antigen S.paratyphi(C)",
+                name: "Antigen S.paratyphi",
+                antigen: "C",
                 extra: ["O", "H"]
             },
         ],
-        type: "Serology"
+        type: "Serology",
+        extra: true,
     },
     {
         abbr: "Chlamydia IgG Antibody",

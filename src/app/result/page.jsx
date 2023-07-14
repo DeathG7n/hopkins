@@ -87,13 +87,34 @@ function Page() {
                             {name?.[item?.name] && <tr key={id}>
                                 <td>{item?.name}</td>
                                 <td>{name?.[item?.name]}</td>
-                                <td>{item?.ref}</td>
+                                <td dangerouslySetInnerHTML={{ __html: item?.ref }}></td>
                             </tr>}
-                        </>
-                        
+                        </> 
                     )
                 })}   
             </tbody>}
+        </table>}
+        {test?.extra && <table className={styles.extra}>
+            <thead>
+                <th>Antigen</th>
+                <th> </th>
+                <th>O</th>
+                <th>H</th>
+            </thead>
+            <tbody>
+                {test?.parameters?.map((i, id)=>{
+                    const antigen = ["D", "A", "B", "C"]
+                    const extra = ["O", "H"]
+                    return(
+                        <tr key={id}>
+                            <td>{i?.name}</td>
+                            <td>{antigen[id]}</td>
+                            <td>{name?.[antigen[id]+extra[0]]}</td>
+                            <td>{name?.[antigen[id]+extra[1]]}</td>
+                        </tr>
+                    )
+                })}
+            </tbody>
         </table>}
         {test?.segments && <div className={styles.desc}>
             {uniqueItems?.map((item,id)=>{
