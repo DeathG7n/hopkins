@@ -161,6 +161,13 @@ function Page() {
             [e.target.name] : e.target.value,
         })
     }
+    const handleEditChange = (e)=>{
+        setPatient({
+            ...patient,
+            [e.target.name] : e.target.value,
+        })
+        console.log(patient)
+    }
     const handleMergeChange = (e)=>{
         const newArray = [...items]
         if(e.target?.checked == false ){
@@ -674,6 +681,7 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                 result: data
             }),
         })
+        setTimeout(()=> {location.reload(true)}, 1000)
     }
     const handleChange = (e) => {
         setData({

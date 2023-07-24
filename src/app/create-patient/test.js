@@ -779,48 +779,64 @@ export const labTests = [
     },
     {
         abbr: "Urinalysis",
-        name: "Urinalysis",
+        name: "Urine Routine Test",
         parameters: [
-            {
-                name: "Specific Gravity",
-                ref: ""
-            },
-            {
-                name: "PH",
-                ref: ""
-            },
-            {
-                name: "Protein",
-                ref: ""
-            },
-            {
-                name: "Glucose",
-                ref: ""
-            },
-            {
-                name: "Ketones",
-                ref: ""
-            },
-            {
-                name: "Urobilinogen",
-                ref: ""
-            },
-            {
-                name: "Blood",
-                ref: ""
-            },
-            {
-                name: "Nitrite",
-                ref: ""
-            },
-            {
-                name: "Leucocytes",
-                ref: ""
-            },
-            {
-                name: "Bilirubin",
-                ref: ""
-            },
+            // {
+            //     name: "Specimen",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Specimen Type",
+            //     ref: "",
+            // },
+            // {
+            //     name: "Date Received",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Appearance",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Specific Gravity",
+            //     ref: ""
+            // },
+            // {
+            //     name: "PH",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Protein",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Glucose",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Ketones",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Urobilinogen",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Blood",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Nitrite",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Leucocytes",
+            //     ref: ""
+            // },
+            // {
+            //     name: "Bilirubin",
+            //     ref: ""
+            // },
         ],
         type: "Microbiology"
     },
