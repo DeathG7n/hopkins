@@ -14,10 +14,11 @@ function Page() {
     const name = useRef()
     const abbr = useRef()
     const type = useRef()
+    const editRef = useRef()
     const [values, setValues] = useState([])
     const [desc, setDesc] = useState("")
     const [patient, setPatient] = useState()
-    const [currentTest, setCurrentTest] = useState("Results")
+    const [currentTest, setCurrentTest] = useState("Add")
     const [currentResult, setCurrentResult] = useState({})
     const [parameters, setParameters] = useState([])
     const [test, setTest] = useState({})
@@ -35,6 +36,7 @@ function Page() {
     const [show, setShow] = useState(false)
     const [testShow, setTestShow] = useState(false)
     const [resultShow, setResultShow] = useState(false)
+    const [edit, setEdit] = useState(false)
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
@@ -52,6 +54,22 @@ function Page() {
         }
         getPatient()
     },[])
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+          function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+              setEdit(false);
+            }
+          }
+          // Bind the event listener
+          document.addEventListener("mousedown", handleClickOutside);
+          return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+          };
+        }, [ref]);
+      }
+    useOutsideAlerter(editRef)
     useEffect(()=>{
         for (let i = 0; i < tests?.labTests?.length; i++) {
             if (tests?.labTests[i]?.name == currentTest){
@@ -78,6 +96,7 @@ function Page() {
             setResult(false)
             setAdd(false)
             setResults(false)
+            setEdit(false)
         } else if(currentTest == "Merge Tests"){
             setMerge(true)
             setCreate(false)
@@ -85,6 +104,7 @@ function Page() {
             setResult(false)
             setAdd(false)
             setResults(false)
+            setEdit(false)
         } else if(currentTest == "Update Test"){
             setCreate(false)
             setMerge(false)
@@ -92,6 +112,7 @@ function Page() {
             setResult(false)
             setAdd(false)
             setResults(false)
+            setEdit(false)
         } else if(currentTest == "Add"){
             setCreate(false)
             setMerge(false)
@@ -99,6 +120,7 @@ function Page() {
             setResult(false)
             setAdd(true)
             setResults(false)
+            setEdit(false)
         } else if(currentTest == "Results"){
             setCreate(false)
             setMerge(false)
@@ -106,6 +128,7 @@ function Page() {
             setResult(false)
             setAdd(false)
             setResults(true)
+            setEdit(false)
         } else{
             setCreate(false)
             setMerge(false)
@@ -113,6 +136,7 @@ function Page() {
             setResult(true)
             setAdd(false)
             setResults(false)
+            setEdit(false)
         }
     },[currentTest, add, tests?.labTests, tests?.scanTests, currentResult])
 
@@ -274,16 +298,17 @@ function Page() {
                     </section>}
                     {/* <li onClick={()=>toggle("Create New")}>Create New Test</li> */}
                     <li onClick={()=>toggle("Add")}>Add Test</li>
-                    <li onClick={()=>toggle("Merge Tests")}>Merge Tests</li>
+                    <li onClick={()=>toggle("Merge Tests")}>Merge Results</li>
                     <li onClick={()=>toggle("Update Test")}>Update Test</li>
+                    <li onClick={()=>setEdit(true)}>Edit Patient</li>
                 </ul>
             </div>
         </nav>
-        <section className={styles.main}>
+        <section className={styles.main} ref={editRef}>
             <h1>{currentTest}</h1>
             <form>
                 <h3>Patient Details</h3>
-                <section className={styles.details}>
+                {!edit ? <section className={styles.details}>
                     <div>
                         <label htmlFor="age">Name: </label>
                         <p>{patient?.name}</p>
@@ -300,7 +325,27 @@ function Page() {
                         <label htmlFor="referral">Referral: </label>
                         <p>{patient?.referral}</p>
                     </div>
+                </section> :
+                <section className={styles.details}>
+                    <div>
+                        <label htmlFor="age">Name: </label>
+                        <input type="text" name="name" value={patient?.name}/>
+                    </div>
+                    <div>
+                        <label htmlFor="age">Age: </label>
+                        <input type="number" name="age" value={patient?.age}/>
+                    </div>
+                    <div>
+                        <label htmlFor="gender">Gender: </label>
+                        <input type="text" name="gender" value={patient?.gender}/>
+                    </div>
+                    <div>
+                        <label htmlFor="referral">Referral: </label>
+                        <input type="text" name="referral" value={patient?.referral}/>
+                    </div>
+                    <div className={styles?.button}>Save</div>
                 </section>
+                }
                 <h3>Patient Results</h3>
                 {result && <section className={styles.input}>
                     {parameters?.map((item, id)=>{
@@ -326,6 +371,9 @@ function Page() {
                     currentResult={currentResult}
                     parameters={parameters}
                     test={test}
+                    editRef={editRef}
+                    edit={edit}
+                    setEdit={setEdit}
                 />}
                 {add && <Add 
                     lab={tests?.labTests}
@@ -453,6 +501,7 @@ export const Update = ({patient,value,addValues,values,updateNew, handleChange, 
 }
 
 export const Merge = ({name, patient, handleChange, handleClick, value}) =>{
+    console.log(patient)
     return(
         <section className={styles.merge}>
             <div>
@@ -464,16 +513,16 @@ export const Merge = ({name, patient, handleChange, handleClick, value}) =>{
                 <input type="text" name="receipt" ref={value}/>
             </div> 
             <section>
-                {patient?.tests?.map((item,id)=>{
+                {patient?.results?.map((item,id)=>{
                     return(
                         <span key={id}>
                             <h4>{item?.receiptNo}</h4>
                             <span>
-                                {item?.requestedTests?.map((test, id)=>{
+                                {item?.results?.map((result, id)=>{
                                     return(
                                         <div key={id}>
-                                            <input type="checkbox" name={test} value={test} onChange={(e)=>handleChange(e)}/>
-                                            <label htmlFor="hb">{test}</label>
+                                            <input type="checkbox" name={result?.name} value={result?.name} onChange={(e)=>handleChange(e)}/>
+                                            <label htmlFor="hb">{result?.name}</label>
                                         </div>
                                     )
                                 })}
@@ -600,7 +649,8 @@ export const Create = ({name, abbr, type, value,values, handleClick, handleRemov
     )
 }
 
-export const Results = ({parameters, currentResult, test}) => {
+export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
+    const [data, setData] = useState(currentResult)
     const admin = localStorage.getItem("admin")
     const id = localStorage.getItem("id")
     const receipt = localStorage.getItem("receiptNo")
@@ -616,11 +666,27 @@ export const Results = ({parameters, currentResult, test}) => {
         })
         localStorage.setItem("name", JSON.stringify(name))
     }
-    console.log(currentResult, parameters)
+    const handleEdit = async() =>{
+        const res = await fetch(`/api/update/edit/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                receiptNo: receipt,
+                result: data
+            }),
+        })
+    }
+    const handleChange = (e) => {
+        setData({
+            ...data,
+            [e.target.name] : e.target?.value
+        })
+        console.log(data)
+    }
+    console.log(data)
     return(
         <section className={styles.input}>
             {currentResult?.createdAt != undefined && <p><span className={styles.span}>Created On</span> : {currentResult?.createdAt}</p>}
-            {parameters?.map((item, id)=>{
+            {!edit && parameters?.map((item, id)=>{
                 const type = currentResult?.[item?.name] != undefined 
                 return(
                     <>
@@ -631,7 +697,82 @@ export const Results = ({parameters, currentResult, test}) => {
                     </>
                 )
             })}
-            {test?.extra && <table >
+            {edit && parameters?.map((item, id)=>{
+                return(
+                    <>
+                        <div key={id}>
+                            <label htmlFor="hb">{item?.name} {item?.antigen}: </label>
+                            {item?.extra == undefined && <input type="text" name={item?.name} onChange={(e)=>handleChange(e)} value={data?.[item?.name]}/>}
+                            {item?.extra != undefined && item?.extra?.map((i, id) => {
+                                const antigen = ["D", "A", "B", "C"]
+                                return(
+                                    <input type="text" name={item?.antigen+i} onChange={(e)=>handleChange(e)} key={id} placeholder={i} value={data[item?.antigen+i]}/>
+                                )
+                            })}
+                        </div> 
+                    </>
+                )
+            })}
+            {currentResult?.merged && currentResult?.results?.map((item, id)=>{
+                console.log(item?.DO)
+                return(
+                    <>
+                        <h3>{item?.name}</h3>
+                        {currentResult?.parameters?.map((para, id)=>{
+                            console?.log(para)
+                            return(
+                                <>
+                                    {para?.extra == undefined && para?.parameters?.map((result, id)=>{
+                                        const type = item?.[result?.name] != undefined 
+                                        return(
+                                            <>
+                                                {type && <div key={id} className={styles.result}>
+                                                    <label htmlFor="hb">{result?.name}: </label>
+                                                <p>{item?.[result?.name]}</p>
+                                                </div>}
+                                            </>
+                                        )
+                                    })}
+                                    {(para?.extra == true && item?.DO != undefined) && <table >
+                                        <thead>
+                                            <th>Antigen</th>
+                                            <th> </th>
+                                            <th>O</th>
+                                            <th>H</th>
+                                        </thead>
+                                        <tbody>
+                                            {para?.parameters?.map((i, id)=>{
+                                                const antigen = ["D", "A", "B", "C"]
+                                                const extra = ["O", "H"]
+                                                return(
+                                                    <tr key={id}>
+                                                        <td>{i?.name}</td>
+                                                        <td>{antigen[id]}</td>
+                                                        <td>{item?.[antigen[id]+extra[0]]}</td>
+                                                        <td>{item?.[antigen[id]+extra[1]]}</td>
+                                                    </tr>
+                                                )
+                                            })}
+                                        </tbody>
+                                    </table>}
+                                </>
+                            )
+                        })}
+                    </>
+                )
+            })}
+            {currentResult?.merged && <h3>Impression</h3>}
+            {currentResult?.merged && currentResult?.results?.map((item, id)=>{
+                console.log(item)
+                return(
+                    <>
+                        <div>
+                            {<div dangerouslySetInnerHTML={{ __html: item?.description }} />}
+                        </div>
+                    </>
+                )
+            })}
+            {(!edit && test?.extra) && <table >
                 <thead>
                     <th>Antigen</th>
                     <th> </th>
@@ -659,6 +800,7 @@ export const Results = ({parameters, currentResult, test}) => {
             </div>
             {currentResult?.printed && <span className={styles.button}>Printed</span>}
             {admin == "true" && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
+            {edit? <span className={styles.button} onClick={handleEdit}> Save Result</span> : <span className={styles.button} onClick={()=> setEdit(true)}>Edit Result</span>}
         </section>
     )
 }

@@ -76,7 +76,7 @@ export const labTests = [
         type: "Hormones"
     },
     {
-        abbr: "Thyroid Stimulating Hormone(FSH)",
+        abbr: "TSH",
         name: "Thyroid Stimulating Hormone(FSH)",
         parameters: [
             {
@@ -225,7 +225,7 @@ export const labTests = [
                 ref: "Less than 200mg/dl (Desirable blood cholesterol) <br/> 201-239mg/dl (borderline-high blood cholesterol) <br/> 240mg/dl &above (High blood cholesterol)"
             },
             {
-                name: "L.D. Lipoprotein",
+                name: "L.D. LipoproteinMale",
                 ref: "Less than 100mg/dl (optimal) <br/> 100-129mg/dl (Near optimal / Above optimal) <br/> 130-159mg/dl (Borderline High) <br/> 160-189mg/dl (High) <br/> 190mg/dl and above (Very High)"
             },
             {
@@ -1399,57 +1399,253 @@ export const labTests = [
         type: "Vitamins"
     },
     {
-        abbr: "Female Hormonal Profile(LH, FSH, Prolactin, E2, Progesterone)",
-        name: "Female Hormonal Profile(LH, FSH, Prolactin, E2, Progesterone)",
-        parameters: [],
+        abbr: "FHP",
+        name: "Female Hormonal Profile",
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-19 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-23 ng/ml"
+            },
+            {
+                name: "Progesterone",
+                ref: "2-28 ng/ml"
+            },
+            {
+                name: "Estradiol E2",
+                ref: "15-45 pg/ml"
+            },
+        ],
+        type: "Profiles"
+    },
+    {
+        abbr: "MHP",
+        name: "Male Hormonal Profile",
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+        ],
         type: "Profiles"
     },
     {
         abbr: "Menstrual Disorder(LH, FSH, Prolactin, E2, Progesterone)",
         name: "Menstrual Disorder(LH, FSH, Prolactin, E2, Progesterone)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-19 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-23 ng/ml"
+            },
+            {
+                name: "Progesterone",
+                ref: "2-28 ng/ml"
+            },
+            {
+                name: "Estradiol E2",
+                ref: "15-45 pg/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
         abbr: "Menstrual Disorder II(LH, FSH, Prolactin, E2, Progesterone)",
         name: "Menstrual Disorder II(LH, FSH, Prolactin, E2, Progesterone)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-19 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-23 ng/ml"
+            },
+            {
+                name: "Progesterone",
+                ref: "2-28 ng/ml"
+            },
+            {
+                name: "Estradiol E2",
+                ref: "15-45 pg/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
         abbr: "Male Infertility(LH, FSH, Prolactin, Testosterone)",
         name: "Male Infertility(LH, FSH, Prolactin, Testosterone)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+        ],
         type: "Profiles"
     },
     {
         abbr: "Male Infertility II (LH, FSH, Prolactin, Testosterone, SHBG, Free Androgen Index)",
         name: "Male Infertility II (LH, FSH, Prolactin, Testosterone, SHBG, Free Androgen Index)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Menopause Profile(LH, FSH,E2, TSH, FT4)",
+        abbr: "Menopause Profile",
         name: "Menopause Profile(LH, FSH,E2, TSH, FT4)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Estradiol E2",
+                ref: "15-45 pg/ml"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+            {
+                name: "Free T4(FT4)",
+                ref: "8.9-17.2 pg/ml"
+            }
+        ],
         type: "Profiles"
     },
     {
         abbr: "Hirsutism(LH, FSH , Testosterone, DHEAS, SHBG)",
         name: "Hirsutism(LH, FSH , Testosterone, DHEAS, SHBG)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Impotence/Erectile Dysfunction Profile I(AGE<40)(LH, FSH ,Prolactin, TSH Testosterone, HbA1C, FLP, FBG)",
-        name: "Impotence/Erectile Dysfunction Profile I(AGE<40)(LH, FSH ,Prolactin, TSH Testosterone, HbA1C, FLP, FBG)",
-        parameters: [],
+        abbr: "Impotence/Erectile Dysfunction Profile I",
+        name: "Impotence/Erectile Dysfunction Profile I(AGE<40)(LH, FSH ,Prolactin, TSH, Testosterone, HbA1C, FLP, FBG)",
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Impotence/Erectile Dysfunction Profile II(AGE<40)(LH, FSH ,Prolactin, TSH Testosterone, HbA1C, FLP, FBG, PSA)",
+        abbr: "Impotence/Erectile Dysfunction Profile II(AGE<40)",
         name: "Impotence/Erectile Dysfunction Profile II(AGE<40)(LH, FSH ,Prolactin, TSH Testosterone, HbA1C, FLP, FBG, PSA)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
@@ -1477,21 +1673,68 @@ export const labTests = [
         type: "Profiles"
     },
     {
-        abbr: "Thyroid Function Test I (TSH, T4, T3, FT4, FT3)",
+        abbr: "TFT I",
         name: "Thyroid Function Test I (TSH, T4, T3, FT4, FT3)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+            {
+                name: "Free T4(FT4)",
+                ref: "8.9-17.2 pg/ml"
+            },
+            {
+                name: "Free T3(FT3)",
+                ref: "1.2-4.2 pg/ml"
+            },
+            {
+                name: "Triodothyronine (T3)",
+                ref: "0.69 -2.15 ng/ml"
+            },
+            {
+                name: "Thyroxine (T4)",
+                ref: "66-163 nmol/L"
+            }
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Thyroid Function Test II (TSH, FT4, FT3)",
+        abbr: "TFT II",
         name: "Thyroid Function Test II (TSH, FT4, FT3)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+            {
+                name: "Free T4(FT4)",
+                ref: "8.9-17.2 pg/ml"
+            },
+            {
+                name: "Free T3(FT3)",
+                ref: "1.2-4.2 pg/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Thyroid Function Test III (TSH, T4, T3)",
+        abbr: "TFT III",
         name: "Thyroid Function Test III (TSH, T4, T3)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+            {
+                name: "Triodothyronine (T3)",
+                ref: "0.69 -2.15 ng/ml"
+            },
+            {
+                name: "Thyroxine (T4)",
+                ref: "66-163 nmol/L"
+            }
+        ],
         type: "Profiles"
     },
     {
@@ -1503,31 +1746,88 @@ export const labTests = [
     {
         abbr: "Galactorrhoea Screen(TSH, Prolactin)",
         name: "Galactorrhoea Screen(TSH, Prolactin)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Chronic Fatigue Panel I(TSH, FERRITIN, VIT.B12, 25-OH-VIT.D)",
+        abbr: "CFP I",
         name: "Chronic Fatigue Panel I(TSH, FERRITIN, VIT.B12, 25-OH-VIT.D)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "Chronic Fatigue Panel II(TSH, FERRITIN, VIT.B12, 25-OH-VIT.D, HSV-6 IgG, IgM, EBV ANtibody, CRP)",
+        abbr: "CFP II",
         name: "Chronic Fatigue Panel II(TSH, FERRITIN, VIT.B12, 25-OH-VIT.D, HSV-6 IgG, IgM, EBV ANtibody, CRP)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "PCOS Profile I (LH, FSH, PROLACTIN, E2, PROG., Total Testosterone, TSH)",
+        abbr: "PCOS Profile I",
         name: "PCOS Profile I (LH, FSH, PROLACTIN, E2, PROG., Total Testosterone, TSH)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Testosterone",
+                ref: "1.61-8.41nmol/L"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
-        abbr: "PCOS Profile II (LH, FSH, PROLACTIN, E2, PROG., Total Testosterone, TSH, DHEAS, Insulin, 17-OH Prog., AMH, SHBG, FLP, FPG)",
+        abbr: "PCOS Profile II",
         name: "PCOS Profile II (LH, FSH, PROLACTIN, E2, PROG., Total Testosterone, TSH, DHEAS, Insulin, 17-OH Prog., AMH, SHBG, FLP, FPG)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Prolactin",
+                ref: "1-16 ng/ml"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
@@ -1537,9 +1837,22 @@ export const labTests = [
         type: "Profiles"
     },
     {
-        abbr: "Pitiutary Profile (TSH, FSH,LH,PRL,GH,Cortisol)",
+        abbr: "Pitiutary Profile",
         name: "Pitiutary Profile (TSH, FSH,LH,PRL,GH,Cortisol)",
-        parameters: [],
+        parameters: [
+            {
+                name: "Lutenizing Hormone LH",
+                ref: "1-25 mlU/ml"
+            },
+            {
+                name: "Follicle Stimulating Hormone FSH",
+                ref: "2-12 mlU/ml"
+            },
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {
@@ -1549,9 +1862,18 @@ export const labTests = [
         type: "Profiles"
     },
     {
-        abbr: "Antenatal Health Package(FBC, ABO/Rh-TYPE, Blood Group, Hb Genotype, VDRL, FBG, TSH, FT4, Rubella, IgG Toxoplasma IgG, HBsAg, HCV Antibody, Varicella Zooster IgG, RVS, Urinalysis",
+        abbr: "Antenatal Health Package",
         name: "Antenatal Health Package(FBC, ABO/Rh-TYPE, Blood Group, Hb Genotype, VDRL, FBG, TSH, FT4, Rubella, IgG Toxoplasma IgG, HBsAg, HCV Antibody, Varicella Zooster IgG, RVS, Urinalysis",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+            {
+                name: "Free T4(FT4)",
+                ref: "8.9-17.2 pg/ml"
+            }
+        ],
         type: "Profiles"
     },
     {
@@ -1561,9 +1883,14 @@ export const labTests = [
         type: "Profiles"
     },
     {
-        abbr: "Metabolic Panel(TSH, LFT, Serum Electrolytes, Urea, Creatinine, Uric Acid, Fasting Lipid Profile, FBG, Complete Blood Count, Urinalysis",
+        abbr: "Metabolic Panel",
         name: "Metabolic Panel(TSH, LFT, Serum Electrolytes, Urea, Creatinine, Uric Acid, Fasting Lipid Profile, FBG, Complete Blood Count, Urinalysis",
-        parameters: [],
+        parameters: [
+            {
+                name: "Thyroid Stimulating Hormone",
+                ref: "0.3 -4.5 µIU/ml"
+            },
+        ],
         type: "Profiles"
     },
     {

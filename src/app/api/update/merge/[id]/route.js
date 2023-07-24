@@ -13,39 +13,26 @@ export async function PUT(req,{params}){
     const scanTest = await Scantests.find({})
     const lab = labTest[0].labTests?.filter(i => body?.results.includes(i?.name))
     const scan = scanTest[0].scanTests?.filter(i => body?.results.includes(i?.name))
-    let parameters = []
-    const labParameters = lab?.map(i => {
-        return i?.parameters
-    })
-    const scanParameters = scan?.map(i => {
-        return i?.parameters
-    })
-    for (let i = 0; i < labParameters.length; i++) {
-        parameters?.push(...labParameters[i]) 
-    }
-    for (let i = 0; i < scanParameters.length; i++) {
-        parameters?.push(...scanParameters[i])
-    }
+    let parameters = [...lab, ...scan]
+    const refResult = user?.results?.find((i) => i?.receiptNo == body?.receiptNo)
+    let results = refResult?.results?.filter(i => body?.results.includes(i?.name))
+    const userResults = user?.results?.map(i => {return i})
     
-    
-    const newTest = {
+    const date = new Date()
+    const newResult = {
         name: body?.name,
         abbr: body?.name,
-        type: "lab",
-        parameters: parameters
+        merged: true,
+        parameters: parameters,
+        createdAt: date.toDateString(),
+        results: results
     }
-    const newTests = user?.tests?.map(i => {return i})
-    const refTest = newTests?.find((i) => i?.receiptNo == body?.receiptNo)
-    const index = newTests?.indexOf(refTest)
-    const remainingTests = refTest?.requestedTests?.filter((i) => !body?.results.includes(i))
-    remainingTests?.push(body?.name)
-    refTest?.requestedTests.splice(0, refTest?.requestedTests.length, ...remainingTests)
-    newTests[index] = refTest
-    
-    await labTest[0].updateOne({$push: {labTests: newTest} })
+    const index = userResults?.indexOf(refResult)
+    refResult?.results?.push(newResult)
+    userResults[index] = refResult
     if(body != null && body?.receiptNo != ""){
-        await user.updateOne({$set: {tests: newTests}})
+        await user.updateOne({$set: {results: userResults}})
     }
-    
+    console.log(refResult, userResults)
     return NextResponse.json(user)
 }

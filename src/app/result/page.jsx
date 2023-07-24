@@ -62,7 +62,7 @@ function Page() {
                 <tr>
                     <td><span>LAB NO</span>: {patient?.labNo}</td>
                     <td><span>REFERRAL</span>: {patient?.referral}</td>
-                    <td><span>TEST</span>: {currentTest?.abbr}</td>
+                    <td><span>TEST</span>: {name?.abbr}</td>
                 </tr>
                 <tr>
                     <td><span>COLLECTION DATE</span>: {name?.createdAt}</td>
@@ -71,7 +71,7 @@ function Page() {
                 </tr>
             </tbody> 
         </table>
-        <h4>{currentTest?.name.toUpperCase()} REPORT</h4>
+        <h4>{name?.name?.toUpperCase()} REPORT</h4>
         {(!test?.segments && test?.parameters?.length != 0) && <table className={styles.result}>
             {available && <thead>
                 <tr>
@@ -163,6 +163,75 @@ function Page() {
         {name?.description != undefined && <div className={styles.desc}>
             <div dangerouslySetInnerHTML={{ __html: name?.description }} />
         </div>}
+        {name?.merged && name?.results?.map((item, id)=>{
+                console.log(item)
+                return(
+                    <>
+                        <h4>{item?.name}</h4>
+                        {name?.parameters?.map((para, id)=>{
+                            console?.log(para)
+                            return(
+                                <>
+                                    {(para?.name == item?.name && para?.extra == undefined) && <table className={styles.result}>
+                                        <thead>
+                                            <tr>
+                                                <th>Investigation</th>
+                                                <th>Patient's Result</th>
+                                                <th>Normal Values</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {para?.parameters?.map((result, id)=>{
+                                                console.log(result)
+                                                return(
+                                                    <tr key={id}>
+                                                        <td>{result?.name}</td>
+                                                        <td>{item?.[result?.name]}</td>
+                                                        <td dangerouslySetInnerHTML={{ __html: result?.ref }}></td>
+                                                    </tr>
+                                                )
+                                            })}
+                                        </tbody>
+                                    </table>}
+                                    {(para?.extra == true && item?.DO != undefined) && <table className={styles.extra}>
+                                        <thead>
+                                            <th>Antigen</th>
+                                            <th> </th>
+                                            <th>O</th>
+                                            <th>H</th>
+                                        </thead>
+                                        <tbody>
+                                            {para?.parameters?.map((i, id)=>{
+                                                const antigen = ["D", "A", "B", "C"]
+                                                const extra = ["O", "H"]
+                                                console.log(i)
+                                                const type = item?.[antigen[id]+extra[0]] && item?.[antigen[id]+extra[1]]
+                                                return(
+                                                    <tr key={id}>
+                                                        <td>{i?.name}</td>
+                                                        <td>{antigen[id]}</td>
+                                                        <td>{item?.[antigen[id]+extra[0]]}</td>
+                                                        <td>{item?.[antigen[id]+extra[1]]}</td>
+                                                    </tr>
+                                                )
+                                            })}
+                                        </tbody>
+                                    </table>}
+                                </>
+                            )
+                        })}
+                    </>
+                )
+            })}
+            {name?.merged && name?.results?.map((item, id)=>{
+                return(
+                    <>
+                        <div className={styles.desc}>
+                            {<div dangerouslySetInnerHTML={{ __html: item?.description }} />}
+                        </div>
+                    </>
+                )
+            })}
         <div className={styles.line}>
             <span></span>
             <p>Medical Laboratory Scientist</p>

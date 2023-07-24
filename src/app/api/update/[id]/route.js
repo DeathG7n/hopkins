@@ -13,8 +13,9 @@ export async function PUT(req,{params}){
         results: [body?.results]
     }
     const existingResult = newResults?.find(i => i?.receiptNo == body?.receiptNo)
+    const existing = existingResult?.results?.find(i => i?.name == body?.results?.name)
 
-    if(body != null ){
+    if(body != null && !existing ){
         if(!existingResult){
             await user.updateOne({$push: {results: newResult}})
         } else{
@@ -26,7 +27,7 @@ export async function PUT(req,{params}){
     }
     
 
-    console.log(existingResult)
+    console.log(existing)
     
     return NextResponse.json(user)
 }
