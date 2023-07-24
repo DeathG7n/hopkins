@@ -35,8 +35,6 @@ export async function PUT(req,{params}){
             await user.updateOne({$set: {results: newResults}})
         }
     }
-
-    console.log(parseInt(body?.result))
     
     return NextResponse.json(user)
 }

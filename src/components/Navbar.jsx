@@ -19,8 +19,6 @@ function Navbar() {
           setButton("Find Patient")
       }
   }, [pathname])
-
-  console.log(pathname)
   
   return (
     <nav className={styles.nav}>

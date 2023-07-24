@@ -49,7 +49,6 @@ function Page() {
         return name?.[i?.name]
     })
     const available = resultParameters?.find(i => i != undefined)
-    console.log(available)
   return (
     <div className={styles.container}>
         <table className={styles.details}>
@@ -164,12 +163,10 @@ function Page() {
             <div dangerouslySetInnerHTML={{ __html: name?.description }} />
         </div>}
         {name?.merged && name?.results?.map((item, id)=>{
-                console.log(item)
                 return(
                     <>
                         <h4>{item?.name}</h4>
                         {name?.parameters?.map((para, id)=>{
-                            console?.log(para)
                             return(
                                 <>
                                     {(para?.name == item?.name && para?.extra == undefined) && <table className={styles.result}>
@@ -182,7 +179,6 @@ function Page() {
                                         </thead>
                                         <tbody>
                                             {para?.parameters?.map((result, id)=>{
-                                                console.log(result)
                                                 return(
                                                     <tr key={id}>
                                                         <td>{result?.name}</td>
@@ -204,7 +200,6 @@ function Page() {
                                             {para?.parameters?.map((i, id)=>{
                                                 const antigen = ["D", "A", "B", "C"]
                                                 const extra = ["O", "H"]
-                                                console.log(i)
                                                 const type = item?.[antigen[id]+extra[0]] && item?.[antigen[id]+extra[1]]
                                                 return(
                                                     <tr key={id}>

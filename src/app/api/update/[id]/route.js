@@ -26,8 +26,6 @@ export async function PUT(req,{params}){
         }
     }
     
-
-    console.log(existing)
     
     return NextResponse.json(user)
 }

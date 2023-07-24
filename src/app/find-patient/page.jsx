@@ -17,7 +17,6 @@ function Page() {
       const res = await fetch(`/api/find`)
       const body = await res.json()
       setSearch(body)
-      console.log(body)
     }
     findAll()
   },[])
@@ -26,9 +25,7 @@ function Page() {
     const patients = search?.filter(i => i?.name.toLowerCase()?.includes(e?.target?.value.toLowerCase()))
     setPatients(patients)
   }
-  console.log(search)
   const handleClick = (id) => {
-    console.log(id)
     localStorage.setItem("id", id)
   }
   

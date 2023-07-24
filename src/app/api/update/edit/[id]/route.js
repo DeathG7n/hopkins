@@ -24,6 +24,5 @@ export async function PUT(req,{params}){
     } else{
         await user.replaceOne(body)
     }
-    console.log(body)
     return NextResponse.json(user)
 }

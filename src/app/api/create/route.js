@@ -31,8 +31,6 @@ export async function POST(req){
     } else{
         return
     }
-
-    console.log(newPatient)
     
 
     return NextResponse.json("Patient Created")

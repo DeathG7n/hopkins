@@ -166,7 +166,6 @@ function Page() {
             ...patient,
             [e.target.name] : e.target.value,
         })
-        console.log(patient)
     }
     const handleMergeChange = (e)=>{
         const newArray = [...items]
@@ -267,7 +266,6 @@ function Page() {
             }),
         })
     }
-    console.log(form)
     useEffect(()=>{
         done && setTimeout(()=> update(), 1000)
     }, [done])
@@ -443,7 +441,6 @@ export const Result = ({item, toggle}) => {
     const handleClick = () =>{
         setShow(!show)
     }
-    console.log(item)
     return(
         <>
             <p onClick={handleClick}>{item?.receiptNo}<span>{show ? "-" : "+"}</span></p>
@@ -504,7 +501,6 @@ export const Update = ({patient,value,addValues,values,updateNew, handleChange, 
 }
 
 export const Merge = ({name, patient, handleChange, handleClick, value}) =>{
-    console.log(patient)
     return(
         <section className={styles.merge}>
             <div>
@@ -684,9 +680,8 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
             ...data,
             [e.target.name] : e.target?.value
         })
-        console.log(data)
+
     }
-    console.log(data)
     return(
         <section className={styles.input}>
             {currentResult?.createdAt != undefined && <p><span className={styles.span}>Created On</span> : {currentResult?.createdAt}</p>}
@@ -718,12 +713,10 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                 )
             })}
             {currentResult?.merged && currentResult?.results?.map((item, id)=>{
-                console.log(item?.DO)
                 return(
                     <>
                         <h3>{item?.name}</h3>
                         {currentResult?.parameters?.map((para, id)=>{
-                            console?.log(para)
                             return(
                                 <>
                                     {para?.extra == undefined && para?.parameters?.map((result, id)=>{
@@ -767,7 +760,6 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
             })}
             {currentResult?.merged && <h3>Impression</h3>}
             {currentResult?.merged && currentResult?.results?.map((item, id)=>{
-                console.log(item)
                 return(
                     <>
                         <div>
