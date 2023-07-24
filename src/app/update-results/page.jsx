@@ -237,16 +237,12 @@ function Page() {
         setValues([...values, value?.current.value])
         value.current.value = ''
     }
-    const addDesc = ()=>{
-        setDesc([...desc, value?.current.value])
-        value.current.value = ''
-    }
-    const removeDesc = (todo) =>{
-        const newArray = [...desc]
-        const removedItem = newArray.find(i => i == todo)
-        const index = newArray.indexOf(removedItem)
-        newArray.splice(index,1)
-        setDesc(newArray)
+    const handleEdit = async() =>{
+        const res = await fetch(`/api/update/edit/${patient?._id}`, {
+            method: 'PUT',
+            body: JSON.stringify(patient),
+        })
+        setTimeout(()=> {location.reload(true)}, 1000)
     }
     const removeValue = (todo) =>{
         const newArray = [...values]
@@ -336,21 +332,21 @@ function Page() {
                 <section className={styles.details}>
                     <div>
                         <label htmlFor="age">Name: </label>
-                        <input type="text" name="name" value={patient?.name}/>
+                        <input type="text" name="name" value={patient?.name} onChange={(e)=> handleEditChange(e)}/>
                     </div>
                     <div>
                         <label htmlFor="age">Age: </label>
-                        <input type="number" name="age" value={patient?.age}/>
+                        <input type="number" name="age" value={patient?.age} onChange={(e)=> handleEditChange(e)}/>
                     </div>
                     <div>
                         <label htmlFor="gender">Gender: </label>
-                        <input type="text" name="gender" value={patient?.gender}/>
+                        <input type="text" name="gender" value={patient?.gender} onChange={(e)=> handleEditChange(e)}/>
                     </div>
                     <div>
                         <label htmlFor="referral">Referral: </label>
-                        <input type="text" name="referral" value={patient?.referral}/>
+                        <input type="text" name="referral" value={patient?.referral} onChange={(e)=> handleEditChange(e)}/>
                     </div>
-                    <div className={styles?.button}>Save</div>
+                    <div className={styles?.button} onClick={handleEdit}>Save</div>
                 </section>
                 }
                 <h3>Patient Results</h3>
