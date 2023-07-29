@@ -35,7 +35,7 @@ function Page() {
       <Navbar/>  
       {popup && <Popup message={message ? "Patient Found" : "Patient Not Found"} error={message}/>}
       <form className={styles.form}>
-          <input type="search" name="search" id="search"  placeholder="Search by patient name or receipt no" onChange={handleSearch}/>
+          <input type="search" name="search" id="search"  placeholder="Search by patient name" onChange={handleSearch}/>
       </form> 
       <div className={styles.box}>
         {patients?.map((item, id) => {

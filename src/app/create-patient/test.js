@@ -648,7 +648,12 @@ export const labTests = [
     {
         abbr: "HB",
         name: "Hemoglobin",
-        parameters: [],
+        parameters: [
+            {
+                name: "Hb",
+                ref: "11-15g/dl"
+            },
+        ],
         type: "Haematology"
     },
     {

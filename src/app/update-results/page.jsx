@@ -675,6 +675,16 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
         })
         setTimeout(()=> {location.reload(true)}, 1000)
     }
+    const handleDelete = async() =>{
+        const res = await fetch(`/api/update/delete/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                receiptNo: receipt,
+                result: currentResult
+            }),
+        })
+        setTimeout(()=> {location.reload(true)}, 1000)
+    }
     const handleChange = (e) => {
         setData({
             ...data,
@@ -797,6 +807,7 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
             {currentResult?.printed && <span className={styles.button}>Printed</span>}
             {admin == "true" && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
             {edit? <span className={styles.button} onClick={handleEdit}> Save Result</span> : <span className={styles.button} onClick={()=> setEdit(true)}>Edit Result</span>}
+            <span className={styles.button} onClick={handleDelete}> Delete Result</span>
         </section>
     )
 }

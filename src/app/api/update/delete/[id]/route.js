@@ -17,10 +17,12 @@ export async function PUT(req,{params}){
         const refResult = userResults?.find((i) => i?.name == body?.result?.name)
         const index = userResults?.indexOf(refResult)
         const resultIndex = results?.indexOf(userResult)
-        userResults[index] = body?.result
-        userResult?.results?.splice(0, userResults?.length, ...userResults)
+        const deleteResults = userResults.filter((item) => item !== refResult)
+        userResult?.results?.splice(0, userResults?.length, ...deleteResults)
         results[resultIndex] = userResult
         await user.updateOne({$set: {results: results}})
-    }
+        console.log(refResult, index, results)
+    } 
+
     return NextResponse.json(user)
 }
