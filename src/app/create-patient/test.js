@@ -240,8 +240,8 @@ export const labTests = [
         type: "Clinical Chemistry"
     },
     {
-        abbr: "LFT",
-        name: "Liver Function Test (AST, ALT, ALP, TB,DB, ALB, GGT)",
+        abbr: "Liver Function Test",
+        name: "Liver Function Test",
         parameters: [
             {
                 name: "Total Bilirubin",

@@ -36,6 +36,7 @@ function Page() {
         }
         get()
     }, [])
+    console.log(name)
     
     const currentTest = tests?.labTests?.find(i => i?.name == name?.name) || tests?.scanTests?.find(i => i?.name == name?.name)
     const newTest = tests?.labTests?.find(i => i?.name == name && i?.type == "lab") || tests?.scanTests?.find(i => i?.name == name && i?.type == "scan")
@@ -61,7 +62,7 @@ function Page() {
                 <tr>
                     <td><span>LAB NO</span>: {patient?.labNo}</td>
                     <td><span>REFERRAL</span>: {patient?.referral}</td>
-                    <td><span>TEST</span>: {name?.abbr}</td>
+                    <td><span>TEST</span>: {name?.abbr || name?.name}</td>
                 </tr>
                 <tr>
                     <td><span>COLLECTION DATE</span>: {name?.createdAt}</td>
