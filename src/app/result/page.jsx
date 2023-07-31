@@ -62,7 +62,7 @@ function Page() {
                 <tr>
                     <td><span>LAB NO</span>: {patient?.labNo}</td>
                     <td><span>REFERRAL</span>: {patient?.referral}</td>
-                    <td><span>TEST</span>: {name?.abbr || name?.name}</td>
+                    <td><span>TEST</span>: {test?.abbr || name?.name}</td>
                 </tr>
                 <tr>
                     <td><span>COLLECTION DATE</span>: {name?.createdAt}</td>
