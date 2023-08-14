@@ -38,7 +38,12 @@ export const labTests = [
     {
         abbr: "Prostate Specific Antigen",
         name: "Prostate Specific Antigen",
-        parameters: [],
+        parameters: [
+            {
+                name: "Prostate Specific Antigen",
+                ref: "0-4 {Normal} <br/> 4.1-10 {Suspicious} <br/> 10.1 & Above {Deviated}"
+            }
+        ],
         type: "Hormones"
     },
     {
@@ -225,7 +230,7 @@ export const labTests = [
                 ref: "Less than 200mg/dl (Desirable blood cholesterol) <br/> 201-239mg/dl (borderline-high blood cholesterol) <br/> 240mg/dl &above (High blood cholesterol)"
             },
             {
-                name: "L.D. LipoproteinMale",
+                name: "L.D. Lipoprotein",
                 ref: "Less than 100mg/dl (optimal) <br/> 100-129mg/dl (Near optimal / Above optimal) <br/> 130-159mg/dl (Borderline High) <br/> 160-189mg/dl (High) <br/> 190mg/dl and above (Very High)"
             },
             {
@@ -393,7 +398,7 @@ export const labTests = [
         parameters: [
             {
                 name: "Cholesterol",
-                ref: "Less than 200mg/dl (Desirable blood cholesterol) 201-239mg/dl {borderline-high blood cholesterol} 240mg/dl &above {High blood cholesterol}    "
+                ref: "Less than 200mg/dl (Desirable blood cholesterol) <br/> 201-239mg/dl {borderline-high blood cholesterol} <br/> 240mg/dl &above {High blood cholesterol}    "
             }
         ],
         type: "Clinical Chemistry"
@@ -422,7 +427,7 @@ export const labTests = [
         parameters: [
             {
                 name: "Glycated Haemoglobin(HbA1C)",
-                ref: "(Normal: Less than 5.7%) (Pre-Diabetic: 5.7-6.4%) (Diabetic: 6.5 or Higher)"
+                ref: "(Normal: Less than 5.7%) <br/> (Pre-Diabetic: 5.7-6.4%) <br/> (Diabetic: 6.5 or Higher)"
             }
         ],
         type: "Clinical Chemistry"
@@ -1386,7 +1391,12 @@ export const labTests = [
     {
         abbr: "PSA",
         name: "PSA",
-        parameters: [],
+        parameters: [
+            {
+                name: "Prostate Specific Antigen",
+                ref: "0-4 {Normal} <br/> 4.1-10 {Suspicious} <br/> 10.1 & Above {Deviated}"
+            }
+        ],
         type: "Tumor Markers"
     },
     {
