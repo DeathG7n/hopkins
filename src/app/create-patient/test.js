@@ -41,7 +41,7 @@ export const labTests = [
         parameters: [
             {
                 name: "Prostate Specific Antigen",
-                ref: "0-4 {Normal} <br/> 4.1-10 {Suspicious} <br/> 10.1 & Above {Deviated}"
+                ref: "0-4ng/ml {Normal} <br/> 4.1-10ng/ml {Suspicious} <br/> 10.1ng/ml & Above {Deviated}"
             }
         ],
         type: "Hormones"
@@ -1394,7 +1394,7 @@ export const labTests = [
         parameters: [
             {
                 name: "Prostate Specific Antigen",
-                ref: "0-4 {Normal} <br/> 4.1-10 {Suspicious} <br/> 10.1 & Above {Deviated}"
+                ref: "0-4ng/ml {Normal} <br/> 4.1-10ng/ml {Suspicious} <br/> 10.1ng/ml & Above {Deviated}"
             }
         ],
         type: "Tumor Markers"
