@@ -49,9 +49,10 @@
 .result td{
     width: 33%;
     height: auto;
+    vertical-align: top;
     padding: 2px;
     text-align: left;
-    font-size: calc(1vh + 5px)
+    font-size: calc(1vh + 5px);
 }
 .extra td{
     width: fit-content;
