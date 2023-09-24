@@ -347,7 +347,17 @@ export const labTests = [
     {
         abbr: "Urine Albumin Creatinine Ratio",
         name: "Urine Albumin Creatinine Ratio",
-        parameters: [],
+        parameters: [
+            {
+                name: "Urine Albumin Creatinine Ratio",
+                ref: `<30mg/dl(Normal) </br>30-300mg/dl(Moderate)</br> >300mg/dl(Severe)`
+            }
+        ],
+        comment: true,
+        writeUp: true,
+        writeUpDesc: `<p>The urine albumin test or {ACR} is used to screen people with chronic conditions such as diabetes and high blood pressure that put them at an increased risk of developing kidney disease. The ACR test results is a ratio of measured albuminand creatinine {a metabolism by product} in the urine that has been excreted from the body, at the time of the test {spot sample}. The severity of ACR levels or albuminuria is indicated as microalbuminuria and macroalbuminuria {overt nephropathy} which refers to impaired kidney function, and normoabluminauria referring to normal ACR levels adequate kidney function.</p>
+        <p>Moderately increased albumin levels found in both inital and repeat urine tests indicate that a person is likely to have early kidney disease. Very high levels are an indication that kidney disease is present in a more severe form. Undetectable levels are an indication that kidney function is normal.</p>
+        <p>The presence of blood in the urine a urinary tract infection, vigorous exercise and other acute illnesses may cause a postive test result that is not related to kidney disease. Testing should be repeated after conditions have resolved.</p>`,
         type: "Clinical Chemistry"
     },
     {
@@ -700,7 +710,34 @@ export const labTests = [
     {
         abbr: "PT/INR",
         name: "PT/INR",
-        parameters: [],
+        parameters: [
+            {
+                name: "PT Control",
+                ref: ""
+            },
+            {
+                name: "Prothrombin Time",
+                ref: "(10.7-14.0 secs)"
+            },
+            {
+                name: "ISI",
+                ref: ""
+            },
+            {
+                name: "INR",
+                ref: "0.9-1.3"
+            }
+        ],
+        writeUp: true,
+        writeUpDesc: `<h5>GENERAL INR GUIDELINES FOR PATIENTS ON WARFARIN THERAPY</h5>
+        <p>Physiological range(no anticoagulants)</p>
+        <p>Venous thrombo-embolism(VTE); Atrial Fibrillation; Pre and Post-Cardio Version; Anti-phospholipid syndrome (APS) with VTE; Femoral vein graft with high risk of failure.</p>
+        <p>Mechanical prosthetic heart valves; VTE while on warfarin with INR of 2-3 APS with arterial thrombosis.</p>
+        <h5>EXCESSIVE ANTICOAGULATION</h5>
+        <p>Assess clinically Consider omission of dose(s) and Vit K1.</p>
+        <h5>EXCESSIVE ANTICOAGULATION</h5>
+        <p>Assess clincally. Omit Warfarin, Vit K1 recommended even if no bleeding.</p>
+        <p>Infusion therapy recommended if bleeding</p>`,
         type: "Haematology"
     },
     {
@@ -710,9 +747,49 @@ export const labTests = [
         type: "Haematology"
     },
     {
-        abbr: "Clotting Time",
-        name: "Clotting Time",
-        parameters: [],
+        abbr: "Clotting Profile",
+        name: "Clotting Profile",
+        parameters: [
+            {
+                name: "PT Control",
+                ref: ""
+            },
+            {
+                name: "Prothrombin Time",
+                ref: "(10.7-14.0 secs)"
+            },
+            {
+                name: "ISI",
+                ref: ""
+            },
+            {
+                name: "INR",
+                ref: "0.9-1.3"
+            },
+            {
+                name: "PTTK",
+                ref: ""
+            },
+            {
+                name: "Clotting Time(modified lee & white method)",
+                ref: "(8-15mins)"
+            },
+            {
+                name: "Bleeding Time (DUKE)",
+                ref: "(1-3mins)"
+            },
+
+        ],
+        writeUp: true,
+        writeUpDesc: `<h5>GENERAL INR GUIDELINES FOR PATIENTS ON WARFARIN THERAPY</h5>
+        <p>Physiological range(no anticoagulants)</p>
+        <p>Venous thrombo-embolism(VTE); Atrial Fibrillation; Pre and Post-Cardio Version; Anti-phospholipid syndrome (APS) with VTE; Femoral vein graft with high risk of failure.</p>
+        <p>Mechanical prosthetic heart valves; VTE while on warfarin with INR of 2-3 APS with arterial thrombosis.</p>
+        <h5>EXCESSIVE ANTICOAGULATION</h5>
+        <p>Assess clinically Consider omission of dose(s) and Vit K1.</p>
+        <h5>EXCESSIVE ANTICOAGULATION</h5>
+        <p>Assess clincally. Omit Warfarin, Vit K1 recommended even if no bleeding.</p>
+        <p>Infusion therapy recommended if bleeding</p>`,
         type: "Haematology"
     },
     {
@@ -730,7 +807,12 @@ export const labTests = [
     {
         abbr: "HB-Genotype",
         name: "HB-Genotype",
-        parameters: [],
+        parameters: [
+            {
+                name: "HB GENOTYPE"
+            }
+        ],
+        statement: true,
         type: "Haematology"
     },
     {
@@ -989,9 +1071,28 @@ export const labTests = [
         type: "Microbiology"
     },
     {
-        abbr: "Hepatitis B Surface Antigen (Australia Antigen)",
-        name: "Hepatitis B Surface Antigen (Australia Antigen)",
-        parameters: [],
+        abbr: "FOB",
+        name: "Faecal Occult Blood",
+        parameters: [
+            {
+                name: "FAECAL OCCULT BLOOD(FOB)", 
+                header: "Specimen Faecal Sample",
+            }
+        ],
+        heading: true,
+        statement: true,
+        type: "Serology"
+    },
+    {
+        abbr: "Hepatitis B Surface Antigen Screening Test",
+        name: "Hepatitis B Surface Antigen Screening Test",
+        parameters: [
+            {
+                name: "Hepatitis B Surface Antigen Screening Test(HBsAg)", 
+                ref: ""
+            }
+        ],
+        statement: true,
         type: "Serology"
     },
     {
@@ -1015,7 +1116,12 @@ export const labTests = [
     {
         abbr: "Blood Grouping (Abo & Rh)",
         name: "Blood Grouping (Abo & Rh)",
-        parameters: [],
+        parameters: [
+            {
+                name: "BLOOD GROUP"
+            }
+        ],
+        statement: true,
         type: "Serology"
     },
     {
@@ -1043,15 +1149,68 @@ export const labTests = [
         type: "Serology"
     },
     {
-        abbr: "Helicobacter Pylori (H/Pylori)",
+        abbr: "H/Pylori",
         name: "Helicobacter Pylori (H/Pylori)",
-        parameters: [],
+        parameters: [
+            {
+                name: "H.Pylori Antibody Test",
+                header: "Specimen - Whole Blood"
+            },
+            {
+                name: "Stool H.Pylori Antibody Test",
+                header: "Specimen - Faecal Specimen"
+            }
+        ],
+        heading: true,
+        statement: true,
         type: "Serology"
     },
     {
-        abbr: "Hepatitis C",
-        name: "Hepatitis C",
-        parameters: [],
+        abbr: "Hepatitis C Surface Antigen Screening Test",
+        name: "Hepatitis C Surface Antigen Screening Test",
+        parameters: [
+            {
+                name: "Hepatitis C Surface Antigen Screening Test(HCV)", 
+                ref: ""
+            }
+        ],
+        statement: true,
+        type: "Serology"
+    },
+    {
+        abbr: "Hepatitis A Surface Antigen Screening Test",
+        name: "Hepatitis A Surface Antigen Screening Test",
+        parameters: [
+            {
+                name: "Hepatitis A Surface Antigen Screening Test", 
+                ref: ""
+            }
+        ],
+        statement: true,
+        type: "Serology"
+    },
+    {
+        abbr: "Retroviral Screening Test",
+        name: "Retroviral Screening Test",
+        parameters: [
+            {
+                name: "Retroviral Screening Test", 
+                ref: ""
+            }
+        ],
+        statement: true,
+        type: "Serology"
+    },
+    {
+        abbr: "VDRL Test",
+        name: "VDRL Test",
+        parameters: [
+            {
+                name: "VDRL Test", 
+                ref: ""
+            }
+        ],
+        statement: true,
         type: "Serology"
     },
     {
@@ -1367,7 +1526,13 @@ export const labTests = [
     {
         abbr: "Ca 125",
         name: "Ca 125",
-        parameters: [],
+        parameters: [
+            {
+                name: "CA 125 Serum",
+                ref: "0-35IU/ml"
+            }
+        ],
+        comment: true,
         type: "Tumor Markers"
     },
     {
@@ -1379,7 +1544,13 @@ export const labTests = [
     {
         abbr: "Ca 15-3",
         name: "Ca 15-3",
-        parameters: [],
+        parameters: [
+            {
+                name: "CA 15-3",
+                ref: "0-21U/ml"
+            }
+        ],
+        comment: true,
         type: "Tumor Markers"
     },
     {
@@ -1397,6 +1568,13 @@ export const labTests = [
                 ref: "0-4ng/ml {Normal} <br/> 4.1-10ng/ml {Suspicious} <br/> 10.1ng/ml & Above {Deviated}"
             }
         ],
+        comment: true,
+        writeUp: true,
+        writeUpDesc : `<h5>ASSAY METHOD : CLIA</h5>
+        <p>✔ PSA level is elevated in benign prostate hypertrophy(BPH)</p>
+        <p>✔ Clinically, an elevated PSA value alone is not of diagonstic value as a specific test for cause and should be used in conjunction with other clinical manifestation and diagonostic procedures(prostate biopsy).</p>
+        <p>✔ PSA level often rises in conditions like prostatitis or urinary tract infection.</p>
+        <p>✔ Prostate biopsies and prostate surgery may also increase PSA level.</p>`,
         type: "Tumor Markers"
     },
     {

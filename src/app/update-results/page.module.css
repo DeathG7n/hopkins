@@ -144,7 +144,7 @@
     border: 2px solid #fb6902;
     padding: 10px;
     border-radius: 5px;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: scroll;
 }
 .input div input{

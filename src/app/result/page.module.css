@@ -26,6 +26,14 @@
 .span{
     font-weight: 900;
 }
+.comment{
+    margin: 10px auto;
+    width: 90%;
+}
+
+.comment span{
+    font-weight: 800;
+}
 
 .container h4{
     text-align: center;
@@ -36,7 +44,7 @@
 
 .result, .options, .extra{
     width: 90%;
-    margin: 5px auto 20px auto;
+    margin: 5px auto 5px auto;
     border-collapse: collapse;
 }
 .result th{
@@ -53,6 +61,10 @@
     padding: 2px;
     text-align: left;
     font-size: calc(1vh + 5px);
+}
+
+.result td:first-child{
+    font-weight: 900;
 }
 .extra td{
     width: fit-content;

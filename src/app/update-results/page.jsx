@@ -74,6 +74,7 @@ function Page() {
         for (let i = 0; i < tests?.labTests?.length; i++) {
             if (tests?.labTests[i]?.name == currentTest){
                 setParameters(tests?.labTests[i]?.parameters)
+                setTest(tests?.labTests[i])
             }
             if (tests?.labTests[i]?.name == currentResult?.name){
                 setParameters(tests?.labTests[i]?.parameters)
@@ -83,12 +84,14 @@ function Page() {
         for (let i = 0; i < tests?.scanTests?.length; i++) {
             if (tests?.scanTests[i]?.name == currentTest){
                 setParameters(tests?.scanTests[i]?.parameters)
+                setTest(tests?.scanTests[i])
             }
             if (tests?.scanTests[i]?.name == currentResult?.name){
                 setParameters(tests?.scanTests[i]?.parameters)
-                setTest(tests?.labTests[i])
+                setTest(tests?.scanTests[i])
             }
         }
+        console.log(test)
         if(currentTest == "Create New"){
             setCreate(true)
             setMerge(false)
@@ -362,6 +365,10 @@ function Page() {
                                 </div> 
                             )
                     })}
+                    {test?.comment && <div>
+                            <label htmlFor="hb">Comment: </label>
+                            <input type="text" name={"Comment"} onChange={(e)=>handleChange(e)}/>
+                        </div>}
                 </section>}
                 {result && <h3>Observations</h3>}
                 {result && <section >
@@ -706,6 +713,8 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                     </>
                 )
             })}
+            {(!edit && test?.comment) && <p><span className={styles.span}>COMMENT</span> : {currentResult?.Comment}</p>}
+            {(!edit && test?.writeUp) && <div dangerouslySetInnerHTML={{ __html: test?.writeUpDesc }}></div>}
             {edit && parameters?.map((item, id)=>{
                 return(
                     <>

@@ -73,7 +73,7 @@ function Page() {
         </table>
         <h4>{name?.name?.toUpperCase()} REPORT</h4>
         {(!test?.segments && test?.parameters?.length != 0) && <table className={styles.result}>
-            {available && <thead>
+            {(available && !test?.statement) && <thead>
                 <tr>
                     <th>Investigation</th>
                     <th>Patient's Result</th>
@@ -84,6 +84,7 @@ function Page() {
                 {(newTest?.parameters || currentTest?.parameters)?.map((item,id)=>{
                     return(
                         <>
+                            {item?.header && <h5>{item?.header}</h5>}
                             {name?.[item?.name] && <tr key={id}>
                                 <td>{item?.name}</td>
                                 <td>{name?.[item?.name]}</td>
@@ -160,36 +161,48 @@ function Page() {
                 )
             })}
         </div>}
+        {test?.comment && <p className={styles.comment}><span>COMMENT</span> : {name?.Comment}</p>}
+        {test?.writeUp && <div dangerouslySetInnerHTML={{ __html: test?.writeUpDesc }} className={styles.desc}></div>}
         {name?.description != undefined && <div className={styles.desc}>
             <div dangerouslySetInnerHTML={{ __html: name?.description }} />
         </div>}
         {name?.merged && name?.results?.map((item, id)=>{
+            const show = name?.parameters[id]?.statement
                 return(
                     <>
-                        <h4>{item?.name}</h4>
+                        {!show && <h4>{item?.name}</h4>}
                         {name?.parameters?.map((para, id)=>{
                             return(
                                 <>
                                     {(para?.name == item?.name && para?.extra == undefined) && <table className={styles.result}>
-                                        <thead>
+                                        {!para?.statement && <thead>
                                             <tr>
                                                 <th>Investigation</th>
                                                 <th>Patient's Result</th>
                                                 <th>Normal Values</th>
                                             </tr>
-                                        </thead>
+                                        </thead>}
                                         <tbody>
                                             {para?.parameters?.map((result, id)=>{
                                                 return(
-                                                    <tr key={id}>
+                                                    <>
+                                                      {result?.header && <h5>{result?.header}</h5>}
+                                                      <tr key={id}>
                                                         <td>{result?.name}</td>
                                                         <td>{item?.[result?.name]}</td>
                                                         <td dangerouslySetInnerHTML={{ __html: result?.ref }}></td>
-                                                    </tr>
+                                                       </tr>  
+                                                       {para?.comment && <p className={styles.comment}><span>COMMENT</span> : {result?.Comment}</p>}
+                                                       {(para?.writeUp && id == para?.parameters.length - 1) && <div dangerouslySetInnerHTML={{ __html: para?.writeUpDesc }} className={styles.desc}></div>}
+                                                       <div className={styles.desc}>
+                                                            {<div dangerouslySetInnerHTML={{ __html: item?.description }} />}
+                                                        </div>
+                                                    </>   
                                                 )
                                             })}
                                         </tbody>
                                     </table>}
+                                    
                                     {(para?.extra == true && item?.DO != undefined) && <table className={styles.extra}>
                                         <thead>
                                             <th>Antigen</th>
