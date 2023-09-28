@@ -38,6 +38,7 @@ function Page() {
     const [resultShow, setResultShow] = useState(false)
     const [edit, setEdit] = useState(false)
     const [drugs, setDrugs] = useState([])
+    const [oldDrugs, setOldDrugs] = useState([])
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
@@ -45,6 +46,14 @@ function Page() {
             setTests(body)
         }
         getTests()
+    },[])
+    useEffect(()=>{
+        async function getDrugs(){
+            const res = await fetch('/api/update/drugs')
+            const body = await res.json()
+            setOldDrugs(body)
+        }
+        getDrugs()
     },[])
     useEffect(()=>{
         const id = localStorage.getItem("id")
@@ -249,6 +258,7 @@ function Page() {
         setDrugs([...drugs, value?.current.value])
         value.current.value = ''
     }
+    console.log(drugs)
     const handleEdit = async() =>{
         const res = await fetch(`/api/update/edit/${patient?._id}`, {
             method: 'PUT',
@@ -271,6 +281,7 @@ function Page() {
         setDrugs(newArray)
     }
     async function update(){
+        updateDrugs()
         const date = new Date()
         const receiptNo = localStorage.getItem("receiptNo")
         const res = await fetch(`/api/update/${patient?._id}`, {
@@ -280,7 +291,8 @@ function Page() {
                     ...form,
                     description : desc,
                     createdAt: date.toDateString(),
-                    printed: false
+                    printed: false,
+                    merged: false,
                 },
                 receiptNo: receiptNo
             }),
@@ -426,7 +438,7 @@ function Page() {
                     </div>}
                     {test?.culture && <div className={styles.test}>
                         <h2>Requested Drugs</h2>
-                       {test?.drugs?.map((item,id)=>{
+                       {oldDrugs?.map((item,id)=>{
                             return(
                                 <span key={id}>
                                     <input type="checkbox" name={item} id={item?.name} onChange={(e)=>handleAdd(e)} checked={drugs?.includes(item)}/>
