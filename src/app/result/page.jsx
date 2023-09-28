@@ -162,6 +162,24 @@ function Page() {
             })}
         </div>}
         {test?.comment && <p className={styles.comment}><span>COMMENT</span> : {name?.Comment}</p>}
+        {test?.culture && <table className={styles?.culture}>
+                <thead>
+                    <td>Antimicrobials</td>
+                    <td>Interpretation</td>
+                    <td>Grade</td>
+                </thead>
+                <tbody>
+                    {test?.drugs?.map((drug, id)=>{
+                        return(
+                            <tr key={id}>
+                                <td>{drug}</td>
+                                <td>{name[drug+"I"]}</td>
+                                <td>{name[drug+"G"]}</td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>}
         {test?.writeUp && <div dangerouslySetInnerHTML={{ __html: test?.writeUpDesc }} className={styles.desc}></div>}
         {name?.description != undefined && <div className={styles.desc}>
             <div dangerouslySetInnerHTML={{ __html: name?.description }} />
@@ -194,9 +212,9 @@ function Page() {
                                                        </tr>  
                                                        {para?.comment && <p className={styles.comment}><span>COMMENT</span> : {result?.Comment}</p>}
                                                        {(para?.writeUp && id == para?.parameters.length - 1) && <div dangerouslySetInnerHTML={{ __html: para?.writeUpDesc }} className={styles.desc}></div>}
-                                                       <div className={styles.desc}>
+                                                       {(item?.description && id == para?.parameters.length - 1) && <div className={styles.desc}>
                                                             {<div dangerouslySetInnerHTML={{ __html: item?.description }} />}
-                                                        </div>
+                                                        </div>}
                                                     </>   
                                                 )
                                             })}
@@ -232,7 +250,7 @@ function Page() {
                     </>
                 )
             })}
-            {name?.merged && name?.results?.map((item, id)=>{
+            {/* {name?.merged && name?.results?.map((item, id)=>{
                 return(
                     <>
                         <div className={styles.desc}>
@@ -240,7 +258,7 @@ function Page() {
                         </div>
                     </>
                 )
-            })}
+            })} */}
         <div className={styles.line}>
             <span></span>
             <p>Medical Laboratory Scientist</p>

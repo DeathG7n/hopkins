@@ -870,66 +870,68 @@ export const labTests = [
         type: "Microbiology"
     },
     {
-        abbr: "Urinalysis",
+        abbr: "Urine M/C/S",
         name: "Urine Routine Test",
         parameters: [
-            // {
-            //     name: "Specimen",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Specimen Type",
-            //     ref: "",
-            // },
-            // {
-            //     name: "Date Received",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Appearance",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Specific Gravity",
-            //     ref: ""
-            // },
-            // {
-            //     name: "PH",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Protein",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Glucose",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Ketones",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Urobilinogen",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Blood",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Nitrite",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Leucocytes",
-            //     ref: ""
-            // },
-            // {
-            //     name: "Bilirubin",
-            //     ref: ""
-            // },
+            {
+                name: "Specimen",
+                ref: ""
+            },
+            {
+                name: "Specimen Type",
+                ref: "",
+            },
+            {
+                name: "Date Received",
+                ref: ""
+            },
+            {
+                name: "Appearance",
+                ref: ""
+            },
+            {
+                name: "Specific Gravity",
+                header: "Biochemical Analysis"
+            },
+            {
+                name: "PH",
+                ref: ""
+            },
+            {
+                name: "Protein",
+                ref: ""
+            },
+            {
+                name: "Glucose",
+                ref: ""
+            },
+            {
+                name: "Ketones",
+                ref: ""
+            },
+            {
+                name: "Urobilinogen",
+                ref: ""
+            },
+            {
+                name: "Blood",
+                ref: ""
+            },
+            {
+                name: "Nitrite",
+                ref: ""
+            },
+            {
+                name: "Leucocytes",
+                ref: ""
+            },
+            {
+                name: "Bilirubin",
+                ref: ""
+            },
         ],
+        statement: true,
+        swab: true,
         type: "Microbiology"
     },
     {
@@ -963,9 +965,36 @@ export const labTests = [
         type: "Microbiology"
     },
     {
-        abbr: "HVS",
-        name: "High Vaginal Swab M/C/S",
-        parameters: [],
+        abbr: "HVS M/C/S",
+        name: "High Vaginal Swab ",
+        parameters: [
+            {
+                name: "Specimen"
+            },
+            {
+                name: "Date Received"
+            },
+            {
+                name: "Appearance"
+            },
+            {
+                name: "Wet Preparation"
+            },
+            {
+                name: "Epithelial Cells"
+            },
+            {
+                name: "Pus Cells"
+            },
+            {
+                name: "Yeast Cells"
+            },
+            {
+                name: "Culture"
+            }
+        ],
+        statement: true,
+        swab: true,
         type: "Microbiology"
     },
     {
@@ -1023,12 +1052,6 @@ export const labTests = [
         type: "Microbiology"
     },
     {
-        abbr: "Urine M/C/S",
-        name: "Urine M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
         abbr: "Urine Microscopy",
         name: "Urine Microscopy",
         parameters: [],
@@ -1055,13 +1078,107 @@ export const labTests = [
     {
         abbr: "Seminal Fluid Analysis",
         name: "Seminal Fluid Analysis",
-        parameters: [],
+        parameters: [
+            {
+                name: "Date Received",
+                header: "PRE-ANALYSIS"
+            },
+            {
+                name: "Time Produced"
+            },
+            {
+                name: "Time Received"
+            },
+            {
+                name: "Time Examined"
+            },
+            {
+                name: "Method"
+            },
+            {
+                name: "Abstinence",
+                ref: "2-7 days"
+            },
+            {
+                name: "Volume",
+                header: "MACROSCOPIC ANALYSIS",
+                ref: "1.5-5.5 mls"
+            },
+            {
+                name: "Colour"
+            },
+            {
+                name: "PH",
+                ref: "7.2-8.0"
+            },
+            {
+                name: "Viscosity",
+                ref: "Normal/+"
+            },
+            {
+                name: "Liquefaction",
+                ref: "10-60 mins"
+            },
+            {
+                name: "Agglutination",
+                header: "MICROSCOPIC EXAMINATION",
+                ref: "Absent/+"
+            },
+            {
+                name: "Velocity",
+                ref: "Fair, Good, Excellent"
+            },
+            {
+                name: "% Motilty",
+                header: "MOTILITY",
+                ref: ">40%"
+            },
+            {
+                name: "% Active Progressive(AP)"
+            },
+            {
+                name: "% Non Progressive(NP)"
+            },
+            {
+                name: "% Immotile"
+            },
+            {
+                name: "% Normal",
+                header: "MORPHOLOGY",
+            },
+            {
+                name: "% Abnormal",
+            },
+            {
+                name: "Sperm Concentration",
+                ref: ">15.0 x 10^8 cells/ml"
+            },
+            {
+                name: "Sperm Numbers",
+                ref: ">39.0 x 10^8"
+            },
+            {
+                name: "Pus Cells"
+            },
+            {
+                name: "Epithelial Cells"
+            },
+        ],
+        analysis: true,
         type: "Microbiology"
     },
     {
-        abbr: "Seminal Fluid Analysis & Culture",
-        name: "Seminal Fluid Analysis & Culture",
-        parameters: [],
+        abbr: "Semen Culture",
+        name: "Semen Culture",
+        parameters: [
+            {
+                name: "Culture"
+            }
+        ],
+        culture: true,
+        drugs: ["STREPTOMYCIN(s)", "ERYTHROMYCIN(E)", "MEROPENEM(MEM)", "AMPICILLIN(AMP)", "AGABAXIN(AGX)", "TARIVID(OFX)", "RIFAMPICIN(RD)", "CIPROPLOXACIN(CPX)", "CHLORANPHENICOL(CHL)", "SEPTRIN(SXT)", "GENTAMYCIN(CN)", "PEFLOXACIN(PEF)", "AZITHROMYCIN(AZM)", "AUGMENTIN(AU)", "CEFTAZIDME", "MPLON(CEFPODOXIN)", "CEFIXIME(MIX)"],
+        writeUp: true,
+        writeUpDesc: `<p> S: Sensitivity.R: Resistant. I: Intermediate </p>`,
         type: "Microbiology"
     },
     {

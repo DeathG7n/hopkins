@@ -47,6 +47,15 @@
     margin: 5px auto 5px auto;
     border-collapse: collapse;
 }
+.culture{
+    width: 90%;
+    margin: 5px auto 5px auto;
+    border-collapse: collapse;
+    border: 1px solid;
+}
+.culture th, .culture tr, .culture td{
+    border: 1px solid;
+}
 .result th{
     width: 33%;
     height: auto;

@@ -37,6 +37,7 @@ function Page() {
     const [testShow, setTestShow] = useState(false)
     const [resultShow, setResultShow] = useState(false)
     const [edit, setEdit] = useState(false)
+    const [drugs, setDrugs] = useState([])
     useEffect(()=>{
         async function getTests(){
             const res = await fetch('/api/getAll/tests')
@@ -224,6 +225,14 @@ function Page() {
         })
         setTimeout(()=> {location.reload(true)}, 1000)
     }
+    const updateDrugs = async()=>{
+        const res = await fetch(`/api/update/drugs`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                newDrugs: [...drugs]
+            }),
+        })
+    }
     const mergeResults = async()=>{
         const res = await fetch(`/api/update/merge/${patient?._id}`, {
             method: 'PUT',
@@ -237,6 +246,7 @@ function Page() {
     }
     const addValues = ()=>{
         setValues([...values, value?.current.value])
+        setDrugs([...drugs, value?.current.value])
         value.current.value = ''
     }
     const handleEdit = async() =>{
@@ -252,6 +262,13 @@ function Page() {
         const index = newArray.indexOf(removedItem)
         newArray.splice(index,1)
         setValues(newArray)
+    }
+    const removeDrug = (todo) =>{
+        const newArray = [...drugs]
+        const removedItem = newArray.find(i => i == todo)
+        const index = newArray.indexOf(removedItem)
+        newArray.splice(index,1)
+        setDrugs(newArray)
     }
     async function update(){
         const date = new Date()
@@ -272,6 +289,18 @@ function Page() {
     useEffect(()=>{
         done && setTimeout(()=> update(), 1000)
     }, [done])
+    const handleAdd = (e)=>{
+        const newArray = [...drugs]
+        if(e.target?.checked == false ){
+            const removedItem = newArray.find(i => i == e?.target.name)
+            const index = newArray.indexOf(removedItem)
+            newArray.splice(index,1)
+            setDrugs(newArray)
+        } else{
+            setDrugs(drugs => [...drugs, e?.target.name])
+        } 
+    }
+    console.log(form)
   return (
     <div className={styles.container}>
         <nav className={styles.nav}>
@@ -362,13 +391,51 @@ function Page() {
                                             <input type="text" name={item?.antigen+i} onChange={(e)=>handleChange(e)} key={id} placeholder={i}/>
                                         )
                                     })}
+                                    
                                 </div> 
                             )
                     })}
+                    {test?.culture && <div>
+                        <label htmlFor="values">Add Values: </label>
+                        <input type="text" name="values" ref={value}/>
+                        <span className={styles.button} onClick={addValues}>Add New Drug</span>
+                    </div>} 
+                    {test?.culture && <table>
+                        <thead>
+                            <td>Antimicrobials</td>
+                            <td>Interpretation</td>
+                            <td>Grade</td>
+                        </thead>
+                        <tbody>
+                            {drugs?.map((drug, id)=>{
+                                return(
+                                    <tr key={id}>
+                                        <td>{drug}</td>
+                                        <td><input type="text" name={drug + "I"} onChange={(e)=>handleChange(e)}/></td>
+                                        <td><input type="text" name={drug + "G"} onChange={(e)=>handleChange(e)}/></td>
+                                        <td onClick={removeDrug} style={{cursor: "pointer"}}>X</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                        
+                    </table>}
                     {test?.comment && <div>
-                            <label htmlFor="hb">Comment: </label>
-                            <input type="text" name={"Comment"} onChange={(e)=>handleChange(e)}/>
-                        </div>}
+                        <label htmlFor="hb">Comment: </label>
+                        <input type="text" name={"Comment"} onChange={(e)=>handleChange(e)}/>
+                    </div>}
+                    {test?.culture && <div className={styles.test}>
+                        <h2>Requested Drugs</h2>
+                       {test?.drugs?.map((item,id)=>{
+                            return(
+                                <span key={id}>
+                                    <input type="checkbox" name={item} id={item?.name} onChange={(e)=>handleAdd(e)} checked={drugs?.includes(item)}/>
+                                    <label htmlFor="">{item}</label>
+                                </span>
+                            )
+                        })} 
+                    </div>}
+                    
                 </section>}
                 {result && <h3>Observations</h3>}
                 {result && <section >
@@ -714,6 +781,24 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                 )
             })}
             {(!edit && test?.comment) && <p><span className={styles.span}>COMMENT</span> : {currentResult?.Comment}</p>}
+            {(!edit && test?.culture) && <table>
+                <thead>
+                    <td>Antimicrobials</td>
+                    <td>Interpretation</td>
+                    <td>Grade</td>
+                </thead>
+                <tbody>
+                    {test?.drugs?.map((drug, id)=>{
+                        return(
+                            <tr key={id}>
+                                <td>{drug}</td>
+                                <td>{currentResult?.[drug+"I"]}</td>
+                                <td>{currentResult?.[drug+"G"]}</td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>}
             {(!edit && test?.writeUp) && <div dangerouslySetInnerHTML={{ __html: test?.writeUpDesc }}></div>}
             {edit && parameters?.map((item, id)=>{
                 return(
@@ -731,6 +816,24 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                     </>
                 )
             })}
+            {(edit && test?.culture) && <table>
+                <thead>
+                    <td>Antimicrobials</td>
+                    <td>Interpretation</td>
+                    <td>Grade</td>
+                </thead>
+                <tbody>
+                    {test?.drugs?.map((drug, id)=>{
+                        return(
+                            <tr key={id}>
+                                <td>{drug}</td>
+                                <td><input type="text" name={drug + "I"} onChange={(e)=>handleChange(e)} value={data[drug + "I"]}/></td>
+                                <td><input type="text" name={drug + "G"} onChange={(e)=>handleChange(e)} value={data[drug + "G"]}/></td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>}
             {currentResult?.merged && currentResult?.results?.map((item, id)=>{
                 return(
                     <>
