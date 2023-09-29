@@ -485,6 +485,8 @@ function Page() {
                     patient={patient}
                     handleChange={handleMergeChange}
                     handleClick={mergeResults}
+                    tests={tests}
+                    items={items}
                 />}
                 {newTest && <Update
                     patient = {patient}
@@ -587,16 +589,121 @@ export const Update = ({patient,value,addValues,values,updateNew, handleChange, 
     )
 }
 
-export const Merge = ({name, patient, handleChange, handleClick, value}) =>{
+export const Merge = ({name, patient, handleChange, handleClick, value, tests, items}) =>{
+    console.log(patient)
+    const [receiptNo, setReceiptNo] = useState("")
+    const handleReceipt = (e) => {
+        setReceiptNo(e.target?.value)
+    }
+    const referenceResult = patient?.results?.find(i => i?.receiptNo == receiptNo)
+    const displayResults = referenceResult?.results?.filter(i => items?.includes(i?.name))
+    console.log(displayResults)
+    console.log(referenceResult)
+    console.log(tests?.labTests)
+    console.log(items)
+    const referenceParameters = tests?.labTests?.filter(i => items?.includes(i?.name)) || tests?.scanTests?.filter(i => items?.includes(i?.name))
+    console.log(referenceParameters)
     return(
         <section className={styles.merge}>
+            <div className={styles.display}>
+                <table className={styles.header}>
+                    <tbody>
+                        <tr>
+                            <td><span>NAME</span>: {patient?.name}</td>
+                            <td><span>AGE</span>: {patient?.age}YRS <br/>  <span>GENDER</span>: {patient?.gender}</td>
+                            <td><span>RECEIPT NO</span>: {receiptNo}</td>
+                        </tr>
+                        <tr>
+                            <td><span>LAB NO</span>: {patient?.labNo}</td>
+                            <td><span>REFERRAL</span>: {patient?.referral}</td>
+                            <td><span>TEST</span>: {name?.name}</td>
+                        </tr>
+                        <tr>
+                            <td><span>COLLECTION DATE</span>: {name?.createdAt}</td>
+                            <td><span>RECEIVED DATE</span>: {name?.createdAt}</td>
+                            <td><span>REPORTING DATE</span>: {name?.createdAt}</td>
+                        </tr>
+                    </tbody> 
+                </table>
+                <h4>{name?.name?.toUpperCase()} REPORT</h4>
+                {displayResults?.map((item, id)=>{
+                    const show = referenceParameters[id]?.statement
+                        return(
+                            <>
+                                {!show && <h4>{item?.name}</h4>}
+                                {referenceParameters?.map((para, id)=>{
+                                    return(
+                                        <>
+                                            {(para?.name == item?.name && para?.extra == undefined) && <table className={styles.displayTable}>
+                                                {!para?.statement && <thead>
+                                                    <tr>
+                                                        <th>Investigation</th>
+                                                        <th>Patient's Result</th>
+                                                        <th>Normal Values</th>
+                                                    </tr>
+                                                </thead>}
+                                                <tbody>
+                                                    {para?.parameters?.map((result, id)=>{
+                                                        return(
+                                                            <>
+                                                            {result?.header && <h5>{result?.header}</h5>}
+                                                            <tr key={id}>
+                                                                <td>{result?.name}</td>
+                                                                <td>{item?.[result?.name]}</td>
+                                                                <td dangerouslySetInnerHTML={{ __html: result?.ref }}></td>
+                                                            </tr>  
+                                                            {para?.comment && <p className={styles.comment}><span>COMMENT</span> : {result?.Comment}</p>}
+                                                            {(para?.writeUp && id == para?.parameters.length - 1) && <div dangerouslySetInnerHTML={{ __html: para?.writeUpDesc }} className={styles.desc}></div>}
+                                                            {(item?.description && id == para?.parameters.length - 1) && <div className={styles.desc}>
+                                                                    {<div dangerouslySetInnerHTML={{ __html: item?.description }} />}
+                                                                </div>}
+                                                            </>   
+                                                        )
+                                                    })}
+                                                </tbody>
+                                            </table>}
+                                            
+                                            {(para?.extra == true && item?.DO != undefined) && <table className={styles.extra}>
+                                                <thead>
+                                                    <th>Antigen</th>
+                                                    <th> </th>
+                                                    <th>O</th>
+                                                    <th>H</th>
+                                                </thead>
+                                                <tbody>
+                                                    {para?.parameters?.map((i, id)=>{
+                                                        const antigen = ["D", "A", "B", "C"]
+                                                        const extra = ["O", "H"]
+                                                        const type = item?.[antigen[id]+extra[0]] && item?.[antigen[id]+extra[1]]
+                                                        return(
+                                                            <tr key={id}>
+                                                                <td>{i?.name}</td>
+                                                                <td>{antigen[id]}</td>
+                                                                <td>{item?.[antigen[id]+extra[0]]}</td>
+                                                                <td>{item?.[antigen[id]+extra[1]]}</td>
+                                                            </tr>
+                                                        )
+                                                    })}
+                                                </tbody>
+                                            </table>}
+                                        </>
+                                    )
+                                })}
+                            </>
+                        )
+                })}
+                <div className={styles.line}>
+                    <span></span>
+                    <p>Medical Laboratory Scientist</p>
+                </div>
+            </div>
             <div>
                 <label htmlFor="hb">Result Name: </label>
                 <input type="text" name="name" ref={name}/>
             </div> 
             <div>
                 <label htmlFor="hb">Receipt No: </label>
-                <input type="text" name="receipt" ref={value}/>
+                <input type="text" name="receipt" ref={value} onChange={(e)=>handleReceipt(e)}/>
             </div> 
             <section>
                 {patient?.results?.map((item,id)=>{
