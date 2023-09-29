@@ -292,7 +292,7 @@ function Page() {
                     description : desc,
                     createdAt: date.toDateString(),
                     printed: false,
-                    merged: false,
+                    hide: false,
                 },
                 receiptNo: receiptNo
             }),
@@ -397,13 +397,13 @@ function Page() {
                             return(
                                 <div key={id}>
                                     <label htmlFor="hb">{item?.name} {item?.antigen}: </label>
+                                    {test?.levels && <input type="text" name={item?.name + "level"} onChange={(e)=>handleChange(e)} placeholder="L or H"/>}
                                     {item?.extra == undefined && <input type="text" name={item?.name} onChange={(e)=>handleChange(e)}/>}
                                     {item?.extra != undefined && item?.extra?.map((i, id) => {
                                         return(
                                             <input type="text" name={item?.antigen+i} onChange={(e)=>handleChange(e)} key={id} placeholder={i}/>
                                         )
                                     })}
-                                    
                                 </div> 
                             )
                     })}
@@ -461,6 +461,7 @@ function Page() {
                     editRef={editRef}
                     edit={edit}
                     setEdit={setEdit}
+                    oldDrugs={oldDrugs}
                 />}
                 {add && <Add 
                     lab={tests?.labTests}
@@ -734,7 +735,7 @@ export const Create = ({name, abbr, type, value,values, handleClick, handleRemov
     )
 }
 
-export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
+export const Results = ({parameters, currentResult, test, edit, setEdit, oldDrugs}) => {
     const [data, setData] = useState(currentResult)
     const admin = localStorage.getItem("admin")
     const id = localStorage.getItem("id")
@@ -787,7 +788,8 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                     <>
                         {type && <div key={id} className={styles.result}>
                             <label htmlFor="hb">{item?.name}: </label>
-                        <p>{currentResult?.[item?.name]}</p>
+                            {test?.levels && <p>{currentResult?.[item?.name+"level"]}</p>}
+                            <p>{currentResult?.[item?.name]}</p>
                         </div>}
                     </>
                 )
@@ -835,7 +837,7 @@ export const Results = ({parameters, currentResult, test, edit, setEdit}) => {
                     <td>Grade</td>
                 </thead>
                 <tbody>
-                    {test?.drugs?.map((drug, id)=>{
+                    {oldDrugs?.map((drug, id)=>{
                         return(
                             <tr key={id}>
                                 <td>{drug}</td>

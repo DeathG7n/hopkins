@@ -7,6 +7,7 @@ function Page() {
     const [patient, setPatient] = useState()
     const [tests, setTests] = useState([])
     const [name, setName] = useState("")
+    const [drugs, setDrugs] = useState([])
     const [receiptNo, setReceiptNo] = useState("")
     const [values, setValues] = useState([])
     useEffect(()=>{
@@ -17,6 +18,14 @@ function Page() {
             setPatient(body)
         }
         getPatient()
+    },[])
+    useEffect(()=>{
+        async function getDrugs(){
+            const res = await fetch('/api/update/drugs')
+            const body = await res.json()
+            setDrugs(body)
+        }
+        getDrugs()
     },[])
     useEffect(()=>{
         async function getTests(){
@@ -86,7 +95,7 @@ function Page() {
                         <>
                             {item?.header && <h5>{item?.header}</h5>}
                             {name?.[item?.name] && <tr key={id}>
-                                <td>{item?.name}</td>
+                                <td><p>{item?.name}</p><p>{test?.levels && name?.[item?.name+"level"]}</p></td>
                                 <td>{name?.[item?.name]}</td>
                                 <td dangerouslySetInnerHTML={{ __html: item?.ref }}></td>
                             </tr>}
@@ -169,13 +178,15 @@ function Page() {
                     <td>Grade</td>
                 </thead>
                 <tbody>
-                    {test?.drugs?.map((drug, id)=>{
+                    {drugs?.map((drug, id)=>{
                         return(
-                            <tr key={id}>
-                                <td>{drug}</td>
-                                <td>{name[drug+"I"]}</td>
-                                <td>{name[drug+"G"]}</td>
-                            </tr>
+                            <>
+                               {(name[drug+"I"] || name[drug+"G"]) && <tr key={id}>
+                                    <td>{drug}</td>
+                                    <td>{name[drug+"I"]}</td>
+                                    <td>{name[drug+"G"]}</td>
+                                </tr>} 
+                            </> 
                         )
                     })}
                 </tbody>

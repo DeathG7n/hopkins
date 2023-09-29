@@ -74,6 +74,8 @@
 
 .result td:first-child{
     font-weight: 900;
+    display: flex;
+    justify-content: space-between;
 }
 .extra td{
     width: fit-content;

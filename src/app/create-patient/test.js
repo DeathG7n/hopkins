@@ -658,6 +658,7 @@ export const labTests = [
                 ref: "1.08-2.82ML/L"
             },
         ],
+        levels: true,
         type: "Haematology"
     },
     {
@@ -1165,6 +1166,7 @@ export const labTests = [
             },
         ],
         analysis: true,
+        statement: true,
         type: "Microbiology"
     },
     {
