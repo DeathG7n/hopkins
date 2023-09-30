@@ -1039,7 +1039,7 @@ export const Results = ({parameters, currentResult, test, edit, setEdit, oldDrug
                 {<div dangerouslySetInnerHTML={{ __html: currentResult?.description }} />}
             </div>
             {currentResult?.printed && <span className={styles.button}>Printed</span>}
-            {(admin == "true" && currentResult?.hide == false) && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
+            {(admin == "true" && (currentResult?.hide == false || currentResult?.hide == undefined)) && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
             {edit? <span className={styles.button} onClick={handleEdit}> Save Result</span> : <span className={styles.button} onClick={()=> setEdit(true)}>Edit Result</span>}
             <span className={styles.button} onClick={handleDelete}> Delete Result</span>
         </section>
