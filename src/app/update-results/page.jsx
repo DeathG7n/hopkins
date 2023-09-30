@@ -676,14 +676,18 @@ export const Merge = ({name, patient, handleChange, handleClick, value, tests, i
                                                         const extra = ["O", "H"]
                                                         const type = item?.[antigen[id]+extra[0]] && item?.[antigen[id]+extra[1]]
                                                         return(
-                                                            <tr key={id}>
-                                                                <td>{i?.name}</td>
-                                                                <td>{antigen[id]}</td>
-                                                                <td>{item?.[antigen[id]+extra[0]]}</td>
-                                                                <td>{item?.[antigen[id]+extra[1]]}</td>
-                                                            </tr>
+                                                            <>
+                                                                <tr key={id}>
+                                                                    <td>{i?.name}</td>
+                                                                    <td>{antigen[id]}</td>
+                                                                    <td>{item?.[antigen[id]+extra[0]]}</td>
+                                                                    <td>{item?.[antigen[id]+extra[1]]}</td>
+                                                                </tr>
+                                                                {(para?.comment && id == para?.parameters.length - 1 ) && <p className={styles.comment}><span>COMMENT</span> : {item?.Comment}</p>}
+                                                            </>
                                                         )
                                                     })}
+                                                    
                                                 </tbody>
                                             </table>}
                                         </>

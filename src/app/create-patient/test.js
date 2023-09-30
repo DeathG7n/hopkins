@@ -835,9 +835,16 @@ export const labTests = [
         type: "Haematology"
     },
     {
-        abbr: "Malaria Parasite Microscopy",
-        name: "Malaria Parasite Microscopy",
-        parameters: [],
+        abbr: "MP",
+        name: "MP",
+        parameters: [
+            {
+                name: "MALARIA PARASITES"
+            }
+        ],
+        writeUp: true,
+        writeUpDesc: `<p><strong>NB:</strong> High significant titre values are not specfic indications of enteric fever (Typhoid).</p><p>A stool m/c/s and occult blood are advised for further evaluations.</p> `,
+        statement: true,
         type: "Haematology"
     },
     {
@@ -1387,6 +1394,7 @@ export const labTests = [
                 extra: ["O", "H"]
             },
         ],
+        comment: true,
         type: "Serology",
         extra: true,
     },

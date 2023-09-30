@@ -196,7 +196,8 @@ function Page() {
             <div dangerouslySetInnerHTML={{ __html: name?.description }} />
         </div>}
         {name?.merged && name?.results?.map((item, id)=>{
-            const show = name?.parameters[id]?.statement
+            const show = name?.parameters[id]?.statement && name?.parameters[id]?.swab == undefined
+            console.log(item?.name)
                 return(
                     <>
                         {!show && <h4>{item?.name}</h4>}
@@ -216,14 +217,14 @@ function Page() {
                                                 return(
                                                     <>
                                                       {result?.header && <h5>{result?.header}</h5>}
-                                                      <tr key={id}>
-                                                        <td>{result?.name}</td>
-                                                        <td>{item?.[result?.name]}</td>
-                                                        <td dangerouslySetInnerHTML={{ __html: result?.ref }}></td>
+                                                        <tr key={id}>
+                                                            <td>{result?.name}</td>
+                                                            <td>{item?.[result?.name]}</td>
+                                                            <td dangerouslySetInnerHTML={{ __html: result?.ref }}></td>
                                                        </tr>  
                                                        {para?.comment && <p className={styles.comment}><span>COMMENT</span> : {result?.Comment}</p>}
-                                                       {(para?.writeUp && id == para?.parameters.length - 1) && <div dangerouslySetInnerHTML={{ __html: para?.writeUpDesc }} className={styles.desc}></div>}
-                                                       {(item?.description && id == para?.parameters.length - 1) && <div className={styles.desc}>
+                                                       {(para?.writeUp && id == para?.parameters.length - 1) && <div dangerouslySetInnerHTML={{ __html: para?.writeUpDesc }} className={styles.descMerge}></div>}
+                                                       {(item?.description && id == para?.parameters.length - 1) && <div className={styles.descMerge}>
                                                             {<div dangerouslySetInnerHTML={{ __html: item?.description }} />}
                                                         </div>}
                                                     </>   
@@ -245,12 +246,16 @@ function Page() {
                                                 const extra = ["O", "H"]
                                                 const type = item?.[antigen[id]+extra[0]] && item?.[antigen[id]+extra[1]]
                                                 return(
-                                                    <tr key={id}>
-                                                        <td>{i?.name}</td>
-                                                        <td>{antigen[id]}</td>
-                                                        <td>{item?.[antigen[id]+extra[0]]}</td>
-                                                        <td>{item?.[antigen[id]+extra[1]]}</td>
-                                                    </tr>
+                                                    <>
+                                                        <tr key={id}>
+                                                            <td>{i?.name}</td>
+                                                            <td>{antigen[id]}</td>
+                                                            <td>{item?.[antigen[id]+extra[0]]}</td>
+                                                            <td>{item?.[antigen[id]+extra[1]]}</td>
+                                                        </tr>
+                                                        {(para?.comment && id == para?.parameters.length - 1 ) && <p className={styles.comment}><span>COMMENT</span> : {item?.Comment}</p>}
+                                                    </>
+                                                    
                                                 )
                                             })}
                                         </tbody>
