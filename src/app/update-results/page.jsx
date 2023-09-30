@@ -705,10 +705,10 @@ export const Merge = ({name, patient, handleChange, handleClick, value, tests, i
                 <label htmlFor="hb">Receipt No: </label>
                 <input type="text" name="receipt" ref={value} onChange={(e)=>handleReceipt(e)}/>
             </div> 
-            <section>
+            <section className={styles?.results}>
                 {patient?.results?.map((item,id)=>{
                     return(
-                        <span key={id}>
+                        <span key={id} >
                             <h4>{item?.receiptNo}</h4>
                             <span>
                                 {item?.results?.map((result, id)=>{
@@ -884,8 +884,9 @@ export const Results = ({parameters, currentResult, test, edit, setEdit, oldDrug
             ...data,
             [e.target.name] : e.target?.value
         })
-
     }
+
+    console.log(admin == "true" && currentResult?.hide == "false")
     return(
         <section className={styles.input}>
             {currentResult?.createdAt != undefined && <p><span className={styles.span}>Created On</span> : {currentResult?.createdAt}</p>}
@@ -1038,7 +1039,7 @@ export const Results = ({parameters, currentResult, test, edit, setEdit, oldDrug
                 {<div dangerouslySetInnerHTML={{ __html: currentResult?.description }} />}
             </div>
             {currentResult?.printed && <span className={styles.button}>Printed</span>}
-            {admin == "true" && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
+            {(admin == "true" && currentResult?.hide == false) && <Link href={"/result"} target="_blank" className={styles.button} onClick={()=>handleClick(currentResult)}>Print</Link>}
             {edit? <span className={styles.button} onClick={handleEdit}> Save Result</span> : <span className={styles.button} onClick={()=> setEdit(true)}>Edit Result</span>}
             <span className={styles.button} onClick={handleDelete}> Delete Result</span>
         </section>

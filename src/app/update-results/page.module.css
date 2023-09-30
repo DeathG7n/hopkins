@@ -402,3 +402,8 @@
     display: flex;
     gap: 10px;
 }
+
+.results{
+    display: flex;
+    flex-direction: column-reverse;
+}

@@ -17,12 +17,19 @@ export async function PUT(req,{params}){
     const refResult = user?.results?.find((i) => i?.receiptNo == body?.receiptNo)
     let results = refResult?.results?.filter(i => body?.results.includes(i?.name))
     const userResults = user?.results?.map(i => {return i})
+
+    refResult?.results?.forEach(result => {
+        if(results?.includes(result)){
+            result["hide"] = true
+        }
+    })
     
     const date = new Date()
     const newResult = {
         name: body?.name,
         abbr: body?.name,
         merged: true,
+        hide: false,
         parameters: parameters,
         createdAt: date.toDateString(),
         results: results
@@ -33,6 +40,6 @@ export async function PUT(req,{params}){
     if(body != null && body?.receiptNo != ""){
         await user.updateOne({$set: {results: userResults}})
     }
-    console.log(refResult, userResults)
+    console.log(results)
     return NextResponse.json(user)
 }
