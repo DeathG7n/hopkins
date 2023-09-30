@@ -186,11 +186,24 @@
     border-collapse: collapse;
 }
 
-.displayTable td, .extra td{
+.extra td{
+    width: fit-content;
+    height: auto;
+    text-align: left;
+    font-size: 1%;
+}
+.extra th{
+    width: 25%;
+    height: auto;
+    text-align: left;
+    font-size: 1%;
+}
+
+.displayTable td{
     width: 33%;
     font-size: 20%;
 }
-.displayTable th, .extra th{
+.displayTable th{
     width: 33%;
     font-size: 20%;
 }
