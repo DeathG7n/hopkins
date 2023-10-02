@@ -83,17 +83,27 @@
     justify-content: space-between;
 }
 .extra td{
-    width: fit-content;
+    width: 25%;
     height: auto;
     padding: 2px;
     text-align: left;
-    font-size: calc(1vh + 5px)
+    font-size: calc(1vh + 5px);
 }
 .extra th{
     width: 25%;
     height: auto;
     padding: 2px;
     text-align: left;
+}
+.extra tr{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.extra thead{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
 }
 .options td{
     width: fit-content;

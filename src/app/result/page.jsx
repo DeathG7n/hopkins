@@ -254,6 +254,7 @@ function Page() {
                                                             <td>{item?.[antigen[id]+extra[1]]}</td>
                                                         </tr>
                                                         {(para?.comment && id == para?.parameters.length - 1 ) && <p className={styles.comment}><span>COMMENT</span> : {item?.Comment}</p>}
+                                                        {(para?.writeUp && id == para?.parameters.length - 1) && <div dangerouslySetInnerHTML={{ __html: para?.writeUpDesc }} className={styles.descMerge}></div>}
                                                     </>
                                                     
                                                 )
