@@ -847,12 +847,12 @@ export const labTests = [
         statement: true,
         type: "Haematology"
     },
-    {
-        abbr: "Malaria Parasite Density",
-        name: "Malaria Parasite Density",
-        parameters: [],
-        type: "Haematology"
-    },
+    // {
+    //     abbr: "Malaria Parasite Density",
+    //     name: "Malaria Parasite Density",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
     {
         abbr: "Blood Culture & Sensitivity",
         name: "Blood Culture & Sensitivity",
@@ -1339,12 +1339,12 @@ export const labTests = [
         statement: true,
         type: "Serology"
     },
-    {
-        abbr: "Malaria Parasite (Rapid Test)",
-        name: "Malaria Parasite (Rapid Test)",
-        parameters: [],
-        type: "Serology"
-    },
+    // {
+    //     abbr: "Malaria Parasite (Rapid Test)",
+    //     name: "Malaria Parasite (Rapid Test)",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
     {
         abbr: "Rheumatoid Factor(RF)",
         name: "Rheumatoid Factor(RF)",
@@ -2283,18 +2283,18 @@ export const labTests = [
         parameters: [],
         type: "DNA"
     },
-    {
-        abbr: "Malaria DNA-PCR",
-        name: "Malaria DNA-PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Malaria Quantitative - PCR",
-        name: "Malaria Quantitative - PCR",
-        parameters: [],
-        type: "DNA"
-    },
+    // {
+    //     abbr: "Malaria DNA-PCR",
+    //     name: "Malaria DNA-PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Malaria Quantitative - PCR",
+    //     name: "Malaria Quantitative - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
     {
         abbr: "Influenza A - PCR",
         name: "Influenza A - PCR",

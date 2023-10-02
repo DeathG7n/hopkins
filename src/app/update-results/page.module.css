@@ -137,7 +137,7 @@
 
 .input, .merge{
     display: flex;
-    height: auto;
+    min-height: 700px;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 15px;
@@ -287,6 +287,11 @@
     width: 200px;
     max-width: fit-content;
     margin-right: 5px;
+}
+.mergeButton{
+    position: absolute;
+    right: 10px;
+    top: 360px;
 }
 /* Track */
 .nav ol::-webkit-scrollbar , .input::-webkit-scrollbar, .section::-webkit-scrollbar{

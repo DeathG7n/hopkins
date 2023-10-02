@@ -728,7 +728,7 @@ export const Merge = ({name, patient, handleChange, handleClick, value, tests, i
                     )
                 })}
             </section>
-            <div>
+            <div className={styles.mergeButton}>
                 <span className={styles.button} onClick={handleClick}>Merge</span>
             </div>
         </section>
