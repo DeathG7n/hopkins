@@ -59,6 +59,7 @@ function Page() {
         return name?.[i?.name]
     })
     const available = resultParameters?.find(i => i != undefined)
+    console.log(test)
   return (
     <div className={styles.container}>
         <table className={styles.details}>
@@ -95,7 +96,7 @@ function Page() {
                         <>
                             {item?.header && <h5>{item?.header}</h5>}
                             {name?.[item?.name] && <tr key={id}>
-                                <td><p>{item?.name}</p><p>{test?.levels && name?.[item?.name+"level"]}</p></td>
+                                <td><p>{item?.name}</p><p>{test?.levels && name?.[item?.name+"level"]}</p>{": "}{item?.organism}</td>
                                 <td>{name?.[item?.name]}</td>
                                 <td dangerouslySetInnerHTML={{ __html: item?.ref }}></td>
                             </tr>}
@@ -218,7 +219,7 @@ function Page() {
                                                     <>
                                                       {result?.header && <h5>{result?.header}</h5>}
                                                         <tr key={id}>
-                                                            <td>{result?.name}</td>
+                                                            <td>{result?.name}{": "}{result?.organism}</td>
                                                             <td>{item?.[result?.name]}</td>
                                                             <td dangerouslySetInnerHTML={{ __html: result?.ref }}></td>
                                                        </tr>  

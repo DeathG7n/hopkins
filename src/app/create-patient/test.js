@@ -839,7 +839,8 @@ export const labTests = [
         name: "MP",
         parameters: [
             {
-                name: "MALARIA PARASITES"
+                name: "MALARIA PARASITES",
+                organism: "Trophozoites of P. falciparum"
             }
         ],
         statement: true,
