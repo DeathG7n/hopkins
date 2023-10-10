@@ -1,63 +1,63 @@
 export const labTests = [
-    {
-        abbr: "Follicle Stimulating Hormone",
-        name: "Follicle Stimulating Hormone",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Lutenizing  Hormone",
-        name: "Lutenizing Hormone",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Prolactin",
-        name: "Prolactin",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Oestradiol(E2)",
-        name: "Oestradiol(E2)",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Progesterone",
-        name: "Progesterone",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Testosterone",
-        name: "Testosterone",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Prostate Specific Antigen",
-        name: "Prostate Specific Antigen",
-        parameters: [
-            {
-                name: "Prostate Specific Antigen",
-                ref: "0-4ng/ml {Normal} <br/> 4.1-10ng/ml {Suspicious} <br/> 10.1ng/ml & Above {Deviated}"
-            }
-        ],
-        type: "Hormones"
-    },
-    {
-        abbr: "Free Prostate Specific Antigen (fPSA)",
-        name: "Free Prostate Specific Antigen (fPSA)",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "B-HCG",
-        name: "B-HCG",
-        parameters: [],
-        type: "Hormones"
-    },
+    // {
+    //     abbr: "Follicle Stimulating Hormone",
+    //     name: "Follicle Stimulating Hormone",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Lutenizing  Hormone",
+    //     name: "Lutenizing Hormone",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Prolactin",
+    //     name: "Prolactin",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Oestradiol(E2)",
+    //     name: "Oestradiol(E2)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Progesterone",
+    //     name: "Progesterone",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Testosterone",
+    //     name: "Testosterone",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Prostate Specific Antigen",
+    //     name: "Prostate Specific Antigen",
+    //     parameters: [
+    //         {
+    //             name: "Prostate Specific Antigen",
+    //             ref: "0-4ng/ml {Normal} <br/> 4.1-10ng/ml {Suspicious} <br/> 10.1ng/ml & Above {Deviated}"
+    //         }
+    //     ],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Free Prostate Specific Antigen (fPSA)",
+    //     name: "Free Prostate Specific Antigen (fPSA)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "B-HCG",
+    //     name: "B-HCG",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
     {
         abbr: "Triodothyronine(T3)",
         name: "Triodothyronine(T3)",
@@ -113,114 +113,114 @@ export const labTests = [
         ],
         type: "Hormones"
     },
-    {
-        abbr: "Thyroglobulin Antibody",
-        name: "Thyroglobulin Antibody",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "TSH Receptor Antibody",
-        name: "TSH Receptor Antibody",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Thyroperoxidase Antibody",
-        name: "Thyroperoxidase Antibody",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "DHEAS",
-        name: "DHEAS",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "17-HydroxylProgesterone",
-        name: "17-HydroxylProgesterone",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Androstenedione",
-        name: "Androstenedione",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "SHBG",
-        name: "SHBG",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Plasma ACTH (MORNING SAMPLE, 8AM",
-        name: "Plasma ACTH (MORNING SAMPLE, 8AM",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Plasma ACTH (EVENING SAMPLE, 4PM",
-        name: "Plasma ACTH (EVENING SAMPLE, 4PM",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Serum Cortisol (MORNING SAMPLE, 8AM)",
-        name: "Serum Cortisol (MORNING SAMPLE, 8AM)",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Serum Cortisol (EVENING SAMPLE, 4PM)",
-        name: "Serum Cortisol (EVENING SAMPLE, 4PM)",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Parathyroid Hormone(PTH)",
-        name: "Parathyroid Hormone(PTH)",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Growth Hormone",
-        name: "Growth Hormone",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Inhibin B",
-        name: "Inhibin B",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Antimullerian Hormine(AMH)",
-        name: "Antimullerian Hormine(AMH)",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "Insulin",
-        name: "Insulin",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "C-Peptide",
-        name: "C-Peptide",
-        parameters: [],
-        type: "Hormones"
-    },
-    {
-        abbr: "NT-prob-TYPE Natriuretic Peptide(BNP)",
-        name: "NT-prob-TYPE Natriuretic Peptide(BNP)",
-        parameters: [],
-        type: "Hormones"
-    },
+    // {
+    //     abbr: "Thyroglobulin Antibody",
+    //     name: "Thyroglobulin Antibody",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "TSH Receptor Antibody",
+    //     name: "TSH Receptor Antibody",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Thyroperoxidase Antibody",
+    //     name: "Thyroperoxidase Antibody",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "DHEAS",
+    //     name: "DHEAS",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "17-HydroxylProgesterone",
+    //     name: "17-HydroxylProgesterone",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Androstenedione",
+    //     name: "Androstenedione",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "SHBG",
+    //     name: "SHBG",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Plasma ACTH (MORNING SAMPLE, 8AM",
+    //     name: "Plasma ACTH (MORNING SAMPLE, 8AM",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Plasma ACTH (EVENING SAMPLE, 4PM",
+    //     name: "Plasma ACTH (EVENING SAMPLE, 4PM",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Serum Cortisol (MORNING SAMPLE, 8AM)",
+    //     name: "Serum Cortisol (MORNING SAMPLE, 8AM)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Serum Cortisol (EVENING SAMPLE, 4PM)",
+    //     name: "Serum Cortisol (EVENING SAMPLE, 4PM)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Parathyroid Hormone(PTH)",
+    //     name: "Parathyroid Hormone(PTH)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Growth Hormone",
+    //     name: "Growth Hormone",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Inhibin B",
+    //     name: "Inhibin B",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Antimullerian Hormine(AMH)",
+    //     name: "Antimullerian Hormine(AMH)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "Insulin",
+    //     name: "Insulin",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "C-Peptide",
+    //     name: "C-Peptide",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
+    // {
+    //     abbr: "NT-prob-TYPE Natriuretic Peptide(BNP)",
+    //     name: "NT-prob-TYPE Natriuretic Peptide(BNP)",
+    //     parameters: [],
+    //     type: "Hormones"
+    // },
     {
         abbr: "FLP",
         name: "Full Lipid Profile",
@@ -314,36 +314,36 @@ export const labTests = [
         ],
         type: "Clinical Chemistry"
     },
-    {
-        abbr: "Serum Electrolytes",
-        name: "Serum Electrolytes(Na+,K+,HCO3-,Cl-)",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Calcium Ion",
-        name: "Calcium Ion",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Total Calcium Plus Ionic Calcium",
-        name: "Total Calcium Plus Ionic Calcium",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Inorganic Phosphate",
-        name: "Inorganic Phosphate",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Iron Studies(Serum Iron, Transferrin, Transferrin Saturation, Iron Binding Capacity)",
-        name: "Iron Studies(Serum Iron, Transferrin, Transferrin Saturation, Iron Binding Capacity)",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
+    // {
+    //     abbr: "Serum Electrolytes",
+    //     name: "Serum Electrolytes(Na+,K+,HCO3-,Cl-)",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Calcium Ion",
+    //     name: "Calcium Ion",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Total Calcium Plus Ionic Calcium",
+    //     name: "Total Calcium Plus Ionic Calcium",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Inorganic Phosphate",
+    //     name: "Inorganic Phosphate",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Iron Studies(Serum Iron, Transferrin, Transferrin Saturation, Iron Binding Capacity)",
+    //     name: "Iron Studies(Serum Iron, Transferrin, Transferrin Saturation, Iron Binding Capacity)",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
     {
         abbr: "Urine Albumin Creatinine Ratio",
         name: "Urine Albumin Creatinine Ratio",
@@ -360,48 +360,48 @@ export const labTests = [
         <p>The presence of blood in the urine a urinary tract infection, vigorous exercise and other acute illnesses may cause a postive test result that is not related to kidney disease. Testing should be repeated after conditions have resolved.</p>`,
         type: "Clinical Chemistry"
     },
-    {
-        abbr: "Uric Acid",
-        name: "Uric Acid",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Serum LDH",
-        name: "Serum LDH",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Ascetic Fluid LDH",
-        name: "Ascetic Fluid LDH",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "eGFR",
-        name: "eGFR",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Urine Bence Jones Protein",
-        name: "Urine Bence Jones Protein",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "HDL",
-        name: "HDL",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "TG",
-        name: "TG",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
+    // {
+    //     abbr: "Uric Acid",
+    //     name: "Uric Acid",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Serum LDH",
+    //     name: "Serum LDH",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Ascetic Fluid LDH",
+    //     name: "Ascetic Fluid LDH",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "eGFR",
+    //     name: "eGFR",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Urine Bence Jones Protein",
+    //     name: "Urine Bence Jones Protein",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "HDL",
+    //     name: "HDL",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "TG",
+    //     name: "TG",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
     {
         abbr: "TCHOL",
         name: "Cholesterol",
@@ -413,24 +413,24 @@ export const labTests = [
         ],
         type: "Clinical Chemistry"
     },
-    {
-        abbr: "Creatinine",
-        name: "Creatinine",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Urea",
-        name: "Urea",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Creatinine Clearance Test",
-        name: "Creatinine Clearance Test",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
+    // {
+    //     abbr: "Creatinine",
+    //     name: "Creatinine",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Urea",
+    //     name: "Urea",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Creatinine Clearance Test",
+    //     name: "Creatinine Clearance Test",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
     {
         abbr: "HbA1C",
         name: "HbA1C",
@@ -453,114 +453,114 @@ export const labTests = [
         ],
         type: "Clinical Chemistry"
     },
-    {
-        abbr: "OGTT",
-        name: "Oral Glucose Tolerance Test",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "2HPP",
-        name: "2 Hours Post Priandal (2HPP)",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "RBG",
-        name: "Random Blood Glucose",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Serum Lipase",
-        name: "Serum Lipase",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Amylase",
-        name: "Amylase",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "AST",
-        name: "AST",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "ALT",
-        name: "ALT",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "ALP",
-        name: "ALP",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "GGT",
-        name: "GGT",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Total Bilirubin",
-        name: "Total Bilirubin",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Direct Bilirubin",
-        name: "Direct Bilirubin",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Albumin",
-        name: "Albumin",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Total Protein",
-        name: "Total Protein",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "TIBC (Direct) Serum",
-        name: "TIBC (Direct) Serum",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Ferritin",
-        name: "Ferritin",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Iron",
-        name: "Iron",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Transferrin",
-        name: "Transferrin",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
-    {
-        abbr: "Magnesium",
-        name: "Magnesium",
-        parameters: [],
-        type: "Clinical Chemistry"
-    },
+    // {
+    //     abbr: "OGTT",
+    //     name: "Oral Glucose Tolerance Test",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "2HPP",
+    //     name: "2 Hours Post Priandal (2HPP)",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "RBG",
+    //     name: "Random Blood Glucose",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Serum Lipase",
+    //     name: "Serum Lipase",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Amylase",
+    //     name: "Amylase",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "AST",
+    //     name: "AST",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "ALT",
+    //     name: "ALT",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "ALP",
+    //     name: "ALP",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "GGT",
+    //     name: "GGT",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Total Bilirubin",
+    //     name: "Total Bilirubin",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Direct Bilirubin",
+    //     name: "Direct Bilirubin",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Albumin",
+    //     name: "Albumin",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Total Protein",
+    //     name: "Total Protein",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "TIBC (Direct) Serum",
+    //     name: "TIBC (Direct) Serum",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Ferritin",
+    //     name: "Ferritin",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Iron",
+    //     name: "Iron",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Transferrin",
+    //     name: "Transferrin",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
+    // {
+    //     abbr: "Magnesium",
+    //     name: "Magnesium",
+    //     parameters: [],
+    //     type: "Clinical Chemistry"
+    // },
     {
         abbr: "FBC",
         name: "Full Blood Count",
@@ -672,42 +672,42 @@ export const labTests = [
         ],
         type: "Haematology"
     },
-    {
-        abbr: "PCV",
-        name: "Packed Cell Volume",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "WBC",
-        name: "White Blood Count",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "WBC Differential Counts",
-        name: "WBC Differential Counts",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "Platelet Counts",
-        name: "Platelet Counts",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "Reticulocyte Counts",
-        name: "Reticulocyte Counts",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "ESR",
-        name: "Erythrocyte Sedimentation Rate",
-        parameters: [],
-        type: "Haematology"
-    },
+    // {
+    //     abbr: "PCV",
+    //     name: "Packed Cell Volume",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "WBC",
+    //     name: "White Blood Count",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "WBC Differential Counts",
+    //     name: "WBC Differential Counts",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "Platelet Counts",
+    //     name: "Platelet Counts",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "Reticulocyte Counts",
+    //     name: "Reticulocyte Counts",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "ESR",
+    //     name: "Erythrocyte Sedimentation Rate",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
     {
         abbr: "PT/INR",
         name: "PT/INR",
@@ -741,12 +741,12 @@ export const labTests = [
         <p>Infusion therapy recommended if bleeding</p>`,
         type: "Haematology"
     },
-    {
-        abbr: "PTTK",
-        name: "PTTK",
-        parameters: [],
-        type: "Haematology"
-    },
+    // {
+    //     abbr: "PTTK",
+    //     name: "PTTK",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
     {
         abbr: "Clotting Profile",
         name: "Clotting Profile",
@@ -793,18 +793,18 @@ export const labTests = [
         <p>Infusion therapy recommended if bleeding</p>`,
         type: "Haematology"
     },
-    {
-        abbr: "Bleeding Time",
-        name: "Bleeding Time",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "Blood Grouping",
-        name: "Blood Grouping",
-        parameters: [],
-        type: "Haematology"
-    },
+    // {
+    //     abbr: "Bleeding Time",
+    //     name: "Bleeding Time",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "Blood Grouping",
+    //     name: "Blood Grouping",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
     {
         abbr: "HB-Genotype",
         name: "HB-Genotype",
@@ -816,24 +816,24 @@ export const labTests = [
         statement: true,
         type: "Haematology"
     },
-    {
-        abbr: "G-6-P-D",
-        name: "G-6-P-D",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "CD4 Count",
-        name: "CD4 Count",
-        parameters: [],
-        type: "Haematology"
-    },
-    {
-        abbr: "Blood Film",
-        name: "Blood Film",
-        parameters: [],
-        type: "Haematology"
-    },
+    // {
+    //     abbr: "G-6-P-D",
+    //     name: "G-6-P-D",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "CD4 Count",
+    //     name: "CD4 Count",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
+    // {
+    //     abbr: "Blood Film",
+    //     name: "Blood Film",
+    //     parameters: [],
+    //     type: "Haematology"
+    // },
     {
         abbr: "MP",
         name: "MP",
@@ -852,30 +852,30 @@ export const labTests = [
     //     parameters: [],
     //     type: "Haematology"
     // },
-    {
-        abbr: "Blood Culture & Sensitivity",
-        name: "Blood Culture & Sensitivity",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Blood Microfilaria",
-        name: "Blood Microfilaria",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Breast Milk M/C/S",
-        name: "Breast Milk M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Catheter Tip M/C/S",
-        name: "Catheter Tip M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
+    // {
+    //     abbr: "Blood Culture & Sensitivity",
+    //     name: "Blood Culture & Sensitivity",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Blood Microfilaria",
+    //     name: "Blood Microfilaria",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Breast Milk M/C/S",
+    //     name: "Breast Milk M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Catheter Tip M/C/S",
+    //     name: "Catheter Tip M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
     {
         abbr: "Urine M/C/S",
         name: "Urine Routine Test",
@@ -941,36 +941,36 @@ export const labTests = [
         swab: true,
         type: "Microbiology"
     },
-    {
-        abbr: "ECS",
-        name: "Endocervical Swab",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Heaf/Mantoux Test",
-        name: "Heaf/Mantoux Test",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Aspirate M/C/S",
-        name: "Aspirate M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Ear Swab M/C/S",
-        name: "Ear Swab M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Eye Swab M/C/S",
-        name: "Eye Swab M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
+    // {
+    //     abbr: "ECS",
+    //     name: "Endocervical Swab",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Heaf/Mantoux Test",
+    //     name: "Heaf/Mantoux Test",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Aspirate M/C/S",
+    //     name: "Aspirate M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Ear Swab M/C/S",
+    //     name: "Ear Swab M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Eye Swab M/C/S",
+    //     name: "Eye Swab M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
     {
         abbr: "HVS M/C/S",
         name: "High Vaginal Swab ",
@@ -1004,84 +1004,84 @@ export const labTests = [
         swab: true,
         type: "Microbiology"
     },
-    {
-        abbr: "Nasal Swab M/C/S",
-        name: "Nasal Swab M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Spectrum M/C/S",
-        name: "Spectrum M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Vulva Swab M/C/S",
-        name: "Vulva Swab M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Skin Snip For Microfilaria",
-        name: "Skin Snip For Microfilaria",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Stool Analysis",
-        name: "Stool Analysis",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Stool M/C/S",
-        name: "Stool M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Throat Swab M/C/S",
-        name: "Throat Swab M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Urethra Swab M/C/S",
-        name: "Urethra Swab M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Pus M/C/S",
-        name: "Pus M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Urine Microscopy",
-        name: "Urine Microscopy",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Schistosoma Ova",
-        name: "Schistosoma Ova",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "H.Pylori Antigen Test, Stool",
-        name: "H.Pylori Antigen Test, Stool",
-        parameters: [],
-        type: "Microbiology"
-    },
-    {
-        abbr: "Wound M/C/S",
-        name: "Wound M/C/S",
-        parameters: [],
-        type: "Microbiology"
-    },
+    // {
+    //     abbr: "Nasal Swab M/C/S",
+    //     name: "Nasal Swab M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Spectrum M/C/S",
+    //     name: "Spectrum M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Vulva Swab M/C/S",
+    //     name: "Vulva Swab M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Skin Snip For Microfilaria",
+    //     name: "Skin Snip For Microfilaria",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Stool Analysis",
+    //     name: "Stool Analysis",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Stool M/C/S",
+    //     name: "Stool M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Throat Swab M/C/S",
+    //     name: "Throat Swab M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Urethra Swab M/C/S",
+    //     name: "Urethra Swab M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Pus M/C/S",
+    //     name: "Pus M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Urine Microscopy",
+    //     name: "Urine Microscopy",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Schistosoma Ova",
+    //     name: "Schistosoma Ova",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "H.Pylori Antigen Test, Stool",
+    //     name: "H.Pylori Antigen Test, Stool",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
+    // {
+    //     abbr: "Wound M/C/S",
+    //     name: "Wound M/C/S",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
     {
         abbr: "Seminal Fluid Analysis",
         name: "Seminal Fluid Analysis",
@@ -1189,12 +1189,12 @@ export const labTests = [
         writeUpDesc: `<p> S: Sensitivity.R: Resistant. I: Intermediate </p>`,
         type: "Microbiology"
     },
-    {
-        abbr: "Skin Scraping For Fungal Studies",
-        name: "Skin Scraping For Fungal Studies",
-        parameters: [],
-        type: "Microbiology"
-    },
+    // {
+    //     abbr: "Skin Scraping For Fungal Studies",
+    //     name: "Skin Scraping For Fungal Studies",
+    //     parameters: [],
+    //     type: "Microbiology"
+    // },
     {
         abbr: "FOB",
         name: "Faecal Occult Blood",
@@ -1220,24 +1220,24 @@ export const labTests = [
         statement: true,
         type: "Serology"
     },
-    {
-        abbr: "ASO",
-        name: "Anti Streptolysin O ",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "Titre Quantitative ",
-        name: "Titre Quantitative ",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "ASO Titre Qualitative",
-        name: "ASO Titre Qualitative",
-        parameters: [],
-        type: "Serology"
-    },
+    // {
+    //     abbr: "ASO",
+    //     name: "Anti Streptolysin O ",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "Titre Quantitative ",
+    //     name: "Titre Quantitative ",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "ASO Titre Qualitative",
+    //     name: "ASO Titre Qualitative",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
     {
         abbr: "Blood Grouping (Abo & Rh)",
         name: "Blood Grouping (Abo & Rh)",
@@ -1249,33 +1249,33 @@ export const labTests = [
         statement: true,
         type: "Serology"
     },
+    // {
+    //     abbr: "Blood Pregnancy Test(HCG)",
+    //     name: "Blood Pregnancy Test(HCG)",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "Blood Tuberculosis",
+    //     name: "Blood Tuberculosis",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "HIV Screening",
+    //     name: "HIV Screening",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "HIV Screening Plus P24 (Rapid Test)",
+    //     name: "HIV Screening Plus P24 (Rapid Test)",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
     {
-        abbr: "Blood Pregnancy Test(HCG)",
-        name: "Blood Pregnancy Test(HCG)",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "Blood Tuberculosis",
-        name: "Blood Tuberculosis",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "HIV Screening",
-        name: "HIV Screening",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "HIV Screening Plus P24 (Rapid Test)",
-        name: "HIV Screening Plus P24 (Rapid Test)",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "H/Pylori",
-        name: "Helicobacter Pylori (H/Pylori)",
+        abbr: "H.Pylori",
+        name: "H.Pylori",
         parameters: [
             {
                 name: "H.Pylori Antibody Test",
@@ -1344,30 +1344,30 @@ export const labTests = [
     //     parameters: [],
     //     type: "Serology"
     // },
-    {
-        abbr: "Rheumatoid Factor(RF)",
-        name: "Rheumatoid Factor(RF)",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "Urine Pregnancy Test",
-        name: "Urine Pregnancy Test",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "Venereal Disease",
-        name: "Venereal Disease",
-        parameters: [],
-        type: "Serology"
-    },
-    {
-        abbr: "Research Lab(VDRL)",
-        name: "Research Lab(VDRL)",
-        parameters: [],
-        type: "Serology"
-    },
+    // {
+    //     abbr: "Rheumatoid Factor(RF)",
+    //     name: "Rheumatoid Factor(RF)",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "Urine Pregnancy Test",
+    //     name: "Urine Pregnancy Test",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "Venereal Disease",
+    //     name: "Venereal Disease",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
+    // {
+    //     abbr: "Research Lab(VDRL)",
+    //     name: "Research Lab(VDRL)",
+    //     parameters: [],
+    //     type: "Serology"
+    // },
     {
         abbr: "Widal",
         name: "Widal",
@@ -1399,258 +1399,258 @@ export const labTests = [
         type: "Serology",
         extra: true,
     },
-    {
-        abbr: "Chlamydia IgG Antibody",
-        name: "Chlamydia IgG Antibody",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "HAV IgG Antibody",
-        name: "HAV IgG Antibody",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Hbs Antigen Quantitative",
-        name: "Hbs Antigen Quantitative",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Hbs Antibody Quantitative",
-        name: "Hbs Antibody Quantitative",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Hbc Antibody Total",
-        name: "Hbc Antibody Total",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Hbc Antibody IgM",
-        name: "Hbc Antibody IgM",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Hbe Antigen",
-        name: "Hbe Antigen",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Hbe Antibody",
-        name: "Hbe Antibody",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "HCV Antibody",
-        name: "HCV Antibody",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "HSV 1 & 2 IgM",
-        name: "HSV 1 & 2 IgM",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "HSV 1 & 2 IgG",
-        name: "HSV 1 & 2 IgG",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "HSV 2 IgG",
-        name: "HSV 2 IgG",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Toxoplasma IgM",
-        name: "Toxoplasma IgM",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Toxoplasma IgG",
-        name: "Toxoplasma IgG",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Cytomegalovirus (CMV) IgM",
-        name: "Cytomegalovirus (CMV) IgM",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Cytomegalovirus (CMV) IgG",
-        name: "Cytomegalovirus (CMV) IgG",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Rubella IgM",
-        name: "Rubella IgM",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Rubella IgG",
-        name: "Rubella IgG",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Human Papiloma Virus (HPV) Antibody",
-        name: "Human Papiloma Virus (HPV) Antibody",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Quanteferone TB Gold",
-        name: "Quanteferone TB Gold",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Sars Cov 2 Antigen Test",
-        name: "Sars Cov 2 Antigen Test",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "Sars Cov 2 Antibody Test",
-        name: "Sars Cov 2 Antibody Test",
-        parameters: [],
-        type: "Infectious Diseases"
-    },
-    {
-        abbr: "FNAC",
-        name: "FNAC",
-        parameters: [],
-        type: "Cytology"
-    },
-    {
-        abbr: "Pap Smear",
-        name: "Pap Smear",
-        parameters: [],
-        type: "Cytology"
-    },
-    {
-        abbr: "Fluid Cytology/Aspirate",
-        name: "Fluid Cytology/Aspirate",
-        parameters: [],
-        type: "Cytology"
-    },
-    {
-        abbr: "Buccal Smear",
-        name: "Buccal Smear",
-        parameters: [],
-        type: "Cytology"
-    },
-    {
-        abbr: "Breast Lump",
-        name: "Breast Lump",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Breast Mass",
-        name: "Breast Mass",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Biopsy",
-        name: "Biopsy",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Fibroid",
-        name: "Fibroid",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Organs- Kidneys, Intestine, etc",
-        name: "Organs- Kidneys, Intestine, etc",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Prostate Tissue",
-        name: "Prostate Tissue",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Testes",
-        name: "Testes",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Uterus",
-        name: "Uterus",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Tubes and Ovaries",
-        name: "Tubes and Ovaries",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Liver Biopsy",
-        name: "Liver Biopsy",
-        parameters: [],
-        type: "Histology"
-    },
-    {
-        abbr: "Anti DS DNA",
-        name: "Anti DS DNA",
-        parameters: [],
-        type: "Auto-Immune"
-    },
-    {
-        abbr: "Anti Nuclear Antibody ANA",
-        name: "Anti Nuclear Antibody ANA",
-        parameters: [],
-        type: "Auto-Immune"
-    },
-    {
-        abbr: "Anti Smith",
-        name: "Anti Smith",
-        parameters: [],
-        type: "Auto-Immune"
-    },
-    {
-        abbr: "ANCA",
-        name: "ANCA",
-        parameters: [],
-        type: "Auto-Immune"
-    },
-    {
-        abbr: "ACCP",
-        name: "ACCP",
-        parameters: [],
-        type: "Auto-Immune"
-    },
-    {
-        abbr: "Cardiolipin IgG/IgM Antibodies",
-        name: "Cardiolipin IgG/IgM Antibodies",
-        parameters: [],
-        type: "Auto-Immune"
-    },
+    // {
+    //     abbr: "Chlamydia IgG Antibody",
+    //     name: "Chlamydia IgG Antibody",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "HAV IgG Antibody",
+    //     name: "HAV IgG Antibody",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Hbs Antigen Quantitative",
+    //     name: "Hbs Antigen Quantitative",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Hbs Antibody Quantitative",
+    //     name: "Hbs Antibody Quantitative",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Hbc Antibody Total",
+    //     name: "Hbc Antibody Total",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Hbc Antibody IgM",
+    //     name: "Hbc Antibody IgM",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Hbe Antigen",
+    //     name: "Hbe Antigen",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Hbe Antibody",
+    //     name: "Hbe Antibody",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "HCV Antibody",
+    //     name: "HCV Antibody",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "HSV 1 & 2 IgM",
+    //     name: "HSV 1 & 2 IgM",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "HSV 1 & 2 IgG",
+    //     name: "HSV 1 & 2 IgG",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "HSV 2 IgG",
+    //     name: "HSV 2 IgG",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Toxoplasma IgM",
+    //     name: "Toxoplasma IgM",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Toxoplasma IgG",
+    //     name: "Toxoplasma IgG",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Cytomegalovirus (CMV) IgM",
+    //     name: "Cytomegalovirus (CMV) IgM",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Cytomegalovirus (CMV) IgG",
+    //     name: "Cytomegalovirus (CMV) IgG",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Rubella IgM",
+    //     name: "Rubella IgM",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Rubella IgG",
+    //     name: "Rubella IgG",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Human Papiloma Virus (HPV) Antibody",
+    //     name: "Human Papiloma Virus (HPV) Antibody",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Quanteferone TB Gold",
+    //     name: "Quanteferone TB Gold",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Sars Cov 2 Antigen Test",
+    //     name: "Sars Cov 2 Antigen Test",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "Sars Cov 2 Antibody Test",
+    //     name: "Sars Cov 2 Antibody Test",
+    //     parameters: [],
+    //     type: "Infectious Diseases"
+    // },
+    // {
+    //     abbr: "FNAC",
+    //     name: "FNAC",
+    //     parameters: [],
+    //     type: "Cytology"
+    // },
+    // {
+    //     abbr: "Pap Smear",
+    //     name: "Pap Smear",
+    //     parameters: [],
+    //     type: "Cytology"
+    // },
+    // {
+    //     abbr: "Fluid Cytology/Aspirate",
+    //     name: "Fluid Cytology/Aspirate",
+    //     parameters: [],
+    //     type: "Cytology"
+    // },
+    // {
+    //     abbr: "Buccal Smear",
+    //     name: "Buccal Smear",
+    //     parameters: [],
+    //     type: "Cytology"
+    // },
+    // {
+    //     abbr: "Breast Lump",
+    //     name: "Breast Lump",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Breast Mass",
+    //     name: "Breast Mass",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Biopsy",
+    //     name: "Biopsy",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Fibroid",
+    //     name: "Fibroid",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Organs- Kidneys, Intestine, etc",
+    //     name: "Organs- Kidneys, Intestine, etc",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Prostate Tissue",
+    //     name: "Prostate Tissue",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Testes",
+    //     name: "Testes",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Uterus",
+    //     name: "Uterus",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Tubes and Ovaries",
+    //     name: "Tubes and Ovaries",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Liver Biopsy",
+    //     name: "Liver Biopsy",
+    //     parameters: [],
+    //     type: "Histology"
+    // },
+    // {
+    //     abbr: "Anti DS DNA",
+    //     name: "Anti DS DNA",
+    //     parameters: [],
+    //     type: "Auto-Immune"
+    // },
+    // {
+    //     abbr: "Anti Nuclear Antibody ANA",
+    //     name: "Anti Nuclear Antibody ANA",
+    //     parameters: [],
+    //     type: "Auto-Immune"
+    // },
+    // {
+    //     abbr: "Anti Smith",
+    //     name: "Anti Smith",
+    //     parameters: [],
+    //     type: "Auto-Immune"
+    // },
+    // {
+    //     abbr: "ANCA",
+    //     name: "ANCA",
+    //     parameters: [],
+    //     type: "Auto-Immune"
+    // },
+    // {
+    //     abbr: "ACCP",
+    //     name: "ACCP",
+    //     parameters: [],
+    //     type: "Auto-Immune"
+    // },
+    // {
+    //     abbr: "Cardiolipin IgG/IgM Antibodies",
+    //     name: "Cardiolipin IgG/IgM Antibodies",
+    //     parameters: [],
+    //     type: "Auto-Immune"
+    // },
     {
         abbr: "Ca 125",
         name: "Ca 125",
@@ -1663,12 +1663,12 @@ export const labTests = [
         comment: true,
         type: "Tumor Markers"
     },
-    {
-        abbr: "Ca 19-9",
-        name: "Ca 19-9",
-        parameters: [],
-        type: "Tumor Markers"
-    },
+    // {
+    //     abbr: "Ca 19-9",
+    //     name: "Ca 19-9",
+    //     parameters: [],
+    //     type: "Tumor Markers"
+    // },
     {
         abbr: "Ca 15-3",
         name: "Ca 15-3",
@@ -1681,12 +1681,12 @@ export const labTests = [
         comment: true,
         type: "Tumor Markers"
     },
-    {
-        abbr: "CEA",
-        name: "CEA",
-        parameters: [],
-        type: "Tumor Markers"
-    },
+    // {
+    //     abbr: "CEA",
+    //     name: "CEA",
+    //     parameters: [],
+    //     type: "Tumor Markers"
+    // },
     {
         abbr: "PSA",
         name: "PSA",
@@ -1705,36 +1705,36 @@ export const labTests = [
         <p>✔ Prostate biopsies and prostate surgery may also increase PSA level.</p>`,
         type: "Tumor Markers"
     },
-    {
-        abbr: "fPSA",
-        name: "fPSA",
-        parameters: [],
-        type: "Tumor Markers"
-    },
-    {
-        abbr: "AFP",
-        name: "AFP",
-        parameters: [],
-        type: "Tumor Markers"
-    },
-    {
-        abbr: "Folic Acid",
-        name: "Folic Acid",
-        parameters: [],
-        type: "Vitamins"
-    },
-    {
-        abbr: "25 Hydroxyl Vitamin D",
-        name: "25 Hydroxyl Vitamin D",
-        parameters: [],
-        type: "Vitamins"
-    },
-    {
-        abbr: "Vitamin B12",
-        name: "Vitamin B12",
-        parameters: [],
-        type: "Vitamins"
-    },
+    // {
+    //     abbr: "fPSA",
+    //     name: "fPSA",
+    //     parameters: [],
+    //     type: "Tumor Markers"
+    // },
+    // {
+    //     abbr: "AFP",
+    //     name: "AFP",
+    //     parameters: [],
+    //     type: "Tumor Markers"
+    // },
+    // {
+    //     abbr: "Folic Acid",
+    //     name: "Folic Acid",
+    //     parameters: [],
+    //     type: "Vitamins"
+    // },
+    // {
+    //     abbr: "25 Hydroxyl Vitamin D",
+    //     name: "25 Hydroxyl Vitamin D",
+    //     parameters: [],
+    //     type: "Vitamins"
+    // },
+    // {
+    //     abbr: "Vitamin B12",
+    //     name: "Vitamin B12",
+    //     parameters: [],
+    //     type: "Vitamins"
+    // },
     {
         abbr: "FHP",
         name: "Female Hormonal Profile",
@@ -1985,30 +1985,30 @@ export const labTests = [
         ],
         type: "Profiles"
     },
-    {
-        abbr: "Ovarian Reserve Profile(DAY 3 FSH, Inhibin B, AMH)",
-        name: "Ovarian Reserve Profile(DAY 3 FSH, Inhibin B, AMH)",
-        parameters: [],
-        type: "Profiles"
-    },
-    {
-        abbr: "Andropause (LH, FSH, Testosterone, DHEAS, SHBG, Free Androgen Index)",
-        name: "Andropause (LH, FSH, Testosterone, DHEAS, SHBG, Free Androgen Index)",
-        parameters: [],
-        type: "Profiles"
-    },
-    {
-        abbr: "Ovulation Profile I(DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
-        name: "Ovulation Profile I(DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
-        parameters: [],
-        type: "Profiles"
-    },
-    {
-        abbr: "Ovulation Profile II(DAY 3 LH, FSH, Prolactin, E2, DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
-        name: "Ovulation Profile II(DAY 3 LH, FSH, Prolactin, E2, DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
-        parameters: [],
-        type: "Profiles"
-    },
+    // {
+    //     abbr: "Ovarian Reserve Profile(DAY 3 FSH, Inhibin B, AMH)",
+    //     name: "Ovarian Reserve Profile(DAY 3 FSH, Inhibin B, AMH)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
+    // {
+    //     abbr: "Andropause (LH, FSH, Testosterone, DHEAS, SHBG, Free Androgen Index)",
+    //     name: "Andropause (LH, FSH, Testosterone, DHEAS, SHBG, Free Androgen Index)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
+    // {
+    //     abbr: "Ovulation Profile I(DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
+    //     name: "Ovulation Profile I(DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
+    // {
+    //     abbr: "Ovulation Profile II(DAY 3 LH, FSH, Prolactin, E2, DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
+    //     name: "Ovulation Profile II(DAY 3 LH, FSH, Prolactin, E2, DAY 12 To DAY 16 LH, DAY 21 Progesterone)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
     {
         abbr: "TFT I",
         name: "Thyroid Function Test I (TSH, T4, T3, FT4, FT3)",
@@ -2074,12 +2074,12 @@ export const labTests = [
         ],
         type: "Profiles"
     },
-    {
-        abbr: "Thyroid Antibody Profile (TPO Antibody, TSH Receptor Antibody, Thyroglobulin Antibody)",
-        name: "Thyroid Antibody Profile (TPO Antibody, TSH Receptor Antibody, Thyroglobulin Antibody)",
-        parameters: [],
-        type: "Profiles"
-    },
+    // {
+    //     abbr: "Thyroid Antibody Profile (TPO Antibody, TSH Receptor Antibody, Thyroglobulin Antibody)",
+    //     name: "Thyroid Antibody Profile (TPO Antibody, TSH Receptor Antibody, Thyroglobulin Antibody)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
     {
         abbr: "Galactorrhoea Screen(TSH, Prolactin)",
         name: "Galactorrhoea Screen(TSH, Prolactin)",
@@ -2167,12 +2167,12 @@ export const labTests = [
         ],
         type: "Profiles"
     },
-    {
-        abbr: "Prostate Profile (TPSA, fPSA, %fPSA)",
-        name: "Prostate Profile (TPSA, fPSA, %fPSA)",
-        parameters: [],
-        type: "Profiles"
-    },
+    // {
+    //     abbr: "Prostate Profile (TPSA, fPSA, %fPSA)",
+    //     name: "Prostate Profile (TPSA, fPSA, %fPSA)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
     {
         abbr: "Pitiutary Profile",
         name: "Pitiutary Profile (TSH, FSH,LH,PRL,GH,Cortisol)",
@@ -2192,12 +2192,12 @@ export const labTests = [
         ],
         type: "Profiles"
     },
-    {
-        abbr: "Chest Pain Profile(Myoglobin, CKMB, Troponin)",
-        name: "Chest Pain Profile(Myoglobin, CKMB, Troponin)",
-        parameters: [],
-        type: "Profiles"
-    },
+    // {
+    //     abbr: "Chest Pain Profile(Myoglobin, CKMB, Troponin)",
+    //     name: "Chest Pain Profile(Myoglobin, CKMB, Troponin)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
     {
         abbr: "Antenatal Health Package",
         name: "Antenatal Health Package(FBC, ABO/Rh-TYPE, Blood Group, Hb Genotype, VDRL, FBG, TSH, FT4, Rubella, IgG Toxoplasma IgG, HBsAg, HCV Antibody, Varicella Zooster IgG, RVS, Urinalysis",
@@ -2213,12 +2213,12 @@ export const labTests = [
         ],
         type: "Profiles"
     },
-    {
-        abbr: "Torch Panel (Toxoplasma, Rubella, Cytomegalovirus, HSV)",
-        name: "Torch Panel (Toxoplasma, Rubella, Cytomegalovirus, HSV)",
-        parameters: [],
-        type: "Profiles"
-    },
+    // {
+    //     abbr: "Torch Panel (Toxoplasma, Rubella, Cytomegalovirus, HSV)",
+    //     name: "Torch Panel (Toxoplasma, Rubella, Cytomegalovirus, HSV)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
     {
         abbr: "Metabolic Panel",
         name: "Metabolic Panel(TSH, LFT, Serum Electrolytes, Urea, Creatinine, Uric Acid, Fasting Lipid Profile, FBG, Complete Blood Count, Urinalysis",
@@ -2230,60 +2230,60 @@ export const labTests = [
         ],
         type: "Profiles"
     },
-    {
-        abbr: "Hepatitis B Panel (HBsAg, HBsAb, HBeAg, HBeAb, HBcAb Total, HBcAb IgM)",
-        name: "Hepatitis B Panel (HBsAg, HBsAb, HBeAg, HBeAb, HBcAb Total, HBcAb IgM)",
-        parameters: [],
-        type: "Profiles"
-    },
-    {
-        abbr: "Paternity Test",
-        name: "Paternity Test",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "BRCA 1 & 2 Gene Mutation",
-        name: "BRCA 1 & 2 Gene Mutation",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "SARS COV 2 PCR",
-        name: "SARS COV 2 PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Alpha Thalassemia, PCR",
-        name: "Alpha Thalassemia, PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Adenovirus - PCR",
-        name: "Adenovirus - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Bocavirus-PCR",
-        name: "Bocavirus-PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "BCR/ABL, Qualitative(Philadelphia Chromosome)",
-        name: "BCR/ABL, Qualitative(Philadelphia Chromosome)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Beta Thalassemia Mutation Detection(ARMS-PCR)",
-        name: "Beta Thalassemia Mutation Detection(ARMS-PCR)",
-        parameters: [],
-        type: "DNA"
-    },
+    // {
+    //     abbr: "Hepatitis B Panel (HBsAg, HBsAb, HBeAg, HBeAb, HBcAb Total, HBcAb IgM)",
+    //     name: "Hepatitis B Panel (HBsAg, HBsAb, HBeAg, HBeAb, HBcAb Total, HBcAb IgM)",
+    //     parameters: [],
+    //     type: "Profiles"
+    // },
+    // {
+    //     abbr: "Paternity Test",
+    //     name: "Paternity Test",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "BRCA 1 & 2 Gene Mutation",
+    //     name: "BRCA 1 & 2 Gene Mutation",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "SARS COV 2 PCR",
+    //     name: "SARS COV 2 PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Alpha Thalassemia, PCR",
+    //     name: "Alpha Thalassemia, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Adenovirus - PCR",
+    //     name: "Adenovirus - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Bocavirus-PCR",
+    //     name: "Bocavirus-PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "BCR/ABL, Qualitative(Philadelphia Chromosome)",
+    //     name: "BCR/ABL, Qualitative(Philadelphia Chromosome)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Beta Thalassemia Mutation Detection(ARMS-PCR)",
+    //     name: "Beta Thalassemia Mutation Detection(ARMS-PCR)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
     // {
     //     abbr: "Malaria DNA-PCR",
     //     name: "Malaria DNA-PCR",
@@ -2296,342 +2296,342 @@ export const labTests = [
     //     parameters: [],
     //     type: "DNA"
     // },
-    {
-        abbr: "Influenza A - PCR",
-        name: "Influenza A - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Influenza B - PCR",
-        name: "Influenza B - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "JAK 2 Exon 12 Mutation Detection",
-        name: "JAK 2 Exon 12 Mutation Detection",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "JAK2 V617F Mutation Detection, Blood",
-        name: "JAK2 V617F Mutation Detection, Blood",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "TB PCR - MDR",
-        name: "TB PCR - MDR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Dengue PCR",
-        name: "Dengue PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Chlamydia DNA Detector, PCR",
-        name: "Chlamydia DNA Detector, PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Chlamydia Trachomatis - PCR",
-        name: "Chlamydia Trachomatis - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "CT/NG - PCR",
-        name: "CT/NG - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Coronavirus - PCR",
-        name: "Coronavirus - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "CMV Viral Load",
-        name: "CMV Viral Load",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Helicobacter Pylori - PCR",
-        name: "Helicobacter Pylori - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "HIV RNA Detector - Qualitative",
-        name: "HIV RNA Detector - Qualitative",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "HIV Viral Load",
-        name: "HIV Viral Load",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "HLA B-27",
-        name: "HLA B-27",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Human Papilloma Virus - PCR",
-        name: "Human Papilloma Virus - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Human Papilloma Virus - Genotyping",
-        name: "Human Papilloma Virus - Genotyping",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "TB Profile (TB-PCR, TB-Culture, AFB-Staining)",
-        name: "TB Profile (TB-PCR, TB-Culture, AFB-Staining)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Cytomegalovirus DNA Detector, PCR",
-        name: "Cytomegalovirus DNA Detector, PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Candida Albicans - PCR",
-        name: "Candida Albicans - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Dengue and Chikugunya Virus PCR",
-        name: "Dengue and Chikugunya Virus PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Enterovirus, Molecular DDetection - PCR",
-        name: "Enterovirus, Molecular DDetection - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Enterovirus, Real Time - PCR",
-        name: "Enterovirus, Real Time - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Epstein Barr Virus (EBV), Molecular Detection, PCR",
-        name: "Epstein Barr Virus (EBV), Molecular Detection, PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Factor V Mutation Detection (Leiden R50Q)",
-        name: "Factor V Mutation Detection (Leiden R50Q)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "MTHFR 677 C > Gene Mutation",
-        name: "MTHFR 677 C > Gene Mutation",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "MEFV Gene Mutation (Mediterranean Fever) Detection",
-        name: "MEFV Gene Mutation (Mediterranean Fever) Detection",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Mycobacterium Tuberculosis PCR",
-        name: "Mycobacterium Tuberculosis PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Mycobacterium Tuberculosis Culture",
-        name: "Mycobacterium Tuberculosis Culture",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Mycobacterium Speciation, Molecular",
-        name: "Mycobacterium Speciation, Molecular",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Trichomonas Vaginalis & Gardnerella Vaginalis PCR",
-        name: "Trichomonas Vaginalis & Gardnerella Vaginalis PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Fragile X (FMR1) Mutation Screen",
-        name: "Fragile X (FMR1) Mutation Screen",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "H1N1 PCR",
-        name: "H1N1 PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "HCV RNA PCR Qualititive",
-        name: "HCV RNA PCR Qualititive",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "HCV RNA PCR Qualititive Real Time",
-        name: "HCV RNA PCR Qualititive Real Time",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Hepatitis C Virus - Profile(HCV-Viral Load, Anti-HCV)",
-        name: "Hepatitis C Virus - Profile(HCV-Viral Load, Anti-HCV)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Hepatitis B Virus, PCR, Qualititive",
-        name: "Hepatitis B Virus, PCR, Qualititive",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Hepatitis C Virus(HCV) Alpha, HCV RNA Quantitative and HCV Genotyping",
-        name: "Hepatitis C Virus(HCV) Alpha, HCV RNA Quantitative and HCV Genotyping",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Mycoplasma Gentalium - PCR",
-        name: "Mycoplasma Gentalium - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Neisseria Gonorrhoeae DNA Detection, PCR",
-        name: "Neisseria Gonorrhoeae DNA Detection, PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Para Influenza Virus - PCR",
-        name: "Para Influenza Virus - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Paravovirus B19, Molecular Detection, PCR",
-        name: "Paravovirus B19, Molecular Detection, PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Thalassemia - Alpha & Beta, Line Probe Assay",
-        name: "Thalassemia - Alpha & Beta, Line Probe Assay",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Hepatitis C Virus (HCV) RNA Genotyping",
-        name: "Hepatitis C Virus (HCV) RNA Genotyping",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Herpes Simplex Virus DNA Detector - (Multiplex PCR: For HSV 1&2 Seperately)",
-        name: "Herpes Simplex Virus DNA Detector - (Multiplex PCR: For HSV 1&2 Seperately)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Herpes Simplex Virus DNA Detector (PCR : Single Sharing Gene For Both HSV 1&2)",
-        name: "Herpes Simplex Virus DNA Detector (PCR : Single Sharing Gene For Both HSV 1&2)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Herpes Simplex Virus -1 PCR",
-        name: "Herpes Simplex Virus -1 PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Herpes Simplex Virus -2 PCR",
-        name: "Herpes Simplex Virus -2 PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Swine Flu-PCR",
-        name: "Swine Flu-PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Respiratory Synctial Virus(RSV) PCR",
-        name: "Respiratory Synctial Virus(RSV) PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Salmonella PCR",
-        name: "Salmonella PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "STD Panel -I (C.Trachomatis,N.Gonorrhoeae, M.Gnitalium)",
-        name: "STD Panel -I (C.Trachomatis,N.Gonorrhoeae, M.Gnitalium)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "STD Panel -II (Trichomonas Vaginalis, Mycoplasma Hominis, Ureaplasmaurealyticum, Ureaplasmaparvum)",
-        name: "STD Panel -II (Trichomonas Vaginalis, Mycoplasma Hominis, Ureaplasmaurealyticum, Ureaplasmaparvum)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "STD Panel -III (Trichomonas Vaginalis, Candida Albicans, Gardenreela Vaginalis)",
-        name: "STD Panel -III (Trichomonas Vaginalis, Candida Albicans, Gardenreela Vaginalis)",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Rhinovirus - PCR",
-        name: "Rhinovirus - PCR",
-        parameters: [],
-        type: "DNA"
-    },
-    {
-        abbr: "Varicella-Zoster Virus, Molecular Detection, PCR",
-        name: "Varicella-Zoster Virus, Molecular Detection, PCR",
-        parameters: [],
-        type: "DNA"
-    },
+    // {
+    //     abbr: "Influenza A - PCR",
+    //     name: "Influenza A - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Influenza B - PCR",
+    //     name: "Influenza B - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "JAK 2 Exon 12 Mutation Detection",
+    //     name: "JAK 2 Exon 12 Mutation Detection",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "JAK2 V617F Mutation Detection, Blood",
+    //     name: "JAK2 V617F Mutation Detection, Blood",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "TB PCR - MDR",
+    //     name: "TB PCR - MDR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Dengue PCR",
+    //     name: "Dengue PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Chlamydia DNA Detector, PCR",
+    //     name: "Chlamydia DNA Detector, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Chlamydia Trachomatis - PCR",
+    //     name: "Chlamydia Trachomatis - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "CT/NG - PCR",
+    //     name: "CT/NG - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Coronavirus - PCR",
+    //     name: "Coronavirus - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "CMV Viral Load",
+    //     name: "CMV Viral Load",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Helicobacter Pylori - PCR",
+    //     name: "Helicobacter Pylori - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "HIV RNA Detector - Qualitative",
+    //     name: "HIV RNA Detector - Qualitative",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "HIV Viral Load",
+    //     name: "HIV Viral Load",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "HLA B-27",
+    //     name: "HLA B-27",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Human Papilloma Virus - PCR",
+    //     name: "Human Papilloma Virus - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Human Papilloma Virus - Genotyping",
+    //     name: "Human Papilloma Virus - Genotyping",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "TB Profile (TB-PCR, TB-Culture, AFB-Staining)",
+    //     name: "TB Profile (TB-PCR, TB-Culture, AFB-Staining)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Cytomegalovirus DNA Detector, PCR",
+    //     name: "Cytomegalovirus DNA Detector, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Candida Albicans - PCR",
+    //     name: "Candida Albicans - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Dengue and Chikugunya Virus PCR",
+    //     name: "Dengue and Chikugunya Virus PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Enterovirus, Molecular DDetection - PCR",
+    //     name: "Enterovirus, Molecular DDetection - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Enterovirus, Real Time - PCR",
+    //     name: "Enterovirus, Real Time - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Epstein Barr Virus (EBV), Molecular Detection, PCR",
+    //     name: "Epstein Barr Virus (EBV), Molecular Detection, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Factor V Mutation Detection (Leiden R50Q)",
+    //     name: "Factor V Mutation Detection (Leiden R50Q)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "MTHFR 677 C > Gene Mutation",
+    //     name: "MTHFR 677 C > Gene Mutation",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "MEFV Gene Mutation (Mediterranean Fever) Detection",
+    //     name: "MEFV Gene Mutation (Mediterranean Fever) Detection",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Mycobacterium Tuberculosis PCR",
+    //     name: "Mycobacterium Tuberculosis PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Mycobacterium Tuberculosis Culture",
+    //     name: "Mycobacterium Tuberculosis Culture",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Mycobacterium Speciation, Molecular",
+    //     name: "Mycobacterium Speciation, Molecular",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Trichomonas Vaginalis & Gardnerella Vaginalis PCR",
+    //     name: "Trichomonas Vaginalis & Gardnerella Vaginalis PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Fragile X (FMR1) Mutation Screen",
+    //     name: "Fragile X (FMR1) Mutation Screen",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "H1N1 PCR",
+    //     name: "H1N1 PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "HCV RNA PCR Qualititive",
+    //     name: "HCV RNA PCR Qualititive",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "HCV RNA PCR Qualititive Real Time",
+    //     name: "HCV RNA PCR Qualititive Real Time",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Hepatitis C Virus - Profile(HCV-Viral Load, Anti-HCV)",
+    //     name: "Hepatitis C Virus - Profile(HCV-Viral Load, Anti-HCV)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Hepatitis B Virus, PCR, Qualititive",
+    //     name: "Hepatitis B Virus, PCR, Qualititive",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Hepatitis C Virus(HCV) Alpha, HCV RNA Quantitative and HCV Genotyping",
+    //     name: "Hepatitis C Virus(HCV) Alpha, HCV RNA Quantitative and HCV Genotyping",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Mycoplasma Gentalium - PCR",
+    //     name: "Mycoplasma Gentalium - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Neisseria Gonorrhoeae DNA Detection, PCR",
+    //     name: "Neisseria Gonorrhoeae DNA Detection, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Para Influenza Virus - PCR",
+    //     name: "Para Influenza Virus - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Paravovirus B19, Molecular Detection, PCR",
+    //     name: "Paravovirus B19, Molecular Detection, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Thalassemia - Alpha & Beta, Line Probe Assay",
+    //     name: "Thalassemia - Alpha & Beta, Line Probe Assay",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Hepatitis C Virus (HCV) RNA Genotyping",
+    //     name: "Hepatitis C Virus (HCV) RNA Genotyping",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Herpes Simplex Virus DNA Detector - (Multiplex PCR: For HSV 1&2 Seperately)",
+    //     name: "Herpes Simplex Virus DNA Detector - (Multiplex PCR: For HSV 1&2 Seperately)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Herpes Simplex Virus DNA Detector (PCR : Single Sharing Gene For Both HSV 1&2)",
+    //     name: "Herpes Simplex Virus DNA Detector (PCR : Single Sharing Gene For Both HSV 1&2)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Herpes Simplex Virus -1 PCR",
+    //     name: "Herpes Simplex Virus -1 PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Herpes Simplex Virus -2 PCR",
+    //     name: "Herpes Simplex Virus -2 PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Swine Flu-PCR",
+    //     name: "Swine Flu-PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Respiratory Synctial Virus(RSV) PCR",
+    //     name: "Respiratory Synctial Virus(RSV) PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Salmonella PCR",
+    //     name: "Salmonella PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "STD Panel -I (C.Trachomatis,N.Gonorrhoeae, M.Gnitalium)",
+    //     name: "STD Panel -I (C.Trachomatis,N.Gonorrhoeae, M.Gnitalium)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "STD Panel -II (Trichomonas Vaginalis, Mycoplasma Hominis, Ureaplasmaurealyticum, Ureaplasmaparvum)",
+    //     name: "STD Panel -II (Trichomonas Vaginalis, Mycoplasma Hominis, Ureaplasmaurealyticum, Ureaplasmaparvum)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "STD Panel -III (Trichomonas Vaginalis, Candida Albicans, Gardenreela Vaginalis)",
+    //     name: "STD Panel -III (Trichomonas Vaginalis, Candida Albicans, Gardenreela Vaginalis)",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Rhinovirus - PCR",
+    //     name: "Rhinovirus - PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
+    // {
+    //     abbr: "Varicella-Zoster Virus, Molecular Detection, PCR",
+    //     name: "Varicella-Zoster Virus, Molecular Detection, PCR",
+    //     parameters: [],
+    //     type: "DNA"
+    // },
 ]
 
 export const scanTests = [
