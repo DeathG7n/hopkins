@@ -40,7 +40,7 @@ function Page() {
       <div className={styles.box}>
         {patients?.map((item, id) => {
           return(
-            <Link href={`/update-results`} key={id} onClick={() => handleClick(item?._id)}>{item?.name}</Link> 
+            <Link href={`/update-results`} key={id} onClick={() => handleClick(item?._id)}><span>{item?.name}</span><span>{item?.createdAt?.substring(0,10)}</span></Link> 
           )
         })}
       </div>

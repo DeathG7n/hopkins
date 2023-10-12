@@ -61,11 +61,13 @@
 
 .box a{
   text-decoration: none;
-  width: fit-content;
+  width: 100%;
   border-radius: 5px;
   padding: 5px;
   background-color: #888;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .box p{
